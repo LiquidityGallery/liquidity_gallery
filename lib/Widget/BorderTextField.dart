@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-//?/ A custom textfield with Border on it.
-
+/// A custom textfield with Border on it.
 
 class BorderTextField extends StatelessWidget {
   final bool? isinputnumber;

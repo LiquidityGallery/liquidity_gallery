@@ -1,5 +1,6 @@
 import 'package:example/TwitterLightOutView.dart';
 import 'package:flutter/material.dart';
+import 'package:liquidity_gallery/Widget/GoogleButton.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 void main() => runApp(MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,8 @@ class MainView extends StatelessWidget {
         children: [
           ListTile(title: Text('Twitter Light out theme'), onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => TwitterLightsOutView()));
-          },)
+          },),
+
         ],
       ),
     );
