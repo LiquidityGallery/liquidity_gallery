@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  date_time_picker: ^2.0.0 #https://pub.dev/packages/date_time_picker
 
 dev_dependencies:
   flutter_test:

@@ -18,4 +18,7 @@ liquidity_gallery:
 ###Themes
 TwitterLightOutTheme
 
+###Widgets
+StartEndDatePicker
+
 ## Example

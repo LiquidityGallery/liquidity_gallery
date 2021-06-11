@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 ThemeData get twitterLightOutTheme => ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Color.fromRGBO(17, 19, 22, 1),
+    primaryColor: Color.fromRGBO(73, 160, 235, 1),
+    inputDecorationTheme: InputDecorationTheme(
+        border: InputBorder.none,
+        hintStyle: TextStyle(
+          color: Color.fromRGBO(113, 118, 124, 1),
+        )),
     appBarTheme: _darkThemeAppBarTheme,
+    bottomAppBarTheme:
+        BottomAppBarTheme(elevation: 0, color: Color.fromRGBO(17, 19, 22, 1)),
     bottomNavigationBarTheme: _darkThemeBottomNavigationBarTheme,
 
     /// [Roboto] is also the default [fontFamily] of Flutter
