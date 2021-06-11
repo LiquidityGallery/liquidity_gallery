@@ -1,45 +1,30 @@
-
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 
-class GoogleButton extends StatelessWidget {
-  final double minwidth;
-  final double height;
-  final Color? textcolor;
-  final Color? color;
-  final String text;
-  final double radius;
-  /// Verion 1.0 20210611
-  /// A functional button to conncet google login while pressed on (Web/Android/iOS).
-  ///
-  /// Remember to enable google login function on firebase.
-  ///
-  /// Remember for iOS, goto iOS/Runner/Info.plist, fill in GoogleService-Info.plist key
-  ///
-  /// Example : 	<string>com.googleusercontent.apps.408336808724-1k8c2o30odi248fqn7uss5g4p5mh457i</string>
-  const GoogleButton({Key? key, this.textcolor, this.color, this.minwidth=270, this.height =47, this.text ='Google Login', this.radius=12}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ConfirmButton(onPressed: () async {
-      try {
-        if (kIsWeb) {
-          await signInWithGoogleWeb();
-        } else if (Platform.isAndroid || Platform.isIOS) {
-          await signInWithGoogle();
-        }
-      } catch (e) {
-        print(e);
-      }
-    },text: text,textcolor: textcolor== null ? Colors.black87 : textcolor!, color: color ==null ? Colors.yellow : color, height: height, minWidth: minwidth,radius: radius,
-    );
+/// A function version of a gogole login method. Saving you Time ;)
+/// Verion 1.0 20210611
+/// A functionalto conncet google login while pressed on (Web/Android/iOS).
+///
+/// Remember to enable google login function on firebase.
+///
+/// Remember for iOS, goto iOS/Runner/Info.plist, fill in GoogleService-Info.plist key
+///
+/// Example : 	<string>com.googleusercontent.apps.408336808724-1k8c2o30odi248fqn7uss5g4p5mh457i</string>
+GoogleLogin() async {
+  try {
+    if (kIsWeb) {
+      await signInWithGoogleWeb();
+    } else if (Platform.isAndroid || Platform.isIOS) {
+      await signInWithGoogle();
+    }
+  } catch (e) {
+    print(e);
   }
 }
+
 
 //?/ Web google login start
 

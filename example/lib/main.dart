@@ -46,7 +46,10 @@ class MainView extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => StartEndDatePickerView())),
-          )
+          ),
+          Header(text: 'Title',color: Colors.white,),
+          Texter(text: 'This is a text.',color: Colors.white,),
+          MailboxContainer(child: ListTile(title: Text("Sam Siu"),subtitle: Text("Vice President(App development)"),trailing: Text("Admin"),))
         ],
       ),
     );
