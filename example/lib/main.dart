@@ -2,7 +2,6 @@ import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:example/TwitterLoginView.dart';
 import 'package:flutter/material.dart';
-import 'package:liquidity_gallery/Widget/GoogleButton.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 void main() => runApp(MyApp());
@@ -27,9 +26,6 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListTile(title: Text('Twitter Light out theme'), onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => TwitterLightsOutView()));
-          },),
           ListTile(
             title: Text('Twitter Light Out theme'),
             onTap: () {
