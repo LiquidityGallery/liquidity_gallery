@@ -4,6 +4,14 @@ A gallery for ellie & logistized app
 
 ## Getting Started
 
-## How to use
+## Installation
+```
+# pubspec.yaml
+
+liquidity_gallery:
+  git:
+    url: https://github.com/LiquidityGallery/liquidity_gallery.git
+    ref: main
+```
 
 ## Example
