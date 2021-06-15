@@ -64,7 +64,10 @@ class MainView extends StatelessWidget {
           ListTile(
               title: Text('Location and Google Map'),
               onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => LocationView())))
+                  context, MaterialPageRoute(builder: (_) => LocationView()))),
+          Header(text: 'Title',color: Colors.white,),
+          Texter(text: 'This is a text.',color: Colors.white,),
+
         ],
       ),
     );

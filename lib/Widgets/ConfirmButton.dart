@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-//?/ Version1.01 last update 20200610
-//?/ A custom button with pre-build rounded colorful shape on it.
-
 class ConfirmButton extends StatelessWidget {
+
   final String? text;
   final Color? color;
   final double radius;
@@ -13,6 +11,9 @@ class ConfirmButton extends StatelessWidget {
   final Color? textcolor;
   final bool? isbold;
 
+  /// Version1.01 last update 20200610.
+  ///
+  /// A custom button with pre-build rounded colorful shape on it.
   const ConfirmButton(
       {Key? key,
       this.text,
