@@ -59,12 +59,12 @@ class _LocationViewState extends State<LocationView> {
             longitude: _locationData!.longitude ?? 0,
           ),
         ),
-        ListTile(
-          title: Text('Address to Location'),
-          subtitle: LocationText(
-            address: '88 Kwok Shui Road',
-          ),
-        ),
+        // ListTile(
+        //   title: Text('Address to Location'),
+        //   subtitle: LocationText(
+        //     address: '88 Kwok Shui Road',
+        //   ),
+        // ),
         Center(
 
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 /// Simply display location from address given, can directly call
 /// [locationFromAddress] to get result
@@ -16,22 +17,26 @@ class LocationText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: locationFromAddress(address),
-      builder: (context, AsyncSnapshot<List<Location>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          final _data = snapshot.data!.first;
-          return Text(
-            'Latitude: ${_data.latitude}, Longitude: ${_data.longitude}',
-            style: textStyle,
-          );
-        } else {
-          return Text(
-            '$loadingText',
-            style: textStyle,
-          );
-        }
-      },
-    );
+    if (kIsWeb) {
+      return Text('Current not supported for web');
+    } else {
+      return FutureBuilder(
+        future: locationFromAddress(address),
+        builder: (context, AsyncSnapshot<List<Location>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            final _data = snapshot.data!.first;
+            return Text(
+              'Latitude: ${_data.latitude}, Longitude: ${_data.longitude}',
+              style: textStyle,
+            );
+          } else {
+            return Text(
+              '$loadingText',
+              style: textStyle,
+            );
+          }
+        },
+      );
+    }
   }
 }

@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:liquidity_gallery/Functions/getAddressByLatLong.dart';
 
 /// Simply display address from location given, can directly call
 /// [placemarkFromCoordinates] to get result
@@ -18,15 +20,19 @@ class AddressText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: placemarkFromCoordinates(latitude, longitude),
-      builder: (context, AsyncSnapshot<List<Placemark>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return Text('${snapshot.data?.first.toJson()}');
-        } else {
-          return Text('$loadingText');
-        }
-      },
-    );
+    if (kIsWeb) {
+      return Text('Current not supported for web');
+    } else {
+      return FutureBuilder(
+        future: placemarkFromCoordinates(latitude, longitude),
+        builder: (context, AsyncSnapshot<List<Placemark>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Text('${snapshot.data!.first.toJson()}');
+          } else {
+            return Text('$loadingText');
+          }
+        },
+      );
+    }
   }
 }

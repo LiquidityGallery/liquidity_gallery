@@ -246,7 +246,7 @@ class ListBoard extends StatelessWidget {
   final double? titlefontsize;
   final Widget? child;
   final Color? titlecolor;
-  final String? buttontext;
+  final String buttontext;
   final Color? buttoncolor;
   final void Function()? onpressed;
   final Color? backgroundcolor;
@@ -263,7 +263,7 @@ class ListBoard extends StatelessWidget {
       this.titlefontsize = 27,
       this.titlecolor,
       this.backgroundcolor,
-      this.radius = 5.0, this.child, this.buttontext, this.buttoncolor, this.onpressed, this.buttontextcolor})
+      this.radius = 5.0, this.child,required this.buttontext, this.buttoncolor, this.onpressed, this.buttontextcolor})
       : super(key: key);
 
   @override
@@ -376,7 +376,7 @@ class HeroBoard extends StatelessWidget {
   final Color? buttoncolor;
   final double? radius;
   final Color? buttontextcolor;
-  final String? buttontext;
+  final String buttontext;
 
 
   ///Big Title and paragraph text for major web disply with great layout.
@@ -392,7 +392,7 @@ class HeroBoard extends StatelessWidget {
       this.buttoncolor,
       this.radius = 30,
       this.buttontextcolor,
-      @required this.buttontext})
+      required this.buttontext})
       : super(key: key);
 
   @override
