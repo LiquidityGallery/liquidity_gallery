@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  final String text;
-  final double left;
-  final double top;
-  final double bottom;
-  final double fontSize;
-  final Color? color;
-
   ///You need something like a Big title for web/ app page?
   ///
   /// Here is a easier version you have it. much better than a text widget.
@@ -22,6 +15,13 @@ class Header extends StatelessWidget {
       this.fontSize = 30,
       this.color})
       : super(key: key);
+
+  final String text;
+  final double left;
+  final double top;
+  final double bottom;
+  final double fontSize;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
