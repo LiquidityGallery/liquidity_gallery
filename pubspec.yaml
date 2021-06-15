@@ -10,7 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  date_time_picker: ^2.0.0 #https://pub.dev/packages/date_time_picker
+  date_time_picker: ^2.0.0
+  flutter_signin_button: ^2.0.0
+  location: ^4.3.0
+  google_maps_flutter: ^2.0.6
+  geocoding: ^2.0.0
 
 dev_dependencies:
   flutter_test:

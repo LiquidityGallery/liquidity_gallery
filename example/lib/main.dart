@@ -1,8 +1,10 @@
+import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
-import 'package:example/TwitterLoginView.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
+
+import 'LocationInfoView.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,7 +39,14 @@ class MainView extends StatelessWidget {
             title: Text('Twitter Light Out Login'),
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Container()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => TwitterLoginView(
+                            onLogin: (username, password) {
+                              print('Username: $username, Password: $password');
+                            },
+                            onGoogleLogin: () {},
+                          )));
             },
           ),
           ListTile(
@@ -46,7 +55,16 @@ class MainView extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => StartEndDatePickerView())),
-          )
+          ),
+          ListTile(
+            title: Text('Location Info'),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => LocationInfoView())),
+          ),
+          ListTile(
+              title: Text('Location and Google Map'),
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => LocationView())))
         ],
       ),
     );
