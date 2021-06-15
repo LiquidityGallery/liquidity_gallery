@@ -13,7 +13,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 /// Remember for iOS, goto iOS/Runner/Info.plist, fill in GoogleService-Info.plist key
 ///
 /// Example : 	<string>com.googleusercontent.apps.408336808724-1k8c2o30odi248fqn7uss5g4p5mh457i</string>
-GoogleLogin() async {
+Future<void> googleLogin() async {
   try {
     if (kIsWeb) {
       await signInWithGoogleWeb();
