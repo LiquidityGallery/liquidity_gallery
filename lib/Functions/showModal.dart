@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-Future <void> showModal(BuildContext context, Widget child, Function? then)async {
+Future <void> showModal(BuildContext context, Widget child, {Function? then})async {
  await  showModalBottomSheet(
        isScrollControlled: true,
        shape: RoundedRectangleBorder(
@@ -17,7 +17,7 @@ Future <void> showModal(BuildContext context, Widget child, Function? then)async
        )).then((value) => then);
  }
 
-Future <void> showModalMax(BuildContext context, Widget child, Function? then )async {
+Future <void> showModalMax(BuildContext context, Widget child, {Function? then} )async {
   await  showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
