@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
@@ -85,10 +87,16 @@ ConfirmButton(text: 'showModalMax', onPressed: (){
       mainAxisSize: MainAxisSize.min,
       children: [
         ListTile(title: Text("HI"),),
-        ListTile(title: Text("IHI"),)
+        ListTile(title: Text("IHI"),),
+
       ],),
   ));
 }),
+          ConfirmButton(text: 'YESNO', onPressed: (){
+            showYesNoModal(context,(){
+              print("HI");
+            });
+          }),
         ],
       ),
     );
