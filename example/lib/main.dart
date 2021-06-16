@@ -2,6 +2,7 @@ import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:flutter/material.dart';
+import 'package:liquidity_gallery/Functions/showModal.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 import 'LocationInfoView.dart';
@@ -67,7 +68,27 @@ class MainView extends StatelessWidget {
                   context, MaterialPageRoute(builder: (_) => LocationView()))),
           Header(text: 'Title',color: Colors.white,),
           Texter(text: 'This is a text.',color: Colors.white,),
+          ConfirmButton(text: 'showModal', onPressed: (){
+            showModal(context, Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ListTile(title: Text("HI"),),
+                ListTile(title: Text("IHI"),)
+              ],));
+          }),
 
+ConfirmButton(text: 'showModalMax', onPressed: (){
+  showModalMax(context, Scaffold(
+    appBar: AppBar(title: Text("showModalMax"),
+    ),
+    body: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ListTile(title: Text("HI"),),
+        ListTile(title: Text("IHI"),)
+      ],),
+  ));
+})
         ],
       ),
     );
