@@ -88,7 +88,7 @@ ConfirmButton(text: 'showModalMax', onPressed: (){
         ListTile(title: Text("IHI"),)
       ],),
   ));
-})
+}),
         ],
       ),
     );
