@@ -68,35 +68,73 @@ class MainView extends StatelessWidget {
               title: Text('Location and Google Map'),
               onTap: () => Navigator.push(
                   context, MaterialPageRoute(builder: (_) => LocationView()))),
-          Header(text: 'Title',color: Colors.white,),
-          Texter(text: 'This is a text.',color: Colors.white,),
-          ConfirmButton(text: 'showModal', onPressed: (){
-            showModal(context, Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(title: Text("HI"),),
-                ListTile(title: Text("IHI"),)
-              ],));
-          }),
+          Header(
+            text: 'Title',
+            color: Colors.white,
+          ),
+          Texter(
+            text: 'This is a text.',
+            color: Colors.white,
+          ),
+          ConfirmButton(
+              text: 'showModal',
+              onPressed: () {
+                showModal(
+                    context,
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          title: Text("HI"),
+                        ),
+                        ListTile(
+                          title: Text("IHI"),
+                        )
+                      ],
+                    ));
+              }),
+          ConfirmButton(
+              text: 'showModalMax',
+              onPressed: () {
+                showModalMax(
+                    context,
+                    Scaffold(
+                      appBar: AppBar(
+                        title: Text("showModalMax"),
+                      ),
+                      body: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(
+                            title: Text("HI"),
+                          ),
+                          ListTile(
+                            title: Text("IHI"),
+                          ),
+                        ],
+                      ),
+                    ));
+              }),
+          ConfirmButton(
+              text: 'YESNO',
+              onPressed: () {
+                showYesNoModal(context, () {
+                  print("HI");
+                });
+              }),
+          ConfirmButton(
+              text: 'ShowMessage',
+              onPressed: () {
+                showMessage(context, 'You can not close this snackbar');
+              }),
+          ConfirmButton(
+              text: 'ShowMessage',
+              onPressed: () {
+                showMessage(context, 'You can close this snackbar', (){
+                  print('Button pressed');
+                }, );
+              })
 
-ConfirmButton(text: 'showModalMax', onPressed: (){
-  showModalMax(context, Scaffold(
-    appBar: AppBar(title: Text("showModalMax"),
-    ),
-    body: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ListTile(title: Text("HI"),),
-        ListTile(title: Text("IHI"),),
-
-      ],),
-  ));
-}),
-          ConfirmButton(text: 'YESNO', onPressed: (){
-            showYesNoModal(context,(){
-              print("HI");
-            });
-          }),
         ],
       ),
     );
