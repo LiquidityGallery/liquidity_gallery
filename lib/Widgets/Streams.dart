@@ -6,6 +6,8 @@ class Streams<T> extends StatelessWidget {
   final T object;
   final Widget Function(QuerySnapshot) child;
 
+
+  ///Better Streambuilder with shorter format.
   const Streams({Key? key,required this.object, required this.child, required this.stream}) : super(key: key);
   @override
   Widget build(BuildContext context) {
