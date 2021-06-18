@@ -1,12 +1,16 @@
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 import 'LocationInfoView.dart';
+import 'ExportTextFromPDFView.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -65,9 +69,18 @@ class MainView extends StatelessWidget {
               title: Text('Location and Google Map'),
               onTap: () => Navigator.push(
                   context, MaterialPageRoute(builder: (_) => LocationView()))),
-          Header(text: 'Title',color: Colors.white,),
-          Texter(text: 'This is a text.',color: Colors.white,),
-
+          Header(
+            text: 'Title',
+            color: Colors.white,
+          ),
+          Texter(
+            text: 'This is a text.',
+            color: Colors.white,
+          ),
+          ListTile(
+              title: Text('Export Text From PDF'),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => ExportTextFromPDFView())))
         ],
       ),
     );
