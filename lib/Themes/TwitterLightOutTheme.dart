@@ -13,6 +13,20 @@ ThemeData get twitterLightOutTheme => ThemeData(
     bottomAppBarTheme:
         BottomAppBarTheme(elevation: 0, color: Color.fromRGBO(17, 19, 22, 1)),
     bottomNavigationBarTheme: _darkThemeBottomNavigationBarTheme,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        primary: Color.fromRGBO(73, 160, 235, 1),
+        elevation: 1,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide.none)
+      )
+    ),
+    snackBarTheme: SnackBarThemeData(
+      contentTextStyle: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
+      backgroundColor: Color.fromRGBO(17, 19, 22, 1),
+      actionTextColor: Color.fromRGBO(73, 160, 235, 1)
+    ),
 
     /// [Roboto] is also the default [fontFamily] of Flutter
     fontFamily: 'Roboto',

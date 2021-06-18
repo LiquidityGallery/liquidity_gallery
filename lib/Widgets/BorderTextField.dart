@@ -24,6 +24,8 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
+       minLines: 1,
+        maxLines: 10,
         keyboardType:
             isinputnumber == null ? TextInputType.text : TextInputType.number,
         controller: controller,

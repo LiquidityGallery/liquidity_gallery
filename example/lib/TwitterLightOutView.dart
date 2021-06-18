@@ -9,7 +9,8 @@ class TwitterLightsOutView extends StatefulWidget {
 class _TwitterLightsOutViewState extends State<TwitterLightsOutView> {
   int _currentIndex = 0;
 
-  Widget get _body => _currentIndex == 0 ? _TwitterLightsOutView() : _SettingsView();
+  Widget get _body =>
+      _currentIndex == 0 ? _TwitterLightsOutView() : _SettingsView();
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +50,22 @@ class _TwitterLightsOutViewState extends State<TwitterLightsOutView> {
 class _TwitterLightsOutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        '他們所有得設備和儀器彷彿都是有生命的\nAlmost before we knew it, we had left the ground.\n\nThis is custom home page',
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+          child: Text(
+            '他們所有得設備和儀器彷彿都是有生命的\nAlmost before we knew it, we had left the ground.\n\nThis is custom home page',
+          ),
+        ),
+        ElevatedButton(
+            onPressed: () {
+              showMessage(context, 'You can close this message',
+                  () => print('User taped the button'), 'tap to close');
+            },
+            child: Text('Show message'))
+      ],
     );
   }
 }
@@ -77,31 +90,31 @@ class _MyDrawer extends StatelessWidget {
             _Header(),
             Expanded(
                 child: ListView(
-                  children: [
-                    // _DrawerItem(title: 'Home', icon: Icons.home_outlined, onTap: () {
-                    //   Navigator.popUntil(context, ModalRoute.withName('/'));
-                    // },),
-                    _DrawerItem(
-                      title: 'Items',
-                      icon: Icons.shopping_bag_outlined,
-                      onTap: () {},
-                    ),
-                    _DrawerItem(
-                      title: 'Workshop',
-                      icon: Icons.home_work_outlined,
-                    ),
-                    _DrawerItem(
-                      title: 'Merchant',
-                      icon: Icons.bookmark_border,
-                    ),
-                    _DrawerItem(
-                      title: 'Report',
-                      icon: Icons.list_alt_outlined,
-                    ),
-                    Divider(),
-                    _DrawerItem(title: 'Settings')
-                  ],
-                ))
+              children: [
+                // _DrawerItem(title: 'Home', icon: Icons.home_outlined, onTap: () {
+                //   Navigator.popUntil(context, ModalRoute.withName('/'));
+                // },),
+                _DrawerItem(
+                  title: 'Items',
+                  icon: Icons.shopping_bag_outlined,
+                  onTap: () {},
+                ),
+                _DrawerItem(
+                  title: 'Workshop',
+                  icon: Icons.home_work_outlined,
+                ),
+                _DrawerItem(
+                  title: 'Merchant',
+                  icon: Icons.bookmark_border,
+                ),
+                _DrawerItem(
+                  title: 'Report',
+                  icon: Icons.list_alt_outlined,
+                ),
+                Divider(),
+                _DrawerItem(title: 'Settings')
+              ],
+            ))
           ],
         ),
       ),
@@ -155,10 +168,10 @@ class _DrawerItem extends StatelessWidget {
           selectedTileColor: Color.fromRGBO(34, 34, 34, 1),
           leading: icon != null
               ? Icon(
-            icon,
-            size: 23,
-            color: Color.fromRGBO(106, 106, 106, 1),
-          )
+                  icon,
+                  size: 23,
+                  color: Color.fromRGBO(106, 106, 106, 1),
+                )
               : null,
           title: Text(
             title,
