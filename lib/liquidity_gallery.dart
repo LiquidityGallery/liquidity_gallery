@@ -19,3 +19,4 @@ export 'Widgets/AddressText.dart';
 export 'Widgets/DefaultGoogleMap.dart';
 export 'Widgets/VisualSection.dart'; // A main useful viusal layout mainly for Web design.
 export 'Widgets/MailboxContainer.dart';   // A container layout for mail/order like layout for app pages
+export 'Widgets/LiquidityAutoComplete.dart';
