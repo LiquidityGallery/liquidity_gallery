@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Functions/showModal.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
+import 'AutoCompleteExampleView.dart';
 import 'LocationInfoView.dart';
 import 'ExportTextFromPDFView.dart';
 
@@ -84,6 +85,11 @@ class MainView extends StatelessWidget {
               title: Text('Export Text From PDF'),
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (_) => ExportTextFromPDFView()))),
+          ListTile(
+            title: Text('Auto Complete example'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => AutoCompleteExampleView())),
+          ),
           ConfirmButton(
               text: 'showModal',
               onPressed: () {
@@ -110,8 +116,7 @@ class MainView extends StatelessWidget {
                       appBar: AppBar(
                         title: Text("showModalMax"),
                       ),
-                      body: Column(
-                        mainAxisSize: MainAxisSize.min,
+                      body: ListView(
                         children: [
                           ListTile(
                             title: Text("HI"),
@@ -119,6 +124,16 @@ class MainView extends StatelessWidget {
                           ListTile(
                             title: Text("IHI"),
                           ),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
+                          TextField(),
                         ],
                       ),
                     ));
@@ -131,16 +146,20 @@ class MainView extends StatelessWidget {
                 });
               }),
           ConfirmButton(
-              text: 'ShowMessage',
+              text: 'ShowMessage (with out action)',
               onPressed: () {
                 showMessage(context, 'You can not close this snackbar');
               }),
           ConfirmButton(
-              text: 'ShowMessage',
+              text: 'ShowMessage (with action)',
               onPressed: () {
-                showMessage(context, 'You can close this snackbar', (){
-                  print('Button pressed');
-                }, );
+                showMessage(
+                  context,
+                  'You can close this snackbar',
+                  () {
+                    print('Button pressed');
+                  },
+                );
               })
         ],
       ),
