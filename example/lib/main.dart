@@ -1,13 +1,19 @@
-import 'dart:ffi';
+
 
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Functions/showModal.dart';
+import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'LocationInfoView.dart';
+import 'package:liquidity_gallery/Functions/hyperlink.dart';
+
+void _launchURL(String a) async =>
+    await canLaunch(a) ? await launch(a) : throw 'Could not launch $a';
+const _url2 = 'https://www.facebook.com/pages/category/Retail-Company/PJ-FOOD-1948955915338325/';
 
 void main() => runApp(MyApp());
 
@@ -25,12 +31,20 @@ class MyApp extends StatelessWidget {
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+        bool darkModeOn = brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
       ),
       body: ListView(
         children: [
+IconButton(onPressed: (){
+ hyperlink('http://schedule-lab.com');
+
+}, icon: Icon(Icons.comment)),
+          ContentCard(dense: true,),
+          ContentCard(),
           ListTile(
             title: Text('Twitter Light Out theme'),
             onTap: () {
@@ -76,64 +90,9 @@ class MainView extends StatelessWidget {
             text: 'This is a text.',
             color: Colors.white,
           ),
-          ConfirmButton(
-              text: 'showModal',
-              onPressed: () {
-                showModal(
-                    context,
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ListTile(
-                          title: Text("HI"),
-                        ),
-                        ListTile(
-                          title: Text("IHI"),
-                        )
-                      ],
-                    ));
-              }),
-          ConfirmButton(
-              text: 'showModalMax',
-              onPressed: () {
-                showModalMax(
-                    context,
-                    Scaffold(
-                      appBar: AppBar(
-                        title: Text("showModalMax"),
-                      ),
-                      body: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          ListTile(
-                            title: Text("HI"),
-                          ),
-                          ListTile(
-                            title: Text("IHI"),
-                          ),
-                        ],
-                      ),
-                    ));
-              }),
-          ConfirmButton(
-              text: 'YESNO',
-              onPressed: () {
-                showYesNoModal(context, () {
-                  print("HI");
-                });
-              }),
-          ConfirmButton(
-              text: 'ShowMessage',
-              onPressed: () {
-                showMessage(context, 'You can not close this snackbar');
-              }),
-          ConfirmButton(
-              text: 'ShowMessage',
-              onPressed: () {
-                showMessage(context, 'You can close this snackbar', (){
-                  print('Button pressed');
-                }, );
-              })
+
+darkModeOn==true ? Text("Darkmode") : Text("Lighttheme"),
+
 
         ],
       ),
