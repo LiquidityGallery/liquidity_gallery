@@ -4,6 +4,7 @@ ThemeData get twitterLightOutTheme => ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Color.fromRGBO(17, 19, 22, 1),
     primaryColor: Color.fromRGBO(73, 160, 235, 1),
+    accentColor: Color.fromRGBO(73, 160, 235, 0.3),
     inputDecorationTheme: InputDecorationTheme(
         border: InputBorder.none,
         hintStyle: TextStyle(
@@ -26,6 +27,10 @@ ThemeData get twitterLightOutTheme => ThemeData(
       contentTextStyle: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
       backgroundColor: Color.fromRGBO(17, 19, 22, 1),
       actionTextColor: Color.fromRGBO(73, 160, 235, 1)
+    ),
+
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: Color.fromRGBO(73, 160, 235, 1)
     ),
 
     /// [Roboto] is also the default [fontFamily] of Flutter

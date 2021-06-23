@@ -1,7 +1,9 @@
 import 'dart:ffi';
 
+import 'package:example/ItemVIew.dart';
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
+import 'package:example/SwitchButtonView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -89,6 +91,14 @@ class MainView extends StatelessWidget {
             title: Text('Auto Complete example'),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (_) => AutoCompleteExampleView())),
+          ),
+          ListTile(
+            title: Text('Item view exmaple'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ItemView())),
+          ),
+          ListTile(
+            title: Text('Switch button example'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SwitchButtonView())),
           ),
           ConfirmButton(
               text: 'showModal',
