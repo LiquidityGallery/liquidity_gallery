@@ -15,11 +15,6 @@ class ItemView extends StatelessWidget {
               pinned: true,
               expandedHeight: 250,
               collapsedHeight: 150,
-              flexibleSpace: LayoutBuilder(
-                builder: (context, bc) {
-                  double size = min(bc.constrainHeight(), 120);
-                },
-              ),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(50.0),
                 child: Row(

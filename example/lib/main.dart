@@ -9,11 +9,8 @@ import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'LocationInfoView.dart';
-import 'package:liquidity_gallery/Functions/hyperlink.dart';
 
-void _launchURL(String a) async =>
-    await canLaunch(a) ? await launch(a) : throw 'Could not launch $a';
-const _url2 = 'https://www.facebook.com/pages/category/Retail-Company/PJ-FOOD-1948955915338325/';
+
 
 void main() => runApp(MyApp());
 
@@ -39,8 +36,8 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-IconButton(onPressed: (){
- hyperlink('http://schedule-lab.com');
+IconButton(onPressed: () async{
+ await hyperlink('http://www.google.com');
 
 }, icon: Icon(Icons.comment)),
           ContentCard(dense: true,),
