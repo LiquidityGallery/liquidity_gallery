@@ -14,6 +14,7 @@ export 'Functions/showMessage.dart';
 export 'Functions/showYesNoModal.dart';
 export 'Functions/getLocation.dart';
 export 'Functions/showModal.dart';
+export 'Functions/hyperlink.dart';
 export 'Widgets/Streams.dart';
 export 'Widgets/AddressText.dart';
 export 'Widgets/DefaultGoogleMap.dart';

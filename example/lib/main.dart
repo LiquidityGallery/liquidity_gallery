@@ -1,31 +1,25 @@
-import 'dart:ffi';
 
-import 'package:example/ItemVIew.dart';
+
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
-import 'package:example/SwitchButtonView.dart';
 import 'package:example/TwitterLightOutView.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Functions/showModal.dart';
+import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
-
-import 'AutoCompleteExampleView.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'LocationInfoView.dart';
-import 'ExportTextFromPDFView.dart';
-import 'NestedNavigationFlowView.dart';
-import 'PickImageView.dart';
 
-Future<void> main() async {
-  runApp(MyApp());
-}
+
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.light(),
-      darkTheme: twitterLightOutTheme,
+      darkTheme: ThemeData.dark(),
       home: MainView(),
     );
   }
@@ -34,12 +28,20 @@ class MyApp extends StatelessWidget {
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+        bool darkModeOn = brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
       ),
       body: ListView(
         children: [
+IconButton(onPressed: () async{
+ await hyperlink('http://www.google.com');
+
+}, icon: Icon(Icons.comment)),
+          ContentCard(dense: true,),
+          ContentCard(),
           ListTile(
             title: Text('Twitter Light Out theme'),
             onTap: () {
@@ -85,102 +87,10 @@ class MainView extends StatelessWidget {
             text: 'This is a text.',
             color: Colors.white,
           ),
-          ListTile(
-              title: Text('Export Text From PDF'),
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => ExportTextFromPDFView()))),
-          ListTile(
-            title: Text('Auto Complete example'),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (_) => AutoCompleteExampleView())),
-          ),
-          ListTile(
-            title: Text('Item view exmaple'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ItemView())),
-          ),
-          ListTile(
-            title: Text('Switch button example'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SwitchButtonView())),
-          ),
-          ListTile(
-            title: Text('Nested navigation flow'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => NestedNavigationFlowView())),
-          ),
-          ListTile(
-            title: Text('Pick image exmaple'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => PickImageView())),
-          ),
-          ConfirmButton(
-              text: 'showModal',
-              onPressed: () {
-                showModal(
-                    context,
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ListTile(
-                          title: Text("HI"),
-                        ),
-                        ListTile(
-                          title: Text("IHI"),
-                        )
-                      ],
-                    ));
-              }),
-          ConfirmButton(
-              text: 'showModalMax',
-              onPressed: () {
-                showModalMax(
-                    context,
-                    Scaffold(
-                      appBar: AppBar(
-                        title: Text("showModalMax"),
-                      ),
-                      body: ListView(
-                        children: [
-                          ListTile(
-                            title: Text("HI"),
-                          ),
-                          ListTile(
-                            title: Text("IHI"),
-                          ),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                          TextField(),
-                        ],
-                      ),
-                    ));
-              }),
-          ConfirmButton(
-              text: 'YESNO',
-              onPressed: () {
-                showYesNoModal(context, () {
-                  print("HI");
-                });
-              }),
-          ConfirmButton(
-              text: 'ShowMessage (with out action)',
-              onPressed: () {
-                showMessage(context, 'You can not close this snackbar');
-              }),
-          ConfirmButton(
-              text: 'ShowMessage (with action)',
-              onPressed: () {
-                showMessage(
-                  context,
-                  'You can close this snackbar',
-                  () {
-                    print('Button pressed');
-                  },
-                );
-              })
+
+darkModeOn==true ? Text("Darkmode") : Text("Lighttheme"),
+
+
         ],
       ),
     );
