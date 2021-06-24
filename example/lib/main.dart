@@ -13,6 +13,8 @@ import 'package:liquidity_gallery/liquidity_gallery.dart';
 import 'AutoCompleteExampleView.dart';
 import 'LocationInfoView.dart';
 import 'ExportTextFromPDFView.dart';
+import 'NestedNavigationFlowView.dart';
+import 'PickImageView.dart';
 
 Future<void> main() async {
   runApp(MyApp());
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      darkTheme: twitterLightOutTheme,
       home: MainView(),
     );
   }
@@ -99,6 +101,14 @@ class MainView extends StatelessWidget {
           ListTile(
             title: Text('Switch button example'),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SwitchButtonView())),
+          ),
+          ListTile(
+            title: Text('Nested navigation flow'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => NestedNavigationFlowView())),
+          ),
+          ListTile(
+            title: Text('Pick image exmaple'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => PickImageView())),
           ),
           ConfirmButton(
               text: 'showModal',
