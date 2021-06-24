@@ -2,18 +2,24 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Streams<T> extends StatelessWidget {
-  final Stream<QuerySnapshot> stream;
+  final Stream<QuerySnapshot<Map<String, dynamic>>> stream;
   final T object;
-  final Widget Function(QuerySnapshot) child;
-
+  final Widget Function(QuerySnapshot<Map<String, dynamic>>) child;
 
   ///Better Streambuilder with shorter format.
-  const Streams({Key? key,required this.object, required this.child, required this.stream}) : super(key: key);
+  /// updated: merge to cloud_firestore 2.2.2
+  const Streams(
+      {Key? key,
+      required this.object,
+      required this.child,
+      required this.stream})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: stream,
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           print(snapshot.error.toString());
           return Center(
@@ -29,10 +35,7 @@ class Streams<T> extends StatelessWidget {
           return child(snapshot.data!);
         }
 //?/ Class做法
-
       },
-
-
     );
   }
 }
