@@ -1,25 +1,24 @@
 name: liquidity_gallery
 description: A gallery for ellie & logistized app
 version: 0.0.1
-homepage:
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
-  url_launcher: ^6.0.7
-  cloud_firestore: ^2.2.2
-  firebase_core: ^1.0.2
-  google_fonts: ^2.1.0
-  firebase_auth: ^1.3.0
-  google_sign_in: ^5.0.4
   flutter:
     sdk: flutter
+
+  url_launcher: ^6.0.7
+  cloud_firestore: ^2.2.2
+  firebase_core: ^1.3.0
+  google_fonts: ^2.1.0
+  firebase_auth: ^1.4.1
+  google_sign_in: ^5.0.4
   date_time_picker: ^2.0.0
   flutter_signin_button: ^2.0.0
   location: ^4.3.0
-  google_maps_flutter: ^2.0.6
   geocoding: ^2.0.0
   pdf_text: ^0.5.0
   share_plus: ^2.1.4
@@ -29,13 +28,12 @@ dependencies:
   carousel_slider: ^4.0.0
   flutter_cache_manager: ^3.1.2
   cached_network_image: ^3.0.0
-  auto_size_text: ^2.1.0
+  google_maps_flutter: ^2.0.6 #platform
+  google_maps: ^5.1.0 #web
+  auto_size_text: ^3.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
-  assets:
-    - assets/
