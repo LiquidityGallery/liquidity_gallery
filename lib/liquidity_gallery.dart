@@ -16,6 +16,7 @@ export 'Functions/getLocation.dart';
 export 'Functions/showModal.dart';
 export 'Functions/hyperlink.dart';
 export 'Widgets/Streams.dart';
+export 'Widgets/ContentCard.dart';
 export 'Widgets/AddressText.dart';
 export 'Widgets/DefaultGoogleMap.dart';
 export 'Widgets/VisualSection.dart'; // A main useful viusal layout mainly for Web design.

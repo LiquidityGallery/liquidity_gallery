@@ -47,6 +47,8 @@ class MainView extends StatelessWidget {
             text:' New WD Drive has security issue',
             subtitle: 'WD News Today',
         //    dense: true,
+            onTap: (){},
+            icon: Icon(Icons.update,size: 17,),
           ),
           ListTile(
             title: Text('Twitter Light Out theme'),
