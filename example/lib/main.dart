@@ -4,6 +4,7 @@ import 'package:example/TwitterLightOutView.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
+import 'AccessRightTest.dart';
 import 'AutoCompleteExampleView.dart';
 import 'ExportTextFromPDFView.dart';
 import 'ItemVIew.dart';
@@ -111,6 +112,11 @@ class MainView extends StatelessWidget {
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (_) => PickImageView())),
           ),
+          ListTile(
+            title: Text('Access exmaple'),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => AccessView())),
+          ),
           Header(
             text: 'Title',
             color: Colors.white,
@@ -120,6 +126,18 @@ class MainView extends StatelessWidget {
             color: Colors.white,
           ),
           darkModeOn == true ? Text("Darkmode") : Text("Lighttheme"),
+          ListTile(
+            title: Text('Show modal'),
+            onTap: () => showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => SafeArea(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [TextField()],
+                      ),
+                    )),
+          )
         ],
       ),
     );

@@ -64,7 +64,12 @@ class ItemView extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+              SliverList(delegate: SliverChildListDelegate([
+                LiquidityCard(children: [
+
+                ])
+              ]))
             ],
           ),
         ),
