@@ -10,6 +10,7 @@ class ConfirmButton extends StatelessWidget {
   final void Function() onPressed;
   final Color? textcolor;
   final bool? isbold;
+  final double elevation;
 
   /// Version1.01 last update 20200610.
   ///
@@ -21,7 +22,7 @@ class ConfirmButton extends StatelessWidget {
       this.radius = 12,
       required this.onPressed,
       this.minWidth = 270,
-      this.height = 47, this.textcolor, this.isbold})
+      this.height = 47, this.textcolor, this.isbold, this.elevation=1})
       : super(key: key);
 
   @override
@@ -32,7 +33,7 @@ class ConfirmButton extends StatelessWidget {
         minWidth: minWidth,
         height: height,
         child: RaisedButton(
-          elevation: 1,
+          elevation: elevation,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius),
               side: BorderSide.none),
