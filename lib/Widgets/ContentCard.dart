@@ -5,8 +5,9 @@ class ContentCard extends StatelessWidget {
   final String text;
   final String subtitle;
   final Widget? icon;
+  final String imageURL;
 
-  const ContentCard({Key? key, this.dense = false, this.text='', this.subtitle='', this.icon}) : super(key: key);
+  const ContentCard({Key? key, this.dense = false, this.text='', this.subtitle='', this.icon, required this.imageURL}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ContentCard extends StatelessWidget {
                                //   border: Border.all(width: 1.0),
                                   image: DecorationImage(
                                       image: NetworkImage(
-                                          'https://picsum.photos/400/200'),
+                                          imageURL),
                                       fit: BoxFit.cover)),
                             ),
                             Padding(
@@ -94,7 +95,7 @@ class ContentCard extends StatelessWidget {
                                      //   border: Border.all(width: 1.0),
                                         image: DecorationImage(
                                             image: NetworkImage(
-                                                'https://picsum.photos/400/200'),
+                                                imageURL),
                                             fit: BoxFit.cover)),
                                   ),
                                 ),
