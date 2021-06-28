@@ -11,7 +11,7 @@ class ConfirmButton extends StatelessWidget {
   final Color? textcolor;
   final bool? isbold;
   final double elevation;
-  final double? padding;
+  final double padding;
 
   /// Version1.01 last update 20200610.
   ///
@@ -23,13 +23,13 @@ class ConfirmButton extends StatelessWidget {
       this.radius = 12,
       required this.onPressed,
       this.minWidth = 270,
-      this.height = 47, this.textcolor, this.isbold, this.elevation=1, this.padding=15.0})
+      this.height = 47, this.textcolor, this.isbold, this.elevation=1,  this.padding=15.0})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(padding),
+      padding:  EdgeInsets.all(padding),
       child: ButtonTheme(
         minWidth: minWidth,
         height: height,
