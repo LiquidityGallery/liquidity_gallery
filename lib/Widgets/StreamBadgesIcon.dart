@@ -1,10 +1,11 @@
 import 'package:badges/badges.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class StreamBadgesIcon extends StatelessWidget {
   const StreamBadgesIcon(
       {Key? key,
-      required this.stream,
+      required this.query,
       this.child,
       this.badge,
       this.showBadge = true,
@@ -14,11 +15,11 @@ class StreamBadgesIcon extends StatelessWidget {
       this.animationDuration = const Duration(milliseconds: 500)})
       : super(key: key);
 
-  final Stream stream;
+  final Query<Map<String, dynamic>> query;
   final Widget? child;
   final int? badge;
   final bool showBadge;
-  final int? Function(AsyncSnapshot) whileStream;
+  final int? Function(QuerySnapshot<Map<String, dynamic>>) whileStream;
   final EdgeInsets? padding;
   final BadgeAnimationType? badgeAnimationType;
   final Duration animationDuration;
@@ -26,8 +27,9 @@ class StreamBadgesIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: stream,
-      builder: (context, snapshot) {
+      stream: query.snapshots(),
+      builder: (context,
+          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Badge(
             animationDuration: animationDuration,
@@ -38,7 +40,7 @@ class StreamBadgesIcon extends StatelessWidget {
             badgeContent: Text(badge?.toString() ?? ''),
           );
         } else {
-          final _int = whileStream(snapshot);
+          final _int = whileStream(snapshot.data!);
           return Badge(
             animationDuration: animationDuration,
             animationType: badgeAnimationType ?? BadgeAnimationType.slide,

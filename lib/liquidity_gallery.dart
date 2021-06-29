@@ -31,3 +31,4 @@ export 'Functions/pickFile.dart';
 export 'Models/PickFile.dart';
 export 'Functions/uploadImage.dart';
 export 'Widgets/BadgesIcon.dart';
+export 'Widgets/StreamBadgesIcon.dart';

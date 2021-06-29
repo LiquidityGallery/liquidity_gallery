@@ -148,7 +148,6 @@ class MainView extends StatelessWidget {
                     )),
           ),
           ConfirmButton(text: '訂閱', onPressed: (){}, radius: 0.0, elevation: 0,color: Colors.black87,),
-
         ],
       ),
     );
