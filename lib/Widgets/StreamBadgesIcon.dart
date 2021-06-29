@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class StreamBadgesIcon<T> extends StatelessWidget {
   StreamBadgesIcon(
       {Key? key,
+      required this.stream,
       this.child,
       this.badge,
       this.showBadge = true,
