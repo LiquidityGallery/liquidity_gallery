@@ -11,7 +11,8 @@ class StreamBadgesIcon<T> extends StatelessWidget {
       required this.whileStream,
       this.padding,
       this.badgeAnimationType,
-      this.animationDuration = const Duration(milliseconds: 500)})
+      this.animationDuration = const Duration(milliseconds: 500),
+      this.textStyle})
       : super(key: key);
 
   final Stream<T> stream;
@@ -22,13 +23,13 @@ class StreamBadgesIcon<T> extends StatelessWidget {
   final EdgeInsets? padding;
   final BadgeAnimationType? badgeAnimationType;
   final Duration animationDuration;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: stream,
-      builder: (context,
-          AsyncSnapshot<T> snapshot) {
+      builder: (context, AsyncSnapshot<T> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Badge(
             animationDuration: animationDuration,
@@ -36,7 +37,10 @@ class StreamBadgesIcon<T> extends StatelessWidget {
             padding: padding ?? EdgeInsets.all(3),
             showBadge: showBadge,
             child: child ?? Icon(Icons.notifications),
-            badgeContent: Text(badge?.toString() ?? ''),
+            badgeContent: Text(
+              badge?.toString() ?? '',
+              style: textStyle,
+            ),
           );
         } else {
           final _int = whileStream(snapshot.data!);
@@ -46,7 +50,10 @@ class StreamBadgesIcon<T> extends StatelessWidget {
             padding: padding ?? EdgeInsets.all(3),
             showBadge: showBadge,
             child: child ?? Icon(Icons.notifications),
-            badgeContent: Text(_int?.toString() ?? ''),
+            badgeContent: Text(
+              _int?.toString() ?? '',
+              style: textStyle,
+            ),
           );
         }
       },
