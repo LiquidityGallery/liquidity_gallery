@@ -16,10 +16,15 @@ class _AutoCompleteExampleViewState extends State<AutoCompleteExampleView> {
     User(id: '05', name: '05User'),
   ];
 
+  List<String> _list = ['1111', '2222', '3333', '4444', '5555'];
+
   final controller = TextEditingController();
+  final controller2 = TextEditingController();
   User? _user;
 
   final _formKey = GlobalKey<FormState>();
+  final node1 = FocusNode();
+  final node2 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -35,31 +40,65 @@ class _AutoCompleteExampleViewState extends State<AutoCompleteExampleView> {
               leading: Text('Selected user'),
               title: Text(_user?.name ?? 'Not selected'),
             ),
-            LiquidityAutoComplete<User>(
-              /// add this when input must match
-              validator: (String? string) {
-                if (!_users.any((element) => element.name == string)) {
-                  return 'Not selected';
-                } else {
-                  return null;
-                }
-              },
-              controller: controller,
-              optionsBuilder: (TextEditingValue textEditingValue) {
-                return _users.where((element) =>
-                    element.name.toLowerCase().contains(textEditingValue.text));
-              },
-              onSelected: (User user) {
-                controller.text = user.name;
-                setState(() {
-                  _user = user;
-                });
-              },
-              child: (User user) => ListTile(
-                title: Text(user.name),
-                subtitle: Text(user.id),
-              ),
+            // LiquidityAutoComplete<User>(
+            //   /// add this when input must match
+            //   validator: (String? string) {
+            //     if (!_users.any((element) => element.name == string)) {
+            //       return 'Not selected';
+            //     } else {
+            //       return null;
+            //     }
+            //   },
+            //   controller: controller,
+            //   focusNode: node1,
+            //   optionsBuilder: (TextEditingValue textEditingValue) {
+            //     return _users.where((element) =>
+            //         element.name.toLowerCase().contains(textEditingValue.text));
+            //   },
+            //   onSelected: (User user) {
+            //     controller.text = user.name;
+            //     setState(() {
+            //       _user = user;
+            //     });
+            //   },
+            //   child: (User user) => ListTile(
+            //     title: Text(user.name),
+            //     subtitle: Text(user.id),
+            //   ),
+            // ),
+            // LiquidityAutoComplete<User>(
+            //   /// add this when input must match
+            //   validator: (String? string) {
+            //     if (!_users.any((element) => element.name == string)) {
+            //       return 'Not selected';
+            //     } else {
+            //       return null;
+            //     }
+            //   },
+            //   controller: controller2,
+            //   focusNode: node2,
+            //   optionsBuilder: (TextEditingValue textEditingValue) {
+            //     return _users.where((element) =>
+            //         element.name.toLowerCase().contains(textEditingValue.text));
+            //   },
+            //   onSelected: (User user) {
+            //     controller2.text = user.name;
+            //     setState(() {
+            //       _user = user;
+            //     });
+            //   },
+            //   child: (User user) => ListTile(
+            //     title: Text(user.name),
+            //     subtitle: Text(user.id),
+            //   ),
+            // ),
+            Autocomplete<String>(
+              optionsBuilder: (value) =>
+                  _list.where((element) => element.contains(value.text)),
             ),
+            Autocomplete<String>(
+                optionsBuilder: (value) =>
+                    _list.where((element) => element.contains(value.text))),
             ElevatedButton(
                 onPressed: () {
                   setState(() {});

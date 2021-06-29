@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
   const LiquidityAutoComplete(
       {Key? key,
+        required this.focusNode,
       required this.optionsBuilder,
       required this.onSelected,
       this.inputDecoration,
@@ -25,6 +26,7 @@ class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
   /// Widget of the suggestion field ListView item
   final Widget Function(T) child;
 
+  final FocusNode focusNode;
   final TextEditingController controller;
 
   /// Background color of the suggestion list

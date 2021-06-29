@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:liquidity_gallery/Functions/showInputModal.dart';
+import 'package:liquidity_gallery/Functions/showModal.dart';
 
 class ModalSheetView extends StatelessWidget {
   const ModalSheetView({Key? key}) : super(key: key);
@@ -13,24 +15,30 @@ class ModalSheetView extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: () {
-                showModalBottomSheet(
-                    isScrollControlled: true,
-                    context: context,
-                    builder: (_) => SafeArea(
-                      child: Padding(
-                            padding: MediaQuery.of(context).viewInsets,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                TextField(
-                                  autofocus: true,
-                                )
-                              ],
-                            ),
+                showInputModal(context, [TextField()]);
+              },
+              child: Text('with input')),
+          ElevatedButton(
+              onPressed: () {
+                showModalMax(
+                    context,
+                    Scaffold(
+                      appBar: AppBar(
+                        title: Text('App bar'),
+                      ),
+                      body: Column(
+                        children: [
+                          ListTile(
+                            title: Text('123'),
                           ),
+                          TextField(
+                            autofocus: true,
+                          )
+                        ],
+                      ),
                     ));
               },
-              child: Text('with input'))
+              child: Text('Show modal max'))
         ],
       ),
     );

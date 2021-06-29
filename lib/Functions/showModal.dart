@@ -12,9 +12,12 @@ Future<void> showModal(BuildContext context,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
       builder: (_) =>
-          Container(
-            //   height: MediaQuery.of(context).size.height * 0.92,
-            child: child,
+          Padding(
+            padding: MediaQuery.of(context).viewInsets,
+            child: Container(
+              //   height: MediaQuery.of(context).size.height * 0.92,
+              child: child,
+            ),
           ));
 }
 

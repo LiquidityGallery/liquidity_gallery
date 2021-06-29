@@ -42,20 +42,19 @@ class StreamBadgesIcon<T> extends StatelessWidget {
               style: textStyle,
             ),
           );
-        } else {
-          final _int = whileStream(snapshot.data!);
-          return Badge(
-            animationDuration: animationDuration,
-            animationType: badgeAnimationType ?? BadgeAnimationType.slide,
-            padding: padding ?? EdgeInsets.all(3),
-            showBadge: showBadge,
-            child: child ?? Icon(Icons.notifications),
-            badgeContent: Text(
-              _int?.toString() ?? '',
-              style: textStyle,
-            ),
-          );
         }
+        final _int = whileStream(snapshot.data!);
+        return Badge(
+          animationDuration: animationDuration,
+          animationType: badgeAnimationType ?? BadgeAnimationType.slide,
+          padding: padding ?? EdgeInsets.all(3),
+          showBadge: showBadge,
+          child: child ?? Icon(Icons.notifications),
+          badgeContent: Text(
+            _int?.toString() ?? '',
+            style: textStyle,
+          ),
+        );
       },
     );
   }
