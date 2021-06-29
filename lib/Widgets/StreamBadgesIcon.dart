@@ -23,7 +23,7 @@ class StreamBadgesIcon<T> extends StatelessWidget {
   final EdgeInsets? padding;
   final BadgeAnimationType? badgeAnimationType;
   final Duration animationDuration;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
