@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-Future <void> showYesNoModal(BuildContext context, void Function() onYes)async {
+Future <void> showYesNoModal(BuildContext context, void Function() onYes, {String? text})async {
  await showModalBottomSheet(
     //   isScrollControlled: true,
        shape: RoundedRectangleBorder(
@@ -18,7 +18,7 @@ Future <void> showYesNoModal(BuildContext context, void Function() onYes)async {
              mainAxisSize: MainAxisSize.min,
              children: [
 ListTile(
-  title: Text("Do you want to continue?") ),
+  title: Text(text==null ? "Do you want to continue?" : text) ),
                ListTile(
                  leading: Icon(Icons.check_circle,color: Colors.cyan[300],),
                  title: Text("Yes"), onTap: onYes,),
