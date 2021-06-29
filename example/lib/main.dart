@@ -6,6 +6,7 @@ import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 import 'AccessRightTest.dart';
 import 'AutoCompleteExampleView.dart';
+import 'BadgesIconView.dart';
 import 'ExportTextFromPDFView.dart';
 import 'ItemVIew.dart';
 import 'LocationInfoView.dart';
@@ -112,14 +113,18 @@ class MainView extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => NestedNavigationFlowView())),
           ),
           ListTile(
-            title: Text('Pick image exmaple'),
+            title: Text('Pick image example'),
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (_) => PickImageView())),
           ),
           ListTile(
-            title: Text('Access exmaple'),
+            title: Text('Access example'),
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (_) => AccessView())),
+          ),
+          ListTile(
+            title: Text('Badges Icon'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => BadgesIconView())),
           ),
           Header(
             text: 'Title',
