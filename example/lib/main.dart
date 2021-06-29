@@ -10,6 +10,7 @@ import 'BadgesIconView.dart';
 import 'ExportTextFromPDFView.dart';
 import 'ItemVIew.dart';
 import 'LocationInfoView.dart';
+import 'ModalSheetView.dart';
 import 'NestedNavigationFlowView.dart';
 import 'PickImageView.dart';
 import 'SwitchButtonView.dart';
@@ -125,6 +126,10 @@ class MainView extends StatelessWidget {
           ListTile(
             title: Text('Badges Icon'),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => BadgesIconView())),
+          ),
+          ListTile(
+            title: Text('Modal sheet example'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ModalSheetView())),
           ),
           Header(
             text: 'Title',

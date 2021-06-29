@@ -2,7 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 class StreamBadgesIcon<T> extends StatelessWidget {
-  StreamBadgesIcon(
+  const StreamBadgesIcon(
       {Key? key,
       required this.stream,
       this.child,
