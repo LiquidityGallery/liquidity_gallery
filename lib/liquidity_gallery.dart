@@ -33,3 +33,5 @@ export 'Functions/uploadImage.dart';
 export 'Widgets/BadgesIcon.dart';
 export 'Widgets/StreamBadgesIcon.dart';
 export 'Functions/showInputModal.dart';
+export 'Functions/showSearchModal.dart';
+export 'Functions/showOnlineSearchModal.dart';
