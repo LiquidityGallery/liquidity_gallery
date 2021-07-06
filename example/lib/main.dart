@@ -54,6 +54,7 @@ class MainView extends StatelessWidget {
             icon: Icon(Icons.update,size: 17,),
           ),
           BubbleTile(
+       //     isShadow: false,
             child: Text('Data'),
           ),
 

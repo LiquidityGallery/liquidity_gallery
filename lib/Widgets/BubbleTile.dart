@@ -46,7 +46,7 @@ class BubbleTile extends StatelessWidget {
                         blurRadius: 5,
                         offset: Offset(0, 4), // changes position of shadow
                       )
-                    : BoxShadow()
+                    : BoxShadow(color: Colors.transparent),
               ]),
           child: child,
         ),
