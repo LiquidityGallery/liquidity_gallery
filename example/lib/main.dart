@@ -132,10 +132,10 @@ class MainView extends StatelessWidget {
             title: Text('Modal sheet example'),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ModalSheetView())),
           ),
-          ListTile(
-            title: Text('Search text field example'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SearchTextFieldView())),
-          ),
+          // ListTile(
+          //   title: Text('Search text field example'),
+          //   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SearchTextFieldView())),
+          // ),
           Header(
             text: 'Title',
             color: Colors.white,

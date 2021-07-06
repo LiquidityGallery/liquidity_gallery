@@ -6,6 +6,9 @@ class MailboxContainer extends StatelessWidget {
   final double? Radius;
   final bool? isShadow;
   final void Function()? onTap;
+  final double padding;
+  final double topMargin;
+  final double bottomMargin;
 
 
   /// A container layout for mail/order like layout for app pages
@@ -14,7 +17,7 @@ class MailboxContainer extends StatelessWidget {
       @required this.child,
       this.backgroundColor,
       this.Radius = 25,
-      this.isShadow = true, this.onTap})
+      this.isShadow = true, this.onTap, this.padding=8, this.topMargin=3, this.bottomMargin=4})
       : super(key: key);
 
   @override
@@ -22,8 +25,8 @@ class MailboxContainer extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(8),
-        margin: EdgeInsets.fromLTRB(0, 3, 0, 4),
+        padding: EdgeInsets.all(padding),
+        margin: EdgeInsets.fromLTRB(0, topMargin, 0, bottomMargin),
         decoration: BoxDecoration(
             color: backgroundColor == null ? Colors.white : backgroundColor,
             borderRadius: BorderRadius.circular(Radius!),
