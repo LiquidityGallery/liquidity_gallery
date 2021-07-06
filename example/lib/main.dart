@@ -53,6 +53,11 @@ class MainView extends StatelessWidget {
             onTap: (){},
             icon: Icon(Icons.update,size: 17,),
           ),
+          BubbleTile(
+            child: Text('Data'),
+          ),
+
+
           ListTile(
             title: Text('Twitter Light Out theme'),
             onTap: () {

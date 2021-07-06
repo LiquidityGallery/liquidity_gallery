@@ -35,3 +35,4 @@ export 'Widgets/StreamBadgesIcon.dart';
 export 'Functions/showInputModal.dart';
 export 'Functions/showSearchModal.dart';
 export 'Functions/showOnlineSearchModal.dart';
+export 'Widgets/BubbleTile.dart';
