@@ -10,13 +10,15 @@ class BorderTextField extends StatelessWidget {
   final Color? bordercolor;
   final String? hinttext;
   final Color? fillcolor;
+  final bool autofocus;
+  final double radius;
 
   const BorderTextField(
       {Key? key,
       this.labeltext,
       required this.controller,
       this.isborder = true,
-      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor})
+      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0})
       : super(key: key);
 
   @override
@@ -24,6 +26,7 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
+        autofocus: autofocus,
        minLines: 1,
         maxLines: 10,
         keyboardType:
@@ -40,7 +43,7 @@ class BorderTextField extends StatelessWidget {
           ),
           border: OutlineInputBorder(
             borderSide: new BorderSide(width: 1.0),
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(radius),
           ),
           labelText: labeltext,
           hintText: hinttext,
