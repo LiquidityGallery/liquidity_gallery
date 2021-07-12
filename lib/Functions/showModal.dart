@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-Future<void> showModal(BuildContext context,
+Future<dynamic> showModal(BuildContext context,
     Widget child,) async {
-  await showModalBottomSheet(
+  return  await showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -21,9 +21,9 @@ Future<void> showModal(BuildContext context,
           ));
 }
 
-Future<void> showModalMax(BuildContext context,
+Future<dynamic> showModalMax(BuildContext context,
     Widget child,) async {
-  await showModalBottomSheet(
+  return await showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
