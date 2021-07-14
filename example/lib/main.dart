@@ -14,6 +14,7 @@ import 'ModalSheetView.dart';
 import 'NestedNavigationFlowView.dart';
 import 'PickImageView.dart';
 import 'SearchTextFieldView.dart';
+import 'SharePrintView.dart';
 import 'SwitchButtonView.dart';
 
 void main() => runApp(MyApp());
@@ -137,6 +138,10 @@ class MainView extends StatelessWidget {
           ListTile(
             title: Text('Modal sheet example'),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ModalSheetView())),
+          ),
+          ListTile(
+            title: Text('Share & Print'),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SharePrintView())),
           ),
           // ListTile(
           //   title: Text('Search text field example'),
