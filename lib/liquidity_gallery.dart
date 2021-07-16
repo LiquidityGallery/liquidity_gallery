@@ -37,3 +37,4 @@ export 'Functions/showSearchModal.dart';
 export 'Functions/showOnlineSearchModal.dart';
 export 'Widgets/BubbleTile.dart';
 export 'Widgets/Futures.dart';
+export 'Widgets/StreamsDoc.dart';
