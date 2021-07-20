@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class Futures<T> extends StatelessWidget {
   final Future<QuerySnapshot<Map<String, dynamic>>> future;
-  final T object;
+
   final Widget Function(QuerySnapshot<Map<String, dynamic>>) child;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const Futures(
       {Key? key,
-      required this.object,
+
       required this.child,
       required this.future})
       : super(key: key);

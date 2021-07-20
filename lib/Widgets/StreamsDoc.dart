@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class StreamsDoc<T> extends StatelessWidget {
   final Stream<DocumentSnapshot<Map<String, dynamic>>> stream;
-  final T object;
+
   final Widget Function(DocumentSnapshot<Map<String, dynamic>>) child;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const StreamsDoc(
       {Key? key,
-      required this.object,
+
       required this.child,
       required this.stream})
       : super(key: key);

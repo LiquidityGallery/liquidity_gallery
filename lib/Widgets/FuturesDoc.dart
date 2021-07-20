@@ -5,14 +5,14 @@ import 'Futures.dart';
 
 class FuturesDoc<T> extends StatelessWidget {
   final Future<DocumentSnapshot<Map<String, dynamic>>> future;
-  final T object;
+
   final Widget Function(DocumentSnapshot<Map<String, dynamic>>) child;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const FuturesDoc(
       {Key? key,
-      required this.object,
+
       required this.child,
       required this.future})
       : super(key: key);
