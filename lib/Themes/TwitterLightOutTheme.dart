@@ -23,6 +23,8 @@ ThemeData get twitterLightOutTheme => ThemeData(
             side: BorderSide.none)
       )
     ),
+    canvasColor: Color.fromRGBO(25, 26, 27, 1),
+
     snackBarTheme: SnackBarThemeData(
       contentTextStyle: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
       backgroundColor: Color.fromRGBO(17, 19, 22, 1),
