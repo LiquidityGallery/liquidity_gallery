@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
-class TwitterLightsOutView extends StatefulWidget {
+class TwitterThemeView extends StatefulWidget {
   @override
-  _TwitterLightsOutViewState createState() => _TwitterLightsOutViewState();
+  _TwitterThemeViewState createState() => _TwitterThemeViewState();
 }
 
-class _TwitterLightsOutViewState extends State<TwitterLightsOutView> {
+class _TwitterThemeViewState extends State<TwitterThemeView> {
   int _currentIndex = 0;
 
   Widget get _body =>
-      _currentIndex == 0 ? _TwitterLightsOutView() : _SettingsView();
+      _currentIndex == 0 ? _TwitterThemeView() : _SettingsView();
 
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: twitterDarkTheme,
+      data: twitterLightTheme,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Home'),
@@ -47,7 +47,7 @@ class _TwitterLightsOutViewState extends State<TwitterLightsOutView> {
   }
 }
 
-class _TwitterLightsOutView extends StatelessWidget {
+class _TwitterThemeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,7 +62,7 @@ class _TwitterLightsOutView extends StatelessWidget {
         ElevatedButton(
             onPressed: () {
               showMessage(context, 'You can close this message',
-                  () => print('User taped the button'), 'tap to close');
+                      () => print('User taped the button'), 'tap to close');
             },
             child: Text('Show message')),
         DropdownButtonFormField(items: [
@@ -95,31 +95,31 @@ class _MyDrawer extends StatelessWidget {
             _Header(),
             Expanded(
                 child: ListView(
-              children: [
-                // _DrawerItem(title: 'Home', icon: Icons.home_outlined, onTap: () {
-                //   Navigator.popUntil(context, ModalRoute.withName('/'));
-                // },),
-                _DrawerItem(
-                  title: 'Items',
-                  icon: Icons.shopping_bag_outlined,
-                  onTap: () {},
-                ),
-                _DrawerItem(
-                  title: 'Workshop',
-                  icon: Icons.home_work_outlined,
-                ),
-                _DrawerItem(
-                  title: 'Merchant',
-                  icon: Icons.bookmark_border,
-                ),
-                _DrawerItem(
-                  title: 'Report',
-                  icon: Icons.list_alt_outlined,
-                ),
-                Divider(),
-                _DrawerItem(title: 'Settings')
-              ],
-            ))
+                  children: [
+                    // _DrawerItem(title: 'Home', icon: Icons.home_outlined, onTap: () {
+                    //   Navigator.popUntil(context, ModalRoute.withName('/'));
+                    // },),
+                    _DrawerItem(
+                      title: 'Items',
+                      icon: Icons.shopping_bag_outlined,
+                      onTap: () {},
+                    ),
+                    _DrawerItem(
+                      title: 'Workshop',
+                      icon: Icons.home_work_outlined,
+                    ),
+                    _DrawerItem(
+                      title: 'Merchant',
+                      icon: Icons.bookmark_border,
+                    ),
+                    _DrawerItem(
+                      title: 'Report',
+                      icon: Icons.list_alt_outlined,
+                    ),
+                    Divider(),
+                    _DrawerItem(title: 'Settings')
+                  ],
+                ))
           ],
         ),
       ),
@@ -173,10 +173,10 @@ class _DrawerItem extends StatelessWidget {
           selectedTileColor: Color.fromRGBO(34, 34, 34, 1),
           leading: icon != null
               ? Icon(
-                  icon,
-                  size: 23,
-                  color: Color.fromRGBO(106, 106, 106, 1),
-                )
+            icon,
+            size: 23,
+            color: Color.fromRGBO(106, 106, 106, 1),
+          )
               : null,
           title: Text(
             title,

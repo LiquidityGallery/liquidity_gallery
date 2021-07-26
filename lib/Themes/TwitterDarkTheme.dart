@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ThemeData get twitterLightOutTheme => ThemeData(
+ThemeData get twitterDarkTheme => ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Color.fromRGBO(17, 19, 22, 1),
     primaryColor: Color.fromRGBO(73, 160, 235, 1),

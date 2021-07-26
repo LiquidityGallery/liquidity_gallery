@@ -8,7 +8,7 @@ class ItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: twitterLightOutTheme,
+      data: twitterDarkTheme,
       child: Scaffold(
         body: SafeArea(
           child: CustomScrollView(

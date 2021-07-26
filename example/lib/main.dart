@@ -1,6 +1,7 @@
 import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
+import 'package:example/TwitterThemeView.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light(),
-      darkTheme: twitterLightOutTheme,
+      theme: twitterLightTheme,
+      darkTheme: twitterDarkTheme,
       home: MainView(),
     );
   }
@@ -65,6 +66,13 @@ class MainView extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (_) => TwitterLightsOutView()));
+            },
+          ),
+          ListTile(
+            title: Text('Twitter theme'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => TwitterThemeView()));
             },
           ),
           ListTile(

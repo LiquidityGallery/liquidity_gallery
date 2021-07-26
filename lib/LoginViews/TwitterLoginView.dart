@@ -30,94 +30,91 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: twitterLightOutTheme,
-      child: GestureDetector(
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Ellie'),
-          ),
-          body: ListView(padding: EdgeInsets.all(20), children: [
-            Center(
-              child: Text(
-                widget.title,
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
-              ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Ellie'),
+        ),
+        body: ListView(padding: EdgeInsets.all(20), children: [
+          Center(
+            child: Text(
+              widget.title,
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
             ),
-            Visibility(
-                visible: widget.onLogin != null,
-                child: Column(
-                  children: [
-                    TextFormField(
-                      style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
-                      controller: _usernameController,
-                      textInputAction: TextInputAction.next,
-                      keyboardType: TextInputType.name,
-                      decoration: InputDecoration(
-                        hintText: 'Phone, email or username',
-                      ),
-                      onChanged: (String string) {
-                        setState(() {});
-                      },
+          ),
+          Visibility(
+              visible: widget.onLogin != null,
+              child: Column(
+                children: [
+                  TextFormField(
+                    style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
+                    controller: _usernameController,
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      hintText: 'Phone, email or username',
                     ),
-                    TextFormField(
-                      style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
-                      controller: _passwordController,
-                      textInputAction: TextInputAction.done,
-                      keyboardType: TextInputType.visiblePassword,
-                      onFieldSubmitted: (String? string) {
-                        widget.onLogin!(
-                            _usernameController.text, _passwordController.text);
-                      },
-                      decoration: InputDecoration(hintText: 'Password'),
-                      onChanged: (String string) {
-                        setState(() {});
-                      },
-                    ),
-                    Divider(),
-                  ],
-                )),
-            TextDivider(text: 'or',),
-            Visibility(
-              visible: widget.onGoogleLogin != null,
-              child: SignInButton(
-                Buttons.GoogleDark,
-                onPressed: () {},
-              ),
-            )
-          ]),
-          bottomNavigationBar: Visibility(
-            visible: widget.onLogin != null,
-            child: BottomAppBar(
-              child: Container(
-                decoration: BoxDecoration(
-                    border: Border(
-                        top: BorderSide(
-                            width: 1, color: Color.fromRGBO(33, 35, 38, 1)))),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Row(
-                    children: [
-                      TextButton(
-                          child: Text(
-                            'Forgot password?',
-                            style: TextStyle(
-                                color: Color.fromRGBO(66, 144, 211, 1)),
-                          ),
-                          onPressed: () {}),
-                      Spacer(),
-                      _LoginButton(
-                        enable: _usernameController.text.isNotEmpty &&
-                            _passwordController.text.isNotEmpty,
-                        text: widget.loginText,
-                        onTap: () {
-                          widget.onLogin!(_usernameController.text,
-                              _passwordController.text);
-                        },
-                      )
-                    ],
+                    onChanged: (String string) {
+                      setState(() {});
+                    },
                   ),
+                  TextFormField(
+                    style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
+                    controller: _passwordController,
+                    textInputAction: TextInputAction.done,
+                    keyboardType: TextInputType.visiblePassword,
+                    onFieldSubmitted: (String? string) {
+                      widget.onLogin!(
+                          _usernameController.text, _passwordController.text);
+                    },
+                    decoration: InputDecoration(hintText: 'Password'),
+                    onChanged: (String string) {
+                      setState(() {});
+                    },
+                  ),
+                  Divider(),
+                ],
+              )),
+          TextDivider(text: 'or',),
+          Visibility(
+            visible: widget.onGoogleLogin != null,
+            child: SignInButton(
+              Buttons.GoogleDark,
+              onPressed: () {},
+            ),
+          )
+        ]),
+        bottomNavigationBar: Visibility(
+          visible: widget.onLogin != null,
+          child: BottomAppBar(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      top: BorderSide(
+                          width: 1, color: Color.fromRGBO(33, 35, 38, 1)))),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Row(
+                  children: [
+                    TextButton(
+                        child: Text(
+                          'Forgot password?',
+                          style: TextStyle(
+                              color: Color.fromRGBO(66, 144, 211, 1)),
+                        ),
+                        onPressed: () {}),
+                    Spacer(),
+                    _LoginButton(
+                      enable: _usernameController.text.isNotEmpty &&
+                          _passwordController.text.isNotEmpty,
+                      text: widget.loginText,
+                      onTap: () {
+                        widget.onLogin!(_usernameController.text,
+                            _passwordController.text);
+                      },
+                    )
+                  ],
                 ),
               ),
             ),
