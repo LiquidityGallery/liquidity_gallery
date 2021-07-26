@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 class BubbleTabBar extends StatefulWidget {
   final List<Tab> tabs;
   final List<Widget> children;
+  final Color? backgroundColor;
+  final Color? labelColor;
+  final Color? indicatorColor;
 
-
-  BubbleTabBar({Key? key,required this.tabs,required this.children}) : super(key: key);
+  BubbleTabBar({Key? key,required this.tabs,required this.children, this.backgroundColor, this.labelColor, this.indicatorColor}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -44,7 +46,7 @@ class HomeWidgetState extends State<BubbleTabBar>
     return new Scaffold(
       appBar: new AppBar(
         elevation: 0,
-        backgroundColor: Colors.white10,
+        backgroundColor: widget.backgroundColor == null ? Colors.white10 : widget.backgroundColor,
         title: new TabBar(
           isScrollable: true,
           unselectedLabelColor: Colors.grey,
@@ -52,7 +54,7 @@ class HomeWidgetState extends State<BubbleTabBar>
           indicatorSize: TabBarIndicatorSize.tab,
           indicator: BubbleTabIndicator(
             indicatorHeight: 25.0,
-            indicatorColor: darkModeOn ==false ?Colors.redAccent[100]! :Colors.tealAccent[700]!,
+            indicatorColor: widget.indicatorColor== null ? Colors.tealAccent[700]!: widget.indicatorColor!,
             tabBarIndicatorSize: TabBarIndicatorSize.tab,
             // Other flags
             // indicatorRadius: 1,

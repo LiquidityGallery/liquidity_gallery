@@ -10,8 +10,9 @@ class NavBar extends StatefulWidget {
 final List<Widget> children;
 final List<BottomNavigationBarItem> items;
 final num NumOfItem;
+final Color? color;
 
-NavBar({Key? key,required this.NumOfItem,required this.children, required this.items}) : super(key: key);
+NavBar({Key? key,required this.NumOfItem,required this.children, required this.items, this.color}) : super(key: key);
 
   @override
   _NavBarState createState() => _NavBarState();
@@ -48,7 +49,7 @@ class _NavBarState extends State<NavBar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.cyan[800],
+        backgroundColor: widget.color== null ? Colors.cyan[800] : widget.color,
         items: widget.items,
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
