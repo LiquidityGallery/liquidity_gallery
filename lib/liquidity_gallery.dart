@@ -41,3 +41,4 @@ export 'Functions/getDeviceId.dart';
 export 'Widgets/FuturesDoc.dart';
 export 'Themes/TwitterDarkTheme.dart';
 export 'Widgets/BubbleTabBar.dart';
+export 'Widgets/NavBar.dart';
