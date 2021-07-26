@@ -22,15 +22,17 @@ class MailboxContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        var brightness = MediaQuery.of(context).platformBrightness;
+            bool darkModeOn = brightness == Brightness.dark;
     return InkWell(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(padding),
         margin: EdgeInsets.fromLTRB(0, topMargin, 0, bottomMargin),
         decoration: BoxDecoration(
-            color: backgroundColor == null ? Colors.white : backgroundColor,
+            color: backgroundColor == null ? (darkModeOn==true ? Colors.grey[800] : Colors.white) : backgroundColor,
             borderRadius: BorderRadius.circular(Radius!),
-            boxShadow: [
+            boxShadow: darkModeOn ? [] : [
               isShadow == true
                   ? BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
