@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
+
+
+
+///The number of widget and tab names should be equal
 class NavBar extends StatefulWidget {
 final List<Widget> children;
 final List<BottomNavigationBarItem> items;

@@ -17,7 +17,7 @@ class BubbleTabBar extends StatefulWidget {
   }
 }
 
-
+///The number of widget and tab names should be equal
 ///Tabs ---> Tab(text: " "),
 class HomeWidgetState extends State<BubbleTabBar>
     with SingleTickerProviderStateMixin {
