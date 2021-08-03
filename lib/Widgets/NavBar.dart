@@ -15,8 +15,10 @@ final List<Widget> children;
 final List<BottomNavigationBarItem> items;
 final num NumOfItem;
 final Color? color;
+final double unselectedFontSize;
+final double selectedFontSize;
 
-NavBar({Key? key,required this.NumOfItem,required this.children, required this.items, this.color}) : super(key: key);
+NavBar({Key? key,required this.NumOfItem,required this.children, required this.items, this.color, this.unselectedFontSize=12, this.selectedFontSize=14}) : super(key: key);
 
   @override
   _NavBarState createState() => _NavBarState();
@@ -57,7 +59,10 @@ class _NavBarState extends State<NavBar> {
         items: widget.items,
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,
+        selectedFontSize: widget.selectedFontSize,
+        unselectedFontSize: widget.unselectedFontSize,
         unselectedItemColor: Colors.white70,
+
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
