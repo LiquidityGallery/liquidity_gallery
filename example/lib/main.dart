@@ -17,6 +17,7 @@ import 'PickImageView.dart';
 import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
 import 'SwitchButtonView.dart';
+import 'package:calendar_timeline/calendar_timeline.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,11 +43,20 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          IconButton(
-              onPressed: () async {
-                await hyperlink('http://www.google.com');
-              },
-              icon: Icon(Icons.comment)),
+          CalendarTimeline(
+            initialDate: DateTime(2020, 4, 20),
+            firstDate: DateTime(2019, 1, 15),
+            lastDate: DateTime(2020, 11, 20),
+            onDateSelected: (date) => print(date),
+            leftMargin: 20,
+            monthColor: Colors.blueGrey,
+            dayColor: Colors.teal[200],
+            activeDayColor: Colors.white,
+            activeBackgroundDayColor: Colors.redAccent[100],
+            dotsColor: Color(0xFF333A47),
+            selectableDayPredicate: (date) => date.day != 23,
+            locale: 'en_ISO',
+          ),
           ContentCard(
             imageURL: 'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
             text:' New WD Drive has security issue',
