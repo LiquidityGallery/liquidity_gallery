@@ -13,13 +13,14 @@ class BorderTextField extends StatelessWidget {
   final bool autofocus;
   final double radius;
   final int minLines;
+  final double borderWidth;
 
   const BorderTextField(
       {Key? key,
       this.labeltext,
       required this.controller,
       this.isborder = true,
-      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1})
+      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=1})
       : super(key: key);
 
   @override
@@ -45,7 +46,7 @@ class BorderTextField extends StatelessWidget {
             //borderRadius: BorderRadius.circular(8.0),
           ),
           border: OutlineInputBorder(
-            borderSide: new BorderSide(width: 1.0),
+            borderSide: new BorderSide(width: borderWidth),
             borderRadius: BorderRadius.circular(radius),
           ),
           labelText: labeltext,
