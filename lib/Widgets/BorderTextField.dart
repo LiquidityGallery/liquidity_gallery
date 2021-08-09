@@ -20,7 +20,7 @@ class BorderTextField extends StatelessWidget {
       this.labeltext,
       required this.controller,
       this.isborder = true,
-      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=1})
+      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=0.2})
       : super(key: key);
 
   @override
@@ -41,13 +41,13 @@ class BorderTextField extends StatelessWidget {
           fillColor: fillcolor==null ? (darkModeOn ? Colors.grey[800] : Colors.white) : fillcolor,
           enabledBorder: OutlineInputBorder(
             borderSide: isborder == true
-                ? BorderSide(color: bordercolor ==null ? Colors.black54 : bordercolor!, width: 0.2)
+                ? BorderSide(color: bordercolor ==null ? Colors.black54 : bordercolor!, width: borderWidth)
                 : BorderSide.none,
-            //borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(radius),
           ),
           border: OutlineInputBorder(
             borderSide: new BorderSide(width: borderWidth),
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: BorderRadius.circular(8),
           ),
           labelText: labeltext,
           hintText: hinttext,
