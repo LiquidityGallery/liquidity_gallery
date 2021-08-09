@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 Future<dynamic> showModal(BuildContext context,
-    Widget child,) async {
+    Widget child, {double? radius}) async {
   return  await showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(16),
+          top: Radius.circular(radius==null ? 16: radius),
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -22,12 +22,12 @@ Future<dynamic> showModal(BuildContext context,
 }
 
 Future<dynamic> showModalMax(BuildContext context,
-    Widget child,) async {
+    Widget child, {double? radius}) async {
   return await showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(16),
+          top: Radius.circular(radius==null ? 16: radius),
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
