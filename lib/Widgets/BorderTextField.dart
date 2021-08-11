@@ -15,13 +15,14 @@ class BorderTextField extends StatelessWidget {
   final int minLines;
   final double borderWidth;
   final TextStyle? textStyle;
+  final Function(String input)? onChanged;
 
   const BorderTextField(
       {Key? key,
       this.labeltext,
       required this.controller,
       this.isborder = true,
-      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=0.2, this.textStyle})
+      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=0.2, this.textStyle, this.onChanged})
       : super(key: key);
 
   @override
@@ -31,6 +32,7 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
+        onChanged: onChanged,
         style: textStyle ==null ? TextStyle(fontSize: 14) :textStyle,
         autofocus: autofocus,
        minLines: minLines,
