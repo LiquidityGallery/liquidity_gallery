@@ -58,18 +58,52 @@ class MainView extends StatelessWidget {
             locale: 'en_ISO',
           ),
           ContentCard(
-            imageURL: 'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
-            text:' New WD Drive has security issue',
+            imageURL:
+                'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
+            text: ' New WD Drive has security issue',
             subtitle: 'WD News Today',
-        //    dense: true,
-            onTap: (){},
-            icon: Icon(Icons.update,size: 17,),
+            //    dense: true,
+            onTap: () {},
+            icon: Icon(
+              Icons.update,
+              size: 17,
+            ),
           ),
-          BubbleTile(
-       //     isShadow: false,
-            child: Text('Data'),
+          ListTile(
+            title: Text("Bubble Tabbar Example"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => Scaffold(
+                        appBar: AppBar(
+                          title: Text("Bubble"),
+                        ),
+                        body: Center(
+                          child: Container(
+                              width: 500,
+                              height: 1000,
+                              child: BubbleTabBar(
+labelColor: Colors.black87,
+                                  unselectedLabalColor: Colors.grey,
+                                  indicatorColor: Colors.transparent,
+                                  tabs: [
+                                Tab(
+                                  text: 'One',
+                                ),
+                                Tab(
+                                  text: 'Second',
+                                )
+                              ], children: [
+                                ListView(
+                                  children: [
+                                    Container(child: Text("One"),color: Colors.blue,)
+                                  ],
+                                ),
+                                Container(child: Text("Second"),color: Colors.red,)
+                              ])),
+                        ),
+                      )));
+            },
           ),
-
 
           ListTile(
             title: Text('Twitter Light Out theme'),
@@ -151,15 +185,18 @@ class MainView extends StatelessWidget {
           ),
           ListTile(
             title: Text('Badges Icon'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => BadgesIconView())),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => BadgesIconView())),
           ),
           ListTile(
             title: Text('Modal sheet example'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ModalSheetView())),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => ModalSheetView())),
           ),
           ListTile(
             title: Text('Share & Print'),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SharePrintView())),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => SharePrintView())),
           ),
           // ListTile(
           //   title: Text('Search text field example'),
@@ -186,13 +223,22 @@ class MainView extends StatelessWidget {
                       ),
                     )),
           ),
-          ConfirmButton(text: '訂閱', onPressed: (){}, radius: 0.0, elevation: 0,color: Colors.black87,),
-       BubbleTabBar(tabs: [Tab(text: 'One',), Tab(text: " Second")], children: [
-         Container(),
-         Container(),
-
-       ])
-
+          ConfirmButton(
+            text: '訂閱',
+            onPressed: () {},
+            radius: 0.0,
+            elevation: 0,
+            color: Colors.black87,
+          ),
+          BubbleTabBar(tabs: [
+            Tab(
+              text: 'One',
+            ),
+            Tab(text: " Second")
+          ], children: [
+            Container(),
+            Container(),
+          ])
         ],
       ),
     );

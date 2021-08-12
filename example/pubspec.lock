@@ -63,7 +63,7 @@ packages:
       name: calendar_timeline
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.1"
+    version: "1.0.1-null-safety.0"
   carousel_slider:
     dependency: transitive
     description:
@@ -645,7 +645,7 @@ packages:
       name: scrollable_positioned_list
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.10"
+    version: "0.2.0-nullsafety.0"
   search_choices:
     dependency: "direct main"
     description:
