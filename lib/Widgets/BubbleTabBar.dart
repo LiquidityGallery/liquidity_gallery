@@ -7,7 +7,7 @@ class BubbleTabBar extends StatefulWidget {
   final Color? backgroundColor;
   final Color? labelColor;
   final Color? indicatorColor;
-
+ final double tabHeight;
   final Color? unselectedLabalColor;
 
   BubbleTabBar(
@@ -16,7 +16,7 @@ class BubbleTabBar extends StatefulWidget {
       required this.children,
       this.backgroundColor,
       this.labelColor,
-      this.indicatorColor, this.unselectedLabalColor})
+      this.indicatorColor, this.unselectedLabalColor, this.tabHeight=40})
       : super(key: key);
 
   @override
@@ -55,7 +55,7 @@ class HomeWidgetState extends State<BubbleTabBar>
       child: Column(
         children: [
          Container(
-          height: 40,
+          height: widget.tabHeight,
             child: TabBar(
               isScrollable: true,
               unselectedLabelColor: widget.unselectedLabalColor == null ? Colors.grey : widget.unselectedLabalColor,
