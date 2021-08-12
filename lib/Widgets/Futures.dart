@@ -5,6 +5,7 @@ class Futures<T> extends StatelessWidget {
   final Future<QuerySnapshot<Map<String, dynamic>>> future;
 
   final Widget Function(QuerySnapshot<Map<String, dynamic>>) child;
+  final Widget? childOnError;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
@@ -12,7 +13,7 @@ class Futures<T> extends StatelessWidget {
       {Key? key,
 
       required this.child,
-      required this.future})
+      required this.future, this.childOnError})
       : super(key: key);
 
   @override
@@ -23,9 +24,9 @@ class Futures<T> extends StatelessWidget {
           AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           print(snapshot.error.toString());
-          return Center(
+          return childOnError==null ? Center(
             child: Text(snapshot.error.toString()),
-          );
+          ) : childOnError!;
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
