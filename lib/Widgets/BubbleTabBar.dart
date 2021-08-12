@@ -43,11 +43,9 @@ class HomeWidgetState extends State<BubbleTabBar>
     //?/ Detect if dark mode is active
     var brightness = MediaQuery.of(context).platformBrightness;
     bool darkModeOn = brightness == Brightness.dark;
-    return new Scaffold(
-      appBar: new AppBar(
-        elevation: 0,
-        backgroundColor: widget.backgroundColor == null ? Colors.white10 : widget.backgroundColor,
-        title: new TabBar(
+    return Column(
+      children: [
+        TabBar(
           isScrollable: true,
           unselectedLabelColor: Colors.grey,
           labelColor: Colors.white,
@@ -64,11 +62,11 @@ class HomeWidgetState extends State<BubbleTabBar>
           tabs: tabs,
           controller: _tabController,
         ),
-      ),
-      body: new TabBarView(
-        controller: _tabController,
-        children: widget.children!,
-      ),
+        new TabBarView(
+          controller: _tabController,
+          children: widget.children!,
+        ),
+      ],
     );
   }
 }
