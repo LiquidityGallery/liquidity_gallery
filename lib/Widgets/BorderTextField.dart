@@ -42,7 +42,7 @@ class BorderTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           filled: true,
-          fillColor: fillcolor==null ? (darkModeOn ? Colors.grey[800] : Colors.white) : fillcolor,
+          fillColor: fillcolor==null ? Colors.white : fillcolor,
           enabledBorder: OutlineInputBorder(
             borderSide: isborder == true
                 ? BorderSide(color: bordercolor ==null ? Colors.black54 : bordercolor!, width: borderWidth)
