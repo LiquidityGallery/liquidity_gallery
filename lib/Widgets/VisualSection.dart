@@ -307,7 +307,7 @@ child== null ? Container() : Padding(
 ),
                   onpressed ==null ? Container() : Align(
                       alignment: Alignment.bottomCenter,
-                      child: ConfirmButton(onPressed: onpressed!,text: buttontext, color: buttoncolor==null ? Colors.yellow : buttoncolor,textcolor: (buttontextcolor == null ? Colors.black87 : buttontextcolor),))
+                      child: ConfirmButton(onPressed: () async {onpressed!;},text: buttontext, color: buttoncolor==null ? Colors.yellow : buttoncolor,textcolor: (buttontextcolor == null ? Colors.black87 : buttontextcolor),))
                 ],
               ),
               decoration: BoxDecoration(
@@ -439,7 +439,7 @@ class HeroBoard extends StatelessWidget {
                 onPressed == null
                     ? Container()
                     : ConfirmButton(
-                        onPressed: onPressed!,
+                        onPressed: () async {onPressed!;},
                         color:
                             buttoncolor == null ? Colors.yellow : buttoncolor,
                         text: buttontext,

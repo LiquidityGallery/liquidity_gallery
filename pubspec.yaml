@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  another_flushbar: ^1.10.24
   calendar_timeline: ^1.0.1-null-safety.0
   bubble_tab_indicator: ^0.1.6
   url_launcher: ^6.0.9

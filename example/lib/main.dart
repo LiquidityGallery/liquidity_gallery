@@ -3,6 +3,7 @@ import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:example/TwitterThemeView.dart';
 import 'package:flutter/material.dart';
+import 'package:liquidity_gallery/Functions/onYesNo.dart';
 import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 import 'AccessRightTest.dart';
@@ -43,6 +44,14 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ConfirmButton(text: 'test this button', onPressed: () async {
+            print("Test");
+            //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');
+          }),
+          ConfirmButton(text: 'test onYesNo', onPressed: () async {
+            final _bool = await onYesNo(context).timeout(Duration(seconds: 1), onTimeout: () => throw 'timeout');
+            print(_bool);
+          }),
           CalendarTimeline(
             initialDate: DateTime(2020, 4, 20),
             firstDate: DateTime(2019, 1, 15),
@@ -244,7 +253,7 @@ class MainView extends StatelessWidget {
           ),
           ConfirmButton(
             text: '訂閱',
-            onPressed: () {},
+            onPressed: () async {},
             radius: 0.0,
             elevation: 0,
             color: Colors.black87,
@@ -257,7 +266,7 @@ class MainView extends StatelessWidget {
           ], children: [
             Container(),
             Container(),
-          ])
+          ]),
         ],
       ),
     );
