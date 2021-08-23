@@ -82,27 +82,46 @@ class MainView extends StatelessWidget {
                               width: 500,
                               height: 1000,
                               child: BubbleTabBar(
-labelColor: Colors.black87,
+                                  labelColor: Colors.black87,
                                   unselectedLabalColor: Colors.grey,
                                   indicatorColor: Colors.transparent,
                                   tabs: [
-                                Tab(
-                                  text: 'One',
-                                ),
-                                Tab(
-                                  text: 'Second',
-                                )
-                              ], children: [
-                                ListView(
-                                  children: [
-                                    Container(child: Text("One"),color: Colors.blue,)
+                                    Tab(
+                                      text: 'One',
+                                    ),
+                                    Tab(
+                                      text: 'Second',
+                                    )
                                   ],
-                                ),
-                                Container(child: Text("Second"),color: Colors.red,)
-                              ])),
+                                  children: [
+                                    ListView(
+                                      children: [
+                                        Container(
+                                          child: Text("One"),
+                                          color: Colors.blue,
+                                        )
+                                      ],
+                                    ),
+                                    Container(
+                                      child: Text("Second"),
+                                      color: Colors.red,
+                                    )
+                                  ])),
                         ),
                       )));
             },
+          ),
+          ListTile(
+            title: Text('Loading widget'),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadingWidget(
+                          load: () async {
+                            await Future.delayed(Duration(seconds: 5));
+                          },
+                          timeout: Duration(seconds: 2),
+                        ))),
           ),
 
           ListTile(
