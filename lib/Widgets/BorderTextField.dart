@@ -16,13 +16,14 @@ class BorderTextField extends StatelessWidget {
   final double borderWidth;
   final TextStyle? textStyle;
   final Function(String input)? onChanged;
+  final bool readOnly;
 
   const BorderTextField(
       {Key? key,
       this.labeltext,
       required this.controller,
       this.isborder = true,
-      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=0.2, this.textStyle, this.onChanged})
+      this.isinputnumber, this.bordercolor, this.hinttext, this.fillcolor, this.autofocus=false, this.radius=8.0, this.minLines=1, this.borderWidth=0.2, this.textStyle, this.onChanged, this.readOnly=false})
       : super(key: key);
 
   @override
@@ -35,6 +36,7 @@ class BorderTextField extends StatelessWidget {
         onChanged: onChanged,
         style: textStyle ==null ? TextStyle(fontSize: 14) :textStyle,
         autofocus: autofocus,
+       readOnly: readOnly,
        minLines: minLines,
         maxLines: 10,
         keyboardType:
