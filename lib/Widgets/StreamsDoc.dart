@@ -5,7 +5,6 @@ class StreamsDoc<T> extends StatelessWidget {
   final Stream<DocumentSnapshot<Map<String, dynamic>>> stream;
 
   final Widget Function(DocumentSnapshot<Map<String, dynamic>>) child;
-  final Function()? onError;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
@@ -13,7 +12,7 @@ class StreamsDoc<T> extends StatelessWidget {
       {Key? key,
 
       required this.child,
-      required this.stream, this.onError})
+      required this.stream})
       : super(key: key);
 
   @override
@@ -21,12 +20,12 @@ class StreamsDoc<T> extends StatelessWidget {
     return StreamBuilder(
       stream: stream,
       builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
-        if (snapshot.hasError) onError==null ? () {
-        print(snapshot.error.toString());
-        return Center(
-          child: Text(snapshot.error.toString()),
-        );
-      }  : onError;
+        if (snapshot.hasError) {
+          print(snapshot.error.toString());
+          return Center(
+            child: Text(snapshot.error.toString()),
+          );
+        }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
