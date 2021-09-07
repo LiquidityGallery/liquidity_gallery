@@ -12,6 +12,7 @@ class ConfirmButton extends StatefulWidget {
   final bool? isbold;
   final double elevation;
   final double padding;
+  final double fontSize;
 
   /// Version1.01 last update 20200610.
   ///
@@ -27,7 +28,7 @@ class ConfirmButton extends StatefulWidget {
       this.textcolor,
       this.isbold,
       this.elevation = 1,
-      this.padding = 15.0,
+      this.padding = 15.0, this.fontSize=15,
       })
       : super(key: key);
 
@@ -86,7 +87,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
               : Text(
                   widget.text,
                   style: TextStyle(
-                      fontSize: 15,
+                      fontSize: widget.fontSize,
                       color: widget.textcolor == null
                           ? Colors.white
                           : widget.textcolor,
