@@ -22,7 +22,7 @@ Future<dynamic> showModal(BuildContext context,
 }
 
 Future<dynamic> showModalMax(BuildContext context,
-    Widget child, {double? radius}) async {
+    Widget child, {double? radius, num height=0.92}) async {
   return await showModalBottomSheet(
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
@@ -37,7 +37,7 @@ Future<dynamic> showModalMax(BuildContext context,
             height: MediaQuery
                 .of(context)
                 .size
-                .height * 0.92,
+                .height * height,
             child: child,
           ));
 }
