@@ -3,6 +3,7 @@ import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:example/TwitterThemeView.dart';
 import 'package:flutter/material.dart';
+import 'package:liquidity_gallery/Class.dart';
 import 'package:liquidity_gallery/Functions/onYesNo.dart';
 import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
@@ -44,6 +45,13 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListTile(
+            title: Text('Currency picker'),
+            onTap: () async{
+              print(await enumPicker(context, Currency.values));
+            },
+          ),
+
           ConfirmButton(text: 'test this button', onPressed: () async {
             print("Test");
             //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');
