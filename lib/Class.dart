@@ -17,6 +17,7 @@ HKD,
   JPY,
   SGD,
   CAD,
+  KRW,
 }
 
 enum Country{
