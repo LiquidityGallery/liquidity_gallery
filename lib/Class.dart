@@ -17,3 +17,8 @@ HKD,
   SGD,
   CAD,
 }
+
+enum Country{
+
+
+}
