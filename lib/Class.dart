@@ -6,6 +6,7 @@ enum Unit{
 
 
 enum Currency {
+  NONE,
 HKD,
   AUD,
   USD,

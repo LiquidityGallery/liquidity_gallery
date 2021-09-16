@@ -66,7 +66,7 @@ Future<dynamic> enumPicker(context, values, {bool isListview=false}) async {
 
 
         ),
-        radius: 0);
+        radius: 0, height: 0.8);
   }
 
 
