@@ -18,7 +18,3 @@ HKD,
   CAD,
 }
 
-enum Country{
-
-
-}
