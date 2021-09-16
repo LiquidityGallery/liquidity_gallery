@@ -46,3 +46,4 @@ export 'Functions/SlideUp.dart';
 export 'Widgets/GrandButton.dart';
 export 'Widgets/LoadingWidget.dart';
 export 'Functions/enumPicker.dart';
+export 'Class.dart';
