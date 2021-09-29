@@ -54,7 +54,10 @@ class MainView extends StatelessWidget {
             },
           ),
 TextButton(child: Text("Exchange"),onPressed: () async{
-print(getRate(Currency.USD, Currency.HKD));
+  final fx = Forex();
+  double myPrice = await fx.getCurrencyConverted(describeEnum(Currency.CNY), "HKD", 100);
+  print("100 USD in HKD: ${myPrice}");
+print(await fx.getAvailableCurrencies());
 
 },),
           ConfirmButton(text: 'test this button', onPressed: () async {
