@@ -2,6 +2,7 @@ import 'package:example/LocationView.dart';
 import 'package:example/StartEndDatePickerView.dart';
 import 'package:example/TwitterLightOutView.dart';
 import 'package:example/TwitterThemeView.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Class.dart';
 import 'package:liquidity_gallery/Functions/onYesNo.dart';
@@ -20,6 +21,7 @@ import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
 import 'SwitchButtonView.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
+import 'package:forex_conversion/forex_conversion.dart';
 
 void main() => runApp(MyApp());
 
@@ -51,7 +53,13 @@ class MainView extends StatelessWidget {
               print(await enumPicker(context, Currency.values));
             },
           ),
+TextButton(child: Text("Exchange"),onPressed: () async{
+  final fx = Forex();
+  double myPrice = await fx.getCurrencyConverted(describeEnum(Currency.CNY), "HKD", 100);
+  print("100 USD in HKD: ${myPrice}");
+print(await fx.getAvailableCurrencies());
 
+},),
           ConfirmButton(text: 'test this button', onPressed: () async {
             print("Test");
             //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');

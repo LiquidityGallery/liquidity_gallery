@@ -331,6 +331,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "9.1.0"
+  forex_conversion:
+    dependency: "direct main"
+    description:
+      name: forex_conversion
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   geocoding:
     dependency: "direct main"
     description:
