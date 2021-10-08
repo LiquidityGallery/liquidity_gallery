@@ -11,7 +11,7 @@ Future<dynamic> showModal(BuildContext context,
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
-      builder: (context) =>
+      builder: (_) =>
           Padding(
             padding: MediaQuery.of(context).viewInsets,
             child: Container(
@@ -32,7 +32,7 @@ Future<dynamic> showModalMax(BuildContext context,
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
-      builder: (context) =>
+      builder: (_) =>
           Container(
             height: MediaQuery
                 .of(context)
