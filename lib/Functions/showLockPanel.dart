@@ -13,6 +13,10 @@ Future<dynamic> showLockPanel(BuildContext context,
           mainAxisSize:
           MainAxisSize.min,
           children: [
+            Center(child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("PLEASE ENTER PASSWORD"),
+            ),),
             BorderTextField(
               controller: _controller,
               labeltext: 'Password',
