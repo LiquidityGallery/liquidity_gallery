@@ -15,7 +15,13 @@ Future<dynamic> showLockPanel(BuildContext context,
           children: [
             Center(child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("PLEASE ENTER PASSWORD"),
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Text("PLEASE ENTER PASSWORD"),
+                  Icon(Icons.lock)
+                ],
+              ),
             ),),
             BorderTextField(
               autofocus: true,
@@ -32,8 +38,9 @@ Future<dynamic> showLockPanel(BuildContext context,
                       if (_controller
                           .text ==
                           password) {
+                        Navigator.pop(context);
 await onPressed();
-Navigator.pop(context);
+
                       } else {
                         Navigator.pop(
                             context);
