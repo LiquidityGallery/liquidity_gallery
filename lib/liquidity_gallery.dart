@@ -48,3 +48,4 @@ export 'Widgets/LoadingWidget.dart';
 export 'Functions/enumPicker.dart';
 export 'Class.dart';
 export 'Functions/getRate.dart';
+export 'Functions/showLockPanel.dart';
