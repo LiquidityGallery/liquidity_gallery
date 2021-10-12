@@ -56,7 +56,7 @@ class BorderTextField extends StatelessWidget {
         autofocus: autofocus,
         readOnly: readOnly,
         minLines: minLines,
-        maxLines: maxLines,
+        maxLines: maxLines== 0 ? null : maxLines,
         keyboardType:
             isinputnumber == null ? TextInputType.text : TextInputType.numberWithOptions(decimal: true),
         controller: controller,
