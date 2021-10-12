@@ -19,6 +19,7 @@ class BorderTextField extends StatelessWidget {
   final Function(String input)? onChanged;
   final bool readOnly;
   final bool obscureText;
+  final int maxLines;
 
   const BorderTextField(
       {Key? key,
@@ -37,7 +38,8 @@ class BorderTextField extends StatelessWidget {
       this.textStyle,
       this.onChanged,
       this.readOnly = false,
-      this.obscureText = false})
+      this.obscureText = false,
+      this.maxLines=10})
       : super(key: key);
 
   @override
@@ -54,7 +56,7 @@ class BorderTextField extends StatelessWidget {
         autofocus: autofocus,
         readOnly: readOnly,
         minLines: minLines,
-        maxLines: 10,
+        maxLines: maxLines,
         keyboardType:
             isinputnumber == null ? TextInputType.text : TextInputType.numberWithOptions(decimal: true),
         controller: controller,
