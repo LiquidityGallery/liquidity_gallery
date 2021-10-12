@@ -18,6 +18,7 @@ class BorderTextField extends StatelessWidget {
   final TextStyle? textStyle;
   final Function(String input)? onChanged;
   final bool readOnly;
+  final bool obscureText;
 
   const BorderTextField(
       {Key? key,
@@ -35,7 +36,8 @@ class BorderTextField extends StatelessWidget {
       this.borderWidth = 0.2,
       this.textStyle,
       this.onChanged,
-      this.readOnly = false})
+      this.readOnly = false,
+      this.obscureText = false})
       : super(key: key);
 
   @override
@@ -45,6 +47,7 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
+        obscureText: obscureText,
         onTap: onTap,
         onChanged: onChanged,
         style: textStyle == null ? TextStyle(fontSize: 14) : textStyle,

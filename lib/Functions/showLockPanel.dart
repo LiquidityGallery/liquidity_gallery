@@ -24,6 +24,7 @@ Future<dynamic> showLockPanel(BuildContext context,
               ),
             ),),
             BorderTextField(
+              obscureText: true,
               autofocus: true,
               controller: _controller,
               labeltext: 'Password',
