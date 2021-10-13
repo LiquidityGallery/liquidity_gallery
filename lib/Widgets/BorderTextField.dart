@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class BorderTextField extends StatelessWidget {
   final GestureTapCallback? onTap;
   final bool? isinputnumber;
+  final TextInputType textInputType;
   final String? labeltext;
   final TextEditingController controller;
   final bool isborder;
@@ -24,6 +25,7 @@ class BorderTextField extends StatelessWidget {
   const BorderTextField(
       {Key? key,
       this.onTap,
+        this.textInputType= TextInputType.text,
       this.labeltext,
       required this.controller,
       this.isborder = true,
@@ -58,7 +60,7 @@ class BorderTextField extends StatelessWidget {
         minLines: minLines,
         maxLines: maxLines== 0 ? null : maxLines,
         keyboardType:
-            isinputnumber == null ? TextInputType.text : TextInputType.numberWithOptions(decimal: true),
+         textInputType,
         controller: controller,
         decoration: InputDecoration(
           filled: true,
