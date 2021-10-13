@@ -21,6 +21,7 @@ class BorderTextField extends StatelessWidget {
   final bool readOnly;
   final bool obscureText;
   final int maxLines;
+  final TextAlign textAlign;
 
   const BorderTextField(
       {Key? key,
@@ -39,6 +40,7 @@ class BorderTextField extends StatelessWidget {
       this.borderWidth = 0.2,
       this.textStyle,
       this.onChanged,
+        this.textAlign= TextAlign.start,
       this.readOnly = false,
       this.obscureText = false,
       this.maxLines=10})
@@ -51,6 +53,8 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
+
+        textAlign: textAlign,
         obscureText: obscureText,
         onTap: onTap,
         onChanged: onChanged,
