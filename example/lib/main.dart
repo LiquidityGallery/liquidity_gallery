@@ -5,6 +5,7 @@ import 'package:example/TwitterThemeView.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Class.dart';
+import 'package:liquidity_gallery/Functions/datePicker.dart';
 import 'package:liquidity_gallery/Functions/onYesNo.dart';
 import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
@@ -47,6 +48,10 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          TextButton(onPressed: ()async {
+            print(await datePicker(context));
+          }, child: Text("Date Picker")),
+
           ListTile(
             title: Text('Currency picker'),
             onTap: () async{
@@ -58,8 +63,8 @@ TextButton(child: Text("Exchange"),onPressed: () async{
   double myPrice = await fx.getCurrencyConverted(describeEnum(Currency.CNY), "HKD", 100);
   print("100 USD in HKD: ${myPrice}");
 print(await fx.getAvailableCurrencies());
-
 },),
+
           ConfirmButton(text: 'test this button', onPressed: () async {
             print("Test");
             //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');
