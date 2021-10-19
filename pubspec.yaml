@@ -37,6 +37,7 @@ dependencies:
   badges: ^2.0.1
   modal_bottom_sheet: ^2.0.0
   forex_conversion: ^0.0.3
+  flutter_datetime_picker: any
 
 dev_dependencies:
   flutter_test:
