@@ -33,11 +33,14 @@ Future<dynamic> showModalMax(BuildContext context,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
       builder: (context) =>
-          Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * height,
-            child: child,
+          Padding(
+            padding: MediaQuery.of(context).viewInsets,
+            child: Container(
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height * height,
+              child: child,
+            ),
           ));
 }
