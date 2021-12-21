@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  fluent_ui: ^3.5.2
   another_flushbar: ^1.10.24
   calendar_timeline: ^1.0.1-null-safety.0
   bubble_tab_indicator: ^0.1.6
