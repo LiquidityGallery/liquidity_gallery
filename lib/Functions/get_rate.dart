@@ -10,7 +10,10 @@ class Forex {
 
   Future<void> _fetchCurrencies() async {
     Uri baseUri = Uri.parse('http://www.convertmymoney.com/rates.json');
-    final response = await http.get(baseUri);
+    final response = await http.get(baseUri, headers: {
+      "Accept": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    });
     Map<String, dynamic> jsonResponse =
     json.decode(response.body) as Map<String, dynamic>;
     _rates = jsonResponse.remove("rates") as Map<String, dynamic>;
