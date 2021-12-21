@@ -9,6 +9,7 @@ class Forex {
   late Map<String, dynamic> _rates;
 
   Future<void> _fetchCurrencies() async {
+    print('fetching ');
     Uri baseUri = Uri.parse('http://www.convertmymoney.com/rates.json');
     final response = await http.get(baseUri, headers: {
       "Accept": "application/json",
