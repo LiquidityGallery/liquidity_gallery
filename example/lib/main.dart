@@ -22,7 +22,6 @@ import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
 import 'SwitchButtonView.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
-import 'package:forex_conversion/forex_conversion.dart';
 
 void main() => runApp(MyApp());
 

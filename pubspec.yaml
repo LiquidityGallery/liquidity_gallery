@@ -17,7 +17,7 @@ dependencies:
   cloud_firestore: any
   date_time_picker: ^2.1.0
   device_info_plus: any
-  file_picker: ^3.0.3
+  file_picker: ^4.3.0
   firebase_auth: any
   firebase_core: any
   firebase_storage: any

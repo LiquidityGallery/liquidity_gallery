@@ -231,7 +231,7 @@ packages:
       name: file_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4"
+    version: "4.3.0"
   firebase_auth:
     dependency: transitive
     description:
@@ -689,7 +689,7 @@ packages:
     source: hosted
     version: "0.5.6"
   share_plus:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: share_plus
       url: "https://pub.dartlang.org"
