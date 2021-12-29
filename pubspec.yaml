@@ -7,41 +7,41 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-  fluent_ui: ^3.5.2
   another_flushbar: ^1.10.24
-  calendar_timeline: ^1.0.1-null-safety.0
-  bubble_tab_indicator: ^0.1.6
-  url_launcher: ^6.0.9
-  cloud_firestore: ^2.4.0
-  firebase_core: ^1.4.0
-  device_info_plus: ^2.1.0
-  google_fonts: ^2.1.0
-  firebase_auth: ^3.0.1
-  google_sign_in: ^5.0.5
-  date_time_picker: ^2.1.0
-  flutter_signin_button: ^2.0.0
-  location: ^4.3.0
-  geocoding: ^2.0.0
-  pdf_text: ^0.5.0
-  share_plus: ^2.1.4
-  image_picker: ^0.8.2
-  file_picker: ^3.0.3
-  firebase_storage: ^10.0.1
-  carousel_slider: ^4.0.0
-  flutter_cache_manager: ^3.1.2
-  cached_network_image: ^3.1.0
-  google_maps_flutter: ^2.0.6 #platform
-  google_maps: ^5.1.0 #web
   auto_size_text: ^3.0.0-nullsafety.0
   badges: ^2.0.1
-  modal_bottom_sheet: ^2.0.0
+  bubble_tab_indicator: ^0.1.6
+  cached_network_image: ^3.1.0
+  calendar_timeline: ^1.0.1-null-safety.0
+  carousel_slider: ^4.0.0
+  cloud_firestore: ^2.4.0
+  date_time_picker: ^2.1.0
+  device_info_plus: ^2.1.0
+  file_picker: ^3.0.3
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
+  firebase_storage: ^10.0.1
+  fluent_ui: ^3.5.2
+  flutter:
+    sdk: flutter
+  flutter_cache_manager: ^3.1.2
   flutter_datetime_picker: any
+  flutter_signin_button: ^2.0.0
+  geocoding: ^2.0.0
+  google_fonts: ^2.1.0
+  google_maps: ^5.1.0
+  google_maps_flutter: ^2.0.6
+  google_sign_in: ^5.0.5
+  image_picker: ^0.8.2
   intl: any
+  location: ^4.3.0
+  modal_bottom_sheet: ^2.0.0
+  pdf_text: ^0.5.0
+  share_plus: ^3.0.4
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter:
+flutter: null
