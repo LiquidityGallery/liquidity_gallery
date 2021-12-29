@@ -13,14 +13,14 @@ dependencies:
   bubble_tab_indicator: ^0.1.6
   cached_network_image: ^3.1.0
   calendar_timeline: ^1.0.1-null-safety.0
-  carousel_slider: ^4.0.0
-  cloud_firestore: ^3.1.5
+  carousel_slider: any
+  cloud_firestore: any
   date_time_picker: ^2.1.0
-  device_info_plus: ^3.2.0
+  device_info_plus: any
   file_picker: ^3.0.3
-  firebase_auth: ^3.3.4
-  firebase_core: ^1.10.6
-  firebase_storage: ^10.0.1
+  firebase_auth: any
+  firebase_core: any
+  firebase_storage: any
   fluent_ui: ^3.5.2
   flutter:
     sdk: flutter
@@ -28,7 +28,7 @@ dependencies:
   flutter_datetime_picker: any
   flutter_signin_button: ^2.0.0
   geocoding: ^2.0.0
-  google_fonts: ^2.1.0
+  google_fonts: any
   google_maps: ^5.1.0
   google_maps_flutter: ^2.0.6
   google_sign_in: ^5.0.5
@@ -37,7 +37,7 @@ dependencies:
   location: ^4.3.0
   modal_bottom_sheet: ^2.0.0
   pdf_text: ^0.5.0
-  share_plus: ^3.0.4
+  share_plus: any
   url_launcher: ^6.0.9
 
 dev_dependencies:
