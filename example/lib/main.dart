@@ -221,11 +221,11 @@ print(await fx.getAvailableCurrencies());
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (_) => NestedNavigationFlowView())),
           ),
-          ListTile(
-            title: Text('Pick image example'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => PickImageView())),
-          ),
+          // ListTile(
+          //   title: Text('Pick image example'),
+          //   onTap: () => Navigator.push(
+          //       context, MaterialPageRoute(builder: (_) => PickImageView())),
+          // ),
           ListTile(
             title: Text('Access example'),
             onTap: () => Navigator.push(
