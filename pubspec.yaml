@@ -16,7 +16,6 @@ dependencies:
   carousel_slider: any
   cloud_firestore: any
   date_time_picker: ^2.1.0
-  file_picker: ^4.3.0
   firebase_auth: any
   firebase_core: any
   firebase_storage: any
