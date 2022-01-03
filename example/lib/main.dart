@@ -193,10 +193,10 @@ print(await fx.getAvailableCurrencies());
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (_) => LocationInfoView())),
           ),
-          ListTile(
-              title: Text('Location and Google Map'),
-              onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => LocationView()))),
+          // ListTile(
+          //     title: Text('Location and Google Map'),
+          //     onTap: () => Navigator.push(
+          //         context, MaterialPageRoute(builder: (_) => LocationView()))),
           ListTile(
               title: Text('Export Text From PDF'),
               onTap: () => Navigator.push(context,
