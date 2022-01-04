@@ -12,7 +12,7 @@ class Forex {
     Uri baseUri = Uri.parse('http://www.convertmymoney.com/rates.json');
     final response = await http.get(baseUri);
     Map<String, dynamic> jsonResponse =
-    json.decode(response.body) as Map<String, dynamic>;
+        json.decode(response.body) as Map<String, dynamic>;
     _rates = jsonResponse.remove("rates") as Map<String, dynamic>;
   }
 
@@ -55,11 +55,42 @@ class Forex {
   }
 }
 
-Future<double> getRate(Currency currency, Currency toCurrency, {double? amount})async {
-  final fx = Forex();
-  double myPrice = await fx.getCurrencyConverted(describeEnum(currency), describeEnum(toCurrency), amount ?? 1);
+const key = '03ab98ff1731468b917a';
 
-  print("${describeEnum(currency)} to ${describeEnum(toCurrency)}(${amount ?? 1}) = ${myPrice}");
+Future<num> getRateWeb(http.Client client, Currency from, Currency to) async {
+  final response = await client.get(
+    Uri.parse(
+        'https://free.currconv.com/api/v7/convert?q=${from.name}_${to.name}&compact=ultra&apiKey=$key'),
+  );
+  return parse(response.body);
+}
 
-  return myPrice;
+num parse(String responseBody) {
+  final parsed = jsonDecode(responseBody) as Map<String, dynamic>;
+  if (parsed.isEmpty) {
+    throw 'Given currency not found.';
+  } else {
+    return parsed.values.first;
+  }
+}
+
+Future<num> getRate(Currency currency, Currency toCurrency,
+    {double? amount}) async {
+  if (kIsWeb) {
+    if (amount != null) {
+      return amount * (await getRateWeb(http.Client(), currency, toCurrency));
+    } else {
+      final rate = await getRateWeb(http.Client(), currency, toCurrency);
+      return rate;
+    }
+  } else {
+    final fx = Forex();
+    double myPrice = await fx.getCurrencyConverted(
+        describeEnum(currency), describeEnum(toCurrency), amount ?? 1);
+
+    print(
+        "${describeEnum(currency)} to ${describeEnum(toCurrency)}(${amount ?? 1}) = ${myPrice}");
+
+    return myPrice;
+  }
 }
