@@ -215,4 +215,5 @@ enum Country {
   Zambia,
   Zimbabwe,
   Greenland,
+  SouthAmerica,
 }
