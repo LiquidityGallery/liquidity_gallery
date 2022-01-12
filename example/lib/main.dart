@@ -21,7 +21,6 @@ import 'PickImageView.dart';
 import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
 import 'SwitchButtonView.dart';
-import 'package:calendar_timeline/calendar_timeline.dart';
 
 void main() => runApp(MyApp());
 
@@ -72,20 +71,20 @@ print(await fx.getAvailableCurrencies());
             final _bool = await onYesNo(context).timeout(Duration(seconds: 1), onTimeout: () => throw 'timeout');
             print(_bool);
           }),
-          CalendarTimeline(
-            initialDate: DateTime(2020, 4, 20),
-            firstDate: DateTime(2019, 1, 15),
-            lastDate: DateTime(2020, 11, 20),
-            onDateSelected: (date) => print(date),
-            leftMargin: 20,
-            monthColor: Colors.blueGrey,
-            dayColor: Colors.teal[200],
-            activeDayColor: Colors.white,
-            activeBackgroundDayColor: Colors.redAccent[100],
-            dotsColor: Color(0xFF333A47),
-            selectableDayPredicate: (date) => date.day != 23,
-            locale: 'en_ISO',
-          ),
+          // CalendarTimeline(
+          //   initialDate: DateTime(2020, 4, 20),
+          //   firstDate: DateTime(2019, 1, 15),
+          //   lastDate: DateTime(2020, 11, 20),
+          //   onDateSelected: (date) => print(date),
+          //   leftMargin: 20,
+          //   monthColor: Colors.blueGrey,
+          //   dayColor: Colors.teal[200],
+          //   activeDayColor: Colors.white,
+          //   activeBackgroundDayColor: Colors.redAccent[100],
+          //   dotsColor: Color(0xFF333A47),
+          //   selectableDayPredicate: (date) => date.day != 23,
+          //   locale: 'en_ISO',
+          // ),
           ContentCard(
             imageURL:
                 'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
@@ -170,15 +169,15 @@ print(await fx.getAvailableCurrencies());
           ListTile(
             title: Text('Twitter Light Out Login'),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => TwitterLoginView(
-                            onLogin: (username, password) {
-                              print('Username: $username, Password: $password');
-                            },
-                            onGoogleLogin: () {},
-                          )));
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (_) => TwitterLoginView(
+              //               onLogin: (username, password) {
+              //                 print('Username: $username, Password: $password');
+              //               },
+              //               onGoogleLogin: () {},
+              //             )));
             },
           ),
           ListTile(
@@ -233,8 +232,8 @@ print(await fx.getAvailableCurrencies());
           ),
           ListTile(
             title: Text('Badges Icon'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => BadgesIconView())),
+            // onTap: () => Navigator.push(
+            //     context, MaterialPageRoute(builder: (_) => BadgesIconView())),
           ),
           ListTile(
             title: Text('Modal sheet example'),

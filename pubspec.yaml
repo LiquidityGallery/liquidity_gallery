@@ -1,6 +1,6 @@
 name: liquidity_gallery
 description: A gallery for ellie & logistized app
-version: 0.0.1
+version: 1.0.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
