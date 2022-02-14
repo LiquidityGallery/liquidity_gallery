@@ -144,7 +144,9 @@ class _TimeRangeList extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             elevation: 0,
-            primary: this.timeRange == timeRange ? null : Colors.transparent),
+            primary: this.timeRange == timeRange ? null : Colors.transparent,
+            textStyle: TextStyle(
+                color: this.timeRange == timeRange ? null : Colors.black)),
         onPressed: () {
           onChanged(timeRange);
         },
