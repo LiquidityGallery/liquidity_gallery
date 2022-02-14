@@ -1,7 +1,3 @@
-import 'package:example/LocationView.dart';
-import 'package:example/StartEndDatePickerView.dart';
-import 'package:example/TwitterLightOutView.dart';
-import 'package:example/TwitterThemeView.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/Class.dart';
@@ -20,7 +16,10 @@ import 'NestedNavigationFlowView.dart';
 import 'PickImageView.dart';
 import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
+import 'StartEndDatePickerView.dart';
 import 'SwitchButtonView.dart';
+import 'TwitterLightOutView.dart';
+import 'TwitterThemeView.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,31 +45,43 @@ class MainView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          TextButton(onPressed: ()async {
-            print(await datePicker(context));
-          }, child: Text("Date Picker")),
+          TextButton(
+              onPressed: () async {
+                print(await datePicker(context));
+              },
+              child: Text("Date Picker")),
 
           ListTile(
             title: Text('Currency picker'),
-            onTap: () async{
+            onTap: () async {
               print(await enumPicker(context, Currency.values));
             },
           ),
-TextButton(child: Text("Exchange"),onPressed: () async{
-  final fx = Forex();
-  double myPrice = await fx.getCurrencyConverted(describeEnum(Currency.CNY), "HKD", 100);
-  print("100 USD in HKD: ${myPrice}");
-print(await fx.getAvailableCurrencies());
-},),
+          TextButton(
+            child: Text("Exchange"),
+            onPressed: () async {
+              final fx = Forex();
+              double myPrice = await fx.getCurrencyConverted(
+                  describeEnum(Currency.CNY), "HKD", 100);
+              print("100 USD in HKD: ${myPrice}");
+              print(await fx.getAvailableCurrencies());
+            },
+          ),
 
-          ConfirmButton(text: 'test this button', onPressed: () async {
-            print("Test");
-            //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');
-          }),
-          ConfirmButton(text: 'test onYesNo', onPressed: () async {
-            final _bool = await onYesNo(context).timeout(Duration(seconds: 1), onTimeout: () => throw 'timeout');
-            print(_bool);
-          }),
+          ConfirmButton(
+              text: 'test this button',
+              onPressed: () async {
+                print("Test");
+                //await Future.delayed(Duration(seconds: 20)).timeout(Duration(seconds: 5), onTimeout: () => throw'timeout');
+              }),
+          ConfirmButton(
+              text: 'test onYesNo',
+              onPressed: () async {
+                final _bool = await onYesNo(context).timeout(
+                    Duration(seconds: 1),
+                    onTimeout: () => throw 'timeout');
+                print(_bool);
+              }),
           // CalendarTimeline(
           //   initialDate: DateTime(2020, 4, 20),
           //   firstDate: DateTime(2019, 1, 15),

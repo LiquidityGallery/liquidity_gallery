@@ -7,7 +7,7 @@ class BubbleTabBar extends StatefulWidget {
   final Color? backgroundColor;
   final Color? labelColor;
   final Color? indicatorColor;
- final double tabHeight;
+  final double tabHeight;
   final Color? unselectedLabalColor;
 
   BubbleTabBar(
@@ -16,7 +16,9 @@ class BubbleTabBar extends StatefulWidget {
       required this.children,
       this.backgroundColor,
       this.labelColor,
-      this.indicatorColor, this.unselectedLabalColor, this.tabHeight=40})
+      this.indicatorColor,
+      this.unselectedLabalColor,
+      this.tabHeight = 40})
       : super(key: key);
 
   @override
@@ -54,12 +56,15 @@ class HomeWidgetState extends State<BubbleTabBar>
     return Container(
       child: Column(
         children: [
-         Container(
-          height: widget.tabHeight,
+          Container(
+            height: widget.tabHeight,
             child: TabBar(
               isScrollable: true,
-              unselectedLabelColor: widget.unselectedLabalColor == null ? Colors.grey : widget.unselectedLabalColor,
-              labelColor: widget.labelColor == null ? Colors.white : widget.labelColor,
+              unselectedLabelColor: widget.unselectedLabalColor == null
+                  ? Colors.grey
+                  : widget.unselectedLabalColor,
+              labelColor:
+                  widget.labelColor == null ? Colors.white : widget.labelColor,
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BubbleTabIndicator(
                 indicatorHeight: 25.0,
@@ -81,7 +86,7 @@ class HomeWidgetState extends State<BubbleTabBar>
             child: Container(
               child: new TabBarView(
                 controller: _tabController,
-                children: widget.children!,
+                children: widget.children,
               ),
             ),
           ),
