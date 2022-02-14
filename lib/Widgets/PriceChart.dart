@@ -143,14 +143,17 @@ class _TimeRangeList extends StatelessWidget {
   Widget _button(TimeRange timeRange) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            elevation: 0,
-            primary: this.timeRange == timeRange ? null : Colors.transparent,
-            textStyle: TextStyle(
-                color: this.timeRange == timeRange ? null : Colors.black)),
+          elevation: 0,
+          primary: this.timeRange == timeRange ? null : Colors.transparent,
+        ),
         onPressed: () {
           onChanged(timeRange);
         },
-        child: Text(timeRange.shortName()));
+        child: Text(
+          timeRange.shortName(),
+          style: TextStyle(
+              color: this.timeRange == timeRange ? null : Colors.black),
+        ));
   }
 
   @override
