@@ -72,7 +72,7 @@ subtitle==null? Container():                               Padding(
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(9.0),
                           child: Column(
                             children: [
 imageOnLeft==true?                               Row(
