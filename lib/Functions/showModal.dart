@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 Future<dynamic> showModal(BuildContext context,
-    Widget child, {double? radius}) async {
+    Widget child, {double? radius, bool? isDismissible}) async {
   return  await showModalBottomSheet(
+      isDismissible: isDismissible==null? true: isDismissible,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -22,8 +23,9 @@ Future<dynamic> showModal(BuildContext context,
 }
 
 Future<dynamic> showModalMax(BuildContext context,
-    Widget child, {double? radius, num height=0.92}) async {
+    Widget child, {double? radius, num height=0.92,bool? isDismissible}) async {
   return await showModalBottomSheet(
+      isDismissible: isDismissible==null? true: isDismissible,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
