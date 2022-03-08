@@ -114,10 +114,13 @@ class DisplayFrame extends StatelessWidget {
   final Color? titlecolor;
   final Widget? child;
   final Color? subtitlecolor;
+  final double width;
+  final double height;
+  final Widget? child2;
 
 
   ///A image container with prebuild title and subtitle. Auto-adjust layout
-  const DisplayFrame({Key? key, this.title, this.subtitle, this.titlecolor, this.subtitlecolor, this.child}) : super(key: key);
+  const DisplayFrame({Key? key, this.title, this.subtitle, this.titlecolor, this.subtitlecolor, this.child, this.child2, this.height=260, this.width=330}) : super(key: key);
 
 
   @override
@@ -146,12 +149,13 @@ child: child,
                           spreadRadius: 0.5,
                         )
                       ]),
-                  width: 330,
-                  height: 260,
+                  width: width,
+                  height: height,
                 ),
               ),
             ),
           ),
+          child2== null ? Container() : child2!,
           title == null ? Container() : Padding(
             padding: const EdgeInsets.only(left: 8, top: 10, bottom: 6),
             child: Text(
