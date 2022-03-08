@@ -136,7 +136,7 @@ class DisplayFrame extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(top: 8,right: 8,left: 8),
                 child: Container(
 child: child,
                   decoration: BoxDecoration(
@@ -155,7 +155,10 @@ child: child,
               ),
             ),
           ),
-          child2== null ? Container() : child2!,
+          child2== null ? Container() : Padding(
+            padding: const EdgeInsets.only(right: 8,left: 8,bottom: 8),
+            child: child2!,
+          ),
           title == null ? Container() : Padding(
             padding: const EdgeInsets.only(left: 8, top: 10, bottom: 6),
             child: Text(
