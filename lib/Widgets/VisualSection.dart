@@ -117,17 +117,20 @@ class DisplayFrame extends StatelessWidget {
   final double width;
   final double height;
   final Widget? child2;
+  final double radius;
 
 
   ///A image container with prebuild title and subtitle. Auto-adjust layout
-  const DisplayFrame({Key? key, this.title, this.subtitle, this.titlecolor, this.subtitlecolor, this.child, this.child2, this.height=260, this.width=330}) : super(key: key);
+  const DisplayFrame({Key? key, this.title, this.subtitle, this.titlecolor, this.subtitlecolor, this.child, this.child2, this.height=260, this.width=330, this.radius=0}) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 330,
-      child: Column(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -138,7 +141,7 @@ class DisplayFrame extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 8,right: 8,left: 8),
                 child: Container(
-child: child,
+                  child: child,
                   decoration: BoxDecoration(
                     //  color: Colors.cyan,
                       borderRadius: BorderRadius.circular(8.0),
@@ -174,7 +177,7 @@ child: child,
             ),
           )
         ],
-      ),
+      ),),
     );
   }
 }
