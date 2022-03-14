@@ -20,7 +20,7 @@ class ListButton extends StatelessWidget {
           child: ListTile(
             leading: icon,
             title: child,
-            trailing: trailing?? Container(),
+            trailing: trailing== null ? Container() : trailing
           )),
     );
   }
