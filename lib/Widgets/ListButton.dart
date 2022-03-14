@@ -6,8 +6,8 @@ class ListButton extends StatelessWidget {
   final Function() onTap;
   final Icon icon;
   final Widget child;
-  final Widget? trailing;
-  const ListButton({Key? key, required this.onTap, required this.icon, required this.child, this.trailing}) : super(key: key);
+
+  const ListButton({Key? key, required this.onTap, required this.icon, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ListButton extends StatelessWidget {
           child: ListTile(
             leading: icon,
             title: child,
-            trailing: trailing== null ? Container() : trailing
+
           )),
     );
   }
