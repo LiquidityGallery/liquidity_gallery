@@ -382,7 +382,7 @@ class HeroBoard extends StatelessWidget {
   final double? subtitlefontsize;
   final Color? titlecolor;
   final Color? subtitlecolor;
-  final void Function()? onPressed;
+  final Function()? onPressed;
   final Color? buttoncolor;
   final double? radius;
   final Color? buttontextcolor;
@@ -398,7 +398,7 @@ class HeroBoard extends StatelessWidget {
       this.subtitlefontsize = 18,
       this.titlecolor,
       this.subtitlecolor,
-      this.onPressed,
+     this.onPressed,
       this.buttoncolor,
       this.radius = 30,
       this.buttontextcolor,
@@ -449,7 +449,7 @@ class HeroBoard extends StatelessWidget {
                 onPressed == null
                     ? Container()
                     : ConfirmButton(
-                        onPressed: () async {onPressed!;},
+                        onPressed: onPressed!,
                         color:
                             buttoncolor == null ? Colors.yellow : buttoncolor,
                         text: buttontext,
