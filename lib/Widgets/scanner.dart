@@ -14,6 +14,7 @@ class Scanner extends StatefulWidget {
     this.enableAudio = true,
     this.buttonAlignment = Alignment.bottomCenter,
     required this.child,
+    this.debugInput,
   }) : super(key: key);
 
   final bool Function(String result) validator;
@@ -27,6 +28,8 @@ class Scanner extends StatefulWidget {
   final Alignment buttonAlignment;
 
   final Widget child;
+
+  final String? debugInput;
 
   @override
   State<Scanner> createState() => _ScannerState();
@@ -45,7 +48,7 @@ class _ScannerState extends State<Scanner>
   handle(String result) {
     widget.onDecoded(result);
     if (widget.showScanned) {
-      Fluttertoast.showToast(msg: result ?? 'empty', gravity: ToastGravity.TOP);
+      Fluttertoast.showToast(msg: result, gravity: ToastGravity.TOP);
     }
     if (widget.enableAudio) playCorrect();
   }
@@ -105,7 +108,23 @@ class _ScannerState extends State<Scanner>
                 onTapDown: (details) => honeywellScanner.startScanning(),
               ),
             ),
-          )
+          ),
+        if (widget.debugInput != null)
+          Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.all(30),
+                child: IconButton(
+                  icon: const Icon(Icons.bug_report),
+                  onPressed: () {
+                    if (widget.validator(widget.debugInput!)) {
+                      handle(widget.debugInput!);
+                    } else {
+                      handleError('Scanned code invalid');
+                    }
+                  },
+                ),
+              ))
       ],
     );
   }
