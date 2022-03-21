@@ -16,9 +16,9 @@ class Scanner extends StatefulWidget {
     required this.child,
   }) : super(key: key);
 
-  final bool Function(String? result) validator;
+  final bool Function(String result) validator;
 
-  final void Function(String? result) onDecoded;
+  final void Function(String result) onDecoded;
   final void Function(Exception error) onError;
 
   final bool showScanned;
@@ -42,7 +42,7 @@ class _ScannerState extends State<Scanner>
   playCorrect() => audioPlayer.play('correct.wav');
   playError() => audioPlayer.play('error.wav');
 
-  handle(String? result) {
+  handle(String result) {
     widget.onDecoded(result);
     if (widget.showScanned) {
       Fluttertoast.showToast(msg: result ?? 'empty', gravity: ToastGravity.TOP);
@@ -73,7 +73,7 @@ class _ScannerState extends State<Scanner>
 
   @override
   void onDecoded(String? result) {
-    if (widget.validator(result)) {
+    if (result != null && widget.validator(result)) {
       handle(result);
     } else {
       handleError('Scanned code invalid');
