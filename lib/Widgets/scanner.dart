@@ -40,6 +40,8 @@ class _ScannerState extends State<Scanner>
     implements ScannerCallBack {
   final HoneywellScanner honeywellScanner = HoneywellScanner();
 
+  bool isDeviceSupported = false;
+
   final audioPlayer = AudioCache(prefix: 'assets/audios/');
 
   playCorrect() => audioPlayer.play('correct.wav');
@@ -61,7 +63,7 @@ class _ScannerState extends State<Scanner>
   }
 
   Future<void> init() async {
-    final isDeviceSupported = await honeywellScanner.isSupported();
+    isDeviceSupported = await honeywellScanner.isSupported();
     if (isDeviceSupported) await honeywellScanner.startScanner();
     if (mounted) setState(() {});
   }
@@ -94,7 +96,7 @@ class _ScannerState extends State<Scanner>
     return Stack(
       children: [
         widget.child,
-        if (widget.enableOnScreenScanButton)
+        if (widget.enableOnScreenScanButton && isDeviceSupported)
           Align(
             alignment: widget.buttonAlignment,
             child: Padding(
@@ -104,8 +106,12 @@ class _ScannerState extends State<Scanner>
                   Icons.qr_code_scanner,
                   size: 30,
                 ),
-                onTapUp: (details) => honeywellScanner.stopScanning(),
-                onTapDown: (details) => honeywellScanner.startScanning(),
+                onTapUp: (details) {
+                  if (isDeviceSupported) honeywellScanner.stopScanning();
+                },
+                onTapDown: (details) {
+                  if (isDeviceSupported) honeywellScanner.startScanning();
+                },
               ),
             ),
           ),
@@ -132,25 +138,27 @@ class _ScannerState extends State<Scanner>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
-    switch (state) {
-      case AppLifecycleState.resumed:
-        honeywellScanner.resumeScanner();
-        break;
-      case AppLifecycleState.inactive:
-        honeywellScanner.pauseScanner();
-        break;
-      case AppLifecycleState.paused:
-        honeywellScanner.pauseScanner();
-        break;
-      case AppLifecycleState.detached:
-        honeywellScanner.pauseScanner();
-        break;
+    if (isDeviceSupported) {
+      switch (state) {
+        case AppLifecycleState.resumed:
+          honeywellScanner.resumeScanner();
+          break;
+        case AppLifecycleState.inactive:
+          honeywellScanner.pauseScanner();
+          break;
+        case AppLifecycleState.paused:
+          honeywellScanner.pauseScanner();
+          break;
+        case AppLifecycleState.detached:
+          honeywellScanner.pauseScanner();
+          break;
+      }
     }
   }
 
   @override
   void dispose() {
-    honeywellScanner.stopScanner();
+    if (isDeviceSupported) honeywellScanner.stopScanner();
     super.dispose();
   }
 }
