@@ -79,7 +79,11 @@ class _ScannerState extends State<Scanner>
   @override
   void onDecoded(String? result) {
     if (result != null && widget.validator(result)) {
-      handle(result);
+      try {
+        handle(result);
+      } catch (e) {
+        handleError(e.toString());
+      }
     } else {
       handleError('Scanned code invalid');
     }
