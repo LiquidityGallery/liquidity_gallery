@@ -19,7 +19,7 @@ class Scanner extends StatefulWidget {
 
   final bool Function(String result) validator;
 
-  final void Function(String result) onDecoded;
+  final Function(String result) onDecoded;
   final void Function(Exception error) onError;
 
   final bool showScanned;
@@ -47,9 +47,9 @@ class _ScannerState extends State<Scanner>
   playCorrect() => audioPlayer.play('correct.wav');
   playError() => audioPlayer.play('error.wav');
 
-  handle(String result) {
+  handle(String result) async {
     try {
-      widget.onDecoded(result);
+      await widget.onDecoded(result);
     } catch (e) {
       handleError(e.toString());
       return;
