@@ -48,7 +48,12 @@ class _ScannerState extends State<Scanner>
   playError() => audioPlayer.play('error.wav');
 
   handle(String result) {
-    widget.onDecoded(result);
+    try {
+      widget.onDecoded(result);
+    } catch (e) {
+      handleError(e.toString());
+      return;
+    }
     if (widget.showScanned) {
       Fluttertoast.showToast(msg: result, gravity: ToastGravity.TOP);
     }
@@ -79,11 +84,7 @@ class _ScannerState extends State<Scanner>
   @override
   void onDecoded(String? result) {
     if (result != null && widget.validator(result)) {
-      try {
-        handle(result);
-      } catch (e) {
-        handleError(e.toString());
-      }
+      handle(result);
     } else {
       handleError('Scanned code invalid');
     }
