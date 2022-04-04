@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class RadioButtons extends StatefulWidget {
@@ -27,24 +28,28 @@ class _RadioButtonsState extends State<RadioButtons> {
     _selected = widget.initValue;
   }
 
-  Widget _button(bool isSelected, String text) {
+  Widget _button(bool isSelected, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-      child: GestureDetector(
+      child: InkWell(
+        hoverColor: Colors.transparent,
         onTap: () {
-          setState(() => _selected = text);
-          widget.onChanged(text);
+          setState(() => _selected = value);
+          widget.onChanged(value);
         },
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: isSelected ? Colors.blue : Colors.grey),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          child: Center(
-              child: Text(
-            '#$text',
-            style: const TextStyle(color: Colors.white, fontSize: 16),
-          )),
+          child: Text(
+            '#$value',
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
     );
@@ -52,15 +57,21 @@ class _RadioButtonsState extends State<RadioButtons> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
+    return kIsWeb
+        ? Wrap(
             children: widget.children
                 .map((string) => _button(_selected == string, string))
-                .toList()),
-      ),
-    );
+                .toList(),
+          )
+        : SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              height: 50,
+              child: Row(
+                  children: widget.children
+                      .map((string) => _button(_selected == string, string))
+                      .toList()),
+            ),
+          );
   }
 }
