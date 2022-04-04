@@ -104,20 +104,17 @@ class _ScannerState extends State<Scanner>
         if (widget.enableOnScreenScanButton && isDeviceSupported)
           Align(
             alignment: widget.buttonAlignment,
-            child: Padding(
-              padding: const EdgeInsets.all(30),
-              child: GestureDetector(
-                child: const Icon(
-                  Icons.qr_code_scanner,
-                  size: 30,
-                ),
-                onTapUp: (details) {
-                  if (isDeviceSupported) honeywellScanner.stopScanning();
-                },
-                onTapDown: (details) {
-                  if (isDeviceSupported) honeywellScanner.startScanning();
-                },
+            child: GestureDetector(
+              child: Container(
+                height: 60,
+                color: Colors.transparent,
               ),
+              onTapUp: (details) {
+                if (isDeviceSupported) honeywellScanner.stopScanning();
+              },
+              onTapDown: (details) {
+                if (isDeviceSupported) honeywellScanner.startScanning();
+              },
             ),
           ),
         if (widget.debugInput != null)
