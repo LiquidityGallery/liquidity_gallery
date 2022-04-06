@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class TwitterLoginView extends StatefulWidget {
@@ -76,14 +75,16 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
                   Divider(),
                 ],
               )),
-          TextDivider(text: 'or',),
-          Visibility(
-            visible: widget.onGoogleLogin != null,
-            child: SignInButton(
-              Buttons.GoogleDark,
-              onPressed: () {},
-            ),
-          )
+          TextDivider(
+            text: 'or',
+          ),
+          // Visibility(
+          //   visible: widget.onGoogleLogin != null,
+          //   child: SignInButton(
+          //     Buttons.GoogleDark,
+          //     onPressed: () {},
+          //   ),
+          // )
         ]),
         bottomNavigationBar: Visibility(
           visible: widget.onLogin != null,
@@ -100,8 +101,8 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
                     TextButton(
                         child: Text(
                           'Forgot password?',
-                          style: TextStyle(
-                              color: Color.fromRGBO(66, 144, 211, 1)),
+                          style:
+                              TextStyle(color: Color.fromRGBO(66, 144, 211, 1)),
                         ),
                         onPressed: () {}),
                     Spacer(),
@@ -110,8 +111,8 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
                           _passwordController.text.isNotEmpty,
                       text: widget.loginText,
                       onTap: () {
-                        widget.onLogin!(_usernameController.text,
-                            _passwordController.text);
+                        widget.onLogin!(
+                            _usernameController.text, _passwordController.text);
                       },
                     )
                   ],

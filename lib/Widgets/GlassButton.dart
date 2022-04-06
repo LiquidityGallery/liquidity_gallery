@@ -7,16 +7,30 @@ class GlassButton extends StatelessWidget {
   final Color? color;
   final double borderWidth;
 
-  const GlassButton({Key? key, required this.child, this.radius, this.color, this.borderWidth=1, required this.onTap}) : super(key: key);
+  const GlassButton(
+      {Key? key,
+      required this.child,
+      this.radius,
+      this.color,
+      this.borderWidth = 1,
+      required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: onTap,
-        child: Container(child: Padding(
-      padding: const EdgeInsets.only(top: 8,bottom: 8,right: 12,left: 12),
-      child:   child==null ? Container() : child!,
-    ),decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius==null ? 10 : radius!),border: Border.all(width: borderWidth, color: color ?? Colors.grey)),));
-
+        child: Container(
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 8, bottom: 8, right: 12, left: 12),
+            child: child == null ? Container() : child,
+          ),
+          decoration: BoxDecoration(
+              borderRadius:
+                  BorderRadius.circular(radius == null ? 10 : radius!),
+              border:
+                  Border.all(width: borderWidth, color: color ?? Colors.grey)),
+        ));
   }
 }
