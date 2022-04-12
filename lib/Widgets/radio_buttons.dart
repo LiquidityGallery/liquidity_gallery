@@ -57,21 +57,25 @@ class _RadioButtonsState extends State<RadioButtons> {
 
   @override
   Widget build(BuildContext context) {
-    return kIsWeb
-        ? Wrap(
-            children: widget.children
-                .map((string) => _button(_selected == string, string))
-                .toList(),
-          )
-        : SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: SizedBox(
-              height: 50,
-              child: Row(
-                  children: widget.children
-                      .map((string) => _button(_selected == string, string))
-                      .toList()),
-            ),
-          );
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth > 600) {
+        return Wrap(
+          children: widget.children
+              .map((string) => _button(_selected == string, string))
+              .toList(),
+        );
+      } else {
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SizedBox(
+            height: 50,
+            child: Row(
+                children: widget.children
+                    .map((string) => _button(_selected == string, string))
+                    .toList()),
+          ),
+        );
+      }
+    });
   }
 }
