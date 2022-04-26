@@ -37,7 +37,7 @@ class Scanner extends StatefulWidget {
 
 class _ScannerState extends State<Scanner>
     with WidgetsBindingObserver
-    implements ScannerCallBack {
+    implements ScannerCallback {
   final HoneywellScanner honeywellScanner = HoneywellScanner();
 
   bool isDeviceSupported = false;
@@ -67,6 +67,14 @@ class _ScannerState extends State<Scanner>
     if (widget.enableAudio) playError();
   }
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addObserver(this);
+    honeywellScanner.scannerCallback = this;
+    init();
+  }
+
   Future<void> init() async {
     isDeviceSupported = await honeywellScanner.isSupported();
     if (isDeviceSupported) await honeywellScanner.startScanner();
@@ -74,17 +82,11 @@ class _ScannerState extends State<Scanner>
   }
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance?.addObserver(this);
-    honeywellScanner.setScannerCallBack(this);
-    init();
-  }
-
-  @override
-  void onDecoded(String? result) {
-    if (result != null && widget.validator(result)) {
-      handle(result);
+  void onDecoded(ScannedData? scannedData) {
+    if (scannedData != null &&
+        scannedData.code != null &&
+        widget.validator(scannedData.code!)) {
+      handle(scannedData.code!);
     } else {
       handleError('Scanned code invalid');
     }
@@ -104,17 +106,20 @@ class _ScannerState extends State<Scanner>
         if (widget.enableOnScreenScanButton && isDeviceSupported)
           Align(
             alignment: widget.buttonAlignment,
-            child: GestureDetector(
-              child: Container(
-                height: 60,
-                color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: GestureDetector(
+                child: const Icon(
+                  Icons.qr_code_scanner,
+                  size: 30,
+                ),
+                onTapUp: (details) {
+                  if (isDeviceSupported) honeywellScanner.stopScanning();
+                },
+                onTapDown: (details) {
+                  if (isDeviceSupported) honeywellScanner.startScanning();
+                },
               ),
-              onTapUp: (details) {
-                if (isDeviceSupported) honeywellScanner.stopScanning();
-              },
-              onTapDown: (details) {
-                if (isDeviceSupported) honeywellScanner.startScanning();
-              },
             ),
           ),
         if (widget.debugInput != null)
@@ -122,7 +127,8 @@ class _ScannerState extends State<Scanner>
               alignment: Alignment.bottomRight,
               child: Padding(
                 padding: const EdgeInsets.all(30),
-                child: IconButton(
+                child: Material(
+                    child: IconButton(
                   icon: const Icon(Icons.bug_report),
                   onPressed: () {
                     if (widget.validator(widget.debugInput!)) {
@@ -131,7 +137,7 @@ class _ScannerState extends State<Scanner>
                       handleError('Scanned code invalid');
                     }
                   },
-                ),
+                )),
               ))
       ],
     );

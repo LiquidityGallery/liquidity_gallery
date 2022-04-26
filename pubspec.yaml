@@ -31,7 +31,7 @@ dependencies:
   geocoding: ^2.0.0
   google_fonts: any
   google_sign_in: ^5.0.5
-  honeywell_scanner: ^3.2.0+13
+  honeywell_scanner: ^4.0.0+14
   image_picker: ^0.8.2
   intl: any
   location: ^4.3.0

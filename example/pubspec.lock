@@ -405,7 +405,7 @@ packages:
       name: honeywell_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.0+13"
+    version: "4.0.0+14"
   http:
     dependency: transitive
     description:
