@@ -10,7 +10,7 @@ class Scanner extends StatefulWidget {
     required this.onDecoded,
     required this.onError,
     this.showScanned = true,
-    this.enableOnScreenScanButton = true,
+    this.enableOnScreenScanButton = false,
     this.enableAudio = true,
     this.buttonAlignment = Alignment.bottomCenter,
     required this.child,
