@@ -70,7 +70,6 @@ class _ScannerState extends State<Scanner>
   @override
   void initState() {
     super.initState();
-    updateScanProperties();
     WidgetsBinding.instance.addObserver(this);
     honeywellScanner.scannerCallback = this;
     init();
@@ -91,6 +90,7 @@ class _ScannerState extends State<Scanner>
 
   Future<void> init() async {
     isDeviceSupported = await honeywellScanner.isSupported();
+    if (isDeviceSupported) updateScanProperties();
     if (isDeviceSupported) await honeywellScanner.startScanner();
     if (mounted) setState(() {});
   }
