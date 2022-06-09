@@ -70,9 +70,23 @@ class _ScannerState extends State<Scanner>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addObserver(this);
+    updateScanProperties();
+    WidgetsBinding.instance.addObserver(this);
     honeywellScanner.scannerCallback = this;
     init();
+  }
+
+  void updateScanProperties() {
+    List<CodeFormat> codeFormats = [];
+    codeFormats.addAll(CodeFormatUtils.ALL_1D_FORMATS);
+    codeFormats.addAll(CodeFormatUtils.ALL_2D_FORMATS);
+
+    Map<String, dynamic> properties = {
+      ...CodeFormatUtils.getAsPropertiesComplement(codeFormats),
+      'DEC_CODABAR_START_STOP_TRANSMIT': true,
+      'DEC_EAN13_CHECK_DIGIT_TRANSMIT': true,
+    };
+    honeywellScanner.setProperties(properties);
   }
 
   Future<void> init() async {
