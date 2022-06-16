@@ -84,6 +84,7 @@ class _ScannerState extends State<Scanner>
       ...CodeFormatUtils.getAsPropertiesComplement(codeFormats),
       'DEC_CODABAR_START_STOP_TRANSMIT': true,
       'DEC_EAN13_CHECK_DIGIT_TRANSMIT': true,
+      'DEC_UPCA_CHECK_DIGIT_TRANSMIT': true,
     };
     honeywellScanner.setProperties(properties);
   }
