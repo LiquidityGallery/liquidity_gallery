@@ -49,7 +49,7 @@ class _ScannerState extends State<Scanner>
 
   handle(String result) async {
     try {
-      await widget.onDecoded(result);
+      await widget.onDecoded(result.trim());
     } catch (e) {
       handleError(e.toString());
       return;
