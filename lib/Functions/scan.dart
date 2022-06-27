@@ -7,8 +7,8 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 /// Scan barcode and qr code, then return [Barcode], return null if
 /// user close it.
 Future<void> scan(
-    BuildContext context, void Function(Barcode? barcode) onScan) async {
-  final barcode = await showModalBottomSheet<Barcode>(
+    BuildContext context, void Function(String? barcode) onScan) async {
+  final barcode = await showModalBottomSheet<String?>(
       context: context, builder: (context) => const _ScanView());
   onScan(barcode);
 }
@@ -26,7 +26,7 @@ class _ScanViewState extends State<_ScanView>
   bool isScanned = false;
 
   void onDetect(Barcode barcode, MobileScannerArguments? arguments) {
-    if (!isScanned) Navigator.maybePop(context, barcode);
+    if (!isScanned) Navigator.maybePop(context, barcode.rawValue);
     isScanned = true;
   }
 
