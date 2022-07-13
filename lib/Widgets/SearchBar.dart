@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 /// Searchbar for ios style
 class SearchBar extends StatefulWidget {
   final TextEditingController controller;
   final String placeholder;
   final Function(String)? onChanged;
+  final Colors? backgroundColor;
 
-  const SearchBar({Key? key,required this.controller, this.placeholder='Search', this.onChanged}) : super(key: key);
+  const SearchBar({Key? key,required this.controller, this.placeholder='Search', this.onChanged, this.backgroundColor}) : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -20,7 +22,7 @@ class _SearchBarState extends State<SearchBar> {
       padding: const EdgeInsets.only(left: 10,right: 10,bottom: 1),
       child: CupertinoTextField(
         padding: EdgeInsets.all(9),
-        decoration: BoxDecoration(color: Colors.grey[200],borderRadius: BorderRadius.circular(11)),
+        decoration: BoxDecoration(color: widget.backgroundColor== null?Colors.grey[200]: backgroundColor,borderRadius: BorderRadius.circular(11)),
         controller: widget.controller,
         onChanged: widget.onChanged,
         prefix: const Icon(
