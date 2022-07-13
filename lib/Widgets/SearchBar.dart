@@ -7,7 +7,7 @@ class SearchBar extends StatefulWidget {
   final TextEditingController controller;
   final String placeholder;
   final Function(String)? onChanged;
-  final Colors? backgroundColor;
+  final Color? backgroundColor;
 
   const SearchBar({Key? key,required this.controller, this.placeholder='Search', this.onChanged, this.backgroundColor}) : super(key: key);
 
