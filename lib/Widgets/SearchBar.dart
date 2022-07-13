@@ -22,16 +22,16 @@ class _SearchBarState extends State<SearchBar> {
       padding: const EdgeInsets.only(left: 10,right: 10,bottom: 1),
       child: CupertinoTextField(
         padding: EdgeInsets.all(9),
-        decoration: BoxDecoration(color: widget.backgroundColor== null?Colors.grey[200]: backgroundColor,borderRadius: BorderRadius.circular(11)),
+        decoration: BoxDecoration(color: Colors.grey[200],borderRadius: BorderRadius.circular(11)),
         controller: widget.controller,
         onChanged: widget.onChanged,
-        prefix: const Icon(
+        prefix: Icon(
           Icons.search,
-          color: CupertinoColors.systemGrey,
+          color: widget.backgroundColor== null?CupertinoColors.systemGrey: widget.backgroundColor ,
         ),
         placeholder: widget.placeholder,
         placeholderStyle:
-        const TextStyle(color: CupertinoColors.systemGrey),
+        TextStyle(color: widget.backgroundColor== null?CupertinoColors.systemGrey: widget.backgroundColor ),
       ),
     );
   }
