@@ -17,20 +17,20 @@ class ConfirmButton extends StatefulWidget {
   /// Version1.01 last update 20200610.
   ///
   /// A custom button with pre-build rounded colorful shape on it.
-  const ConfirmButton(
-      {Key? key,
-      required this.text,
-      this.color,
-      this.radius = 12,
-      required this.onPressed,
-      this.minWidth = 270,
-      this.height = 47,
-      this.textcolor,
-      this.isbold,
-      this.elevation = 1,
-      this.padding = 15.0, this.fontSize=15,
-      })
-      : super(key: key);
+  const ConfirmButton({
+    Key? key,
+    required this.text,
+    this.color,
+    this.radius = 12,
+    required this.onPressed,
+    this.minWidth = 270,
+    this.height = 47,
+    this.textcolor,
+    this.isbold,
+    this.elevation = 1,
+    this.padding = 15.0,
+    this.fontSize = 15,
+  }) : super(key: key);
 
   @override
   _ConfirmButtonState createState() => _ConfirmButtonState();
@@ -67,11 +67,14 @@ class _ConfirmButtonState extends State<ConfirmButton> {
       child: ButtonTheme(
         minWidth: widget.minWidth,
         height: widget.height,
-        child: RaisedButton(
-          elevation: widget.elevation,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(widget.radius),
-              side: BorderSide.none),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  widget.color == null ? Colors.cyan : widget.color,
+              elevation: widget.elevation,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(widget.radius),
+                  side: BorderSide.none)),
           onPressed: () async {
             if (_isLoading) {
               return;
@@ -95,7 +98,6 @@ class _ConfirmButtonState extends State<ConfirmButton> {
                           ? FontWeight.bold
                           : FontWeight.normal),
                 ),
-          color: widget.color == null ? Colors.cyan : widget.color,
         ),
       ),
     );
