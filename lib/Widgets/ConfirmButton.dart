@@ -69,8 +69,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
         height: widget.height,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  widget.color == null ? Colors.cyan : widget.color,
+              primary: widget.color == null ? Colors.cyan : widget.color,
               elevation: widget.elevation,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.radius),
