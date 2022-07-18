@@ -74,23 +74,15 @@ num parse(String responseBody) {
   }
 }
 
-Future<num> getRate(Currency currency, Currency toCurrency,
-    {double? amount}) async {
-  if (kIsWeb) {
-    if (amount != null) {
-      return amount * (await getRateWeb(http.Client(), currency, toCurrency));
-    } else {
-      final rate = await getRateWeb(http.Client(), currency, toCurrency);
-      return rate;
-    }
-  } else {
-    final fx = Forex();
-    double myPrice = await fx.getCurrencyConverted(
-        describeEnum(currency), describeEnum(toCurrency), amount ?? 1);
+Future<num> getRate(Currency from, Currency to, {double? amount}) async {
+  final url = Uri.parse(
+      'https://api.exchangerate.host/convert?from=${from.name}&to=${to.name}${amount != null ? '&amount=$amount' : ''}');
 
-    print(
-        "${describeEnum(currency)} to ${describeEnum(toCurrency)}(${amount ?? 1}) = ${myPrice}");
+  final response = await http.get(url);
 
-    return myPrice;
-  }
+  final data = jsonDecode(response.body);
+
+  final rate = data['result'];
+
+  return rate;
 }
