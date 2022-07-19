@@ -5,7 +5,6 @@ export 'enumPicker.dart';
 export 'getAddressByLatLong.dart';
 export 'getDeviceId.dart';
 export 'getLocation.dart';
-export 'getRate.dart';
 export 'get_rate.dart';
 export 'hyperlink.dart';
 export 'initializeFirebase.dart';
