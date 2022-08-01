@@ -93,8 +93,8 @@ final countriesEn = [
   {"id": 398, "alpha2": "kz", "alpha3": "kaz", "name": "Kazakhstan"},
   {"id": 404, "alpha2": "ke", "alpha3": "ken", "name": "Kenya"},
   {"id": 296, "alpha2": "ki", "alpha3": "kir", "name": "Kiribati"},
-  {"id": 408, "alpha2": "kp", "alpha3": "prk", "name": "KoreaNorth"},
-  {"id": 410, "alpha2": "kr", "alpha3": "kor", "name": "KoreaSouth"},
+  {"id": 408, "alpha2": "kp", "alpha3": "prk", "name": "NorthKorea"},
+  {"id": 410, "alpha2": "kr", "alpha3": "kor", "name": "SouthKorea"},
   {"id": 414, "alpha2": "kw", "alpha3": "kwt", "name": "Kuwait"},
   {"id": 417, "alpha2": "kg", "alpha3": "kgz", "name": "Kyrgyzstan"},
   {
