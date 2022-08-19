@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'Futures.dart';
-
 class FuturesDoc<T> extends StatelessWidget {
   final Future<DocumentSnapshot<Map<String, dynamic>>> future;
 
@@ -12,10 +10,7 @@ class FuturesDoc<T> extends StatelessWidget {
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const FuturesDoc(
-      {Key? key,
-
-      required this.child,
-      required this.future, this.childOnError})
+      {Key? key, required this.child, required this.future, this.childOnError})
       : super(key: key);
 
   @override
@@ -26,9 +21,11 @@ class FuturesDoc<T> extends StatelessWidget {
           AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           print(snapshot.error.toString());
-          return childOnError==null ? Center(
-            child: Text(snapshot.error.toString()),
-          ) : childOnError!;
+          return childOnError == null
+              ? Center(
+                  child: Text(snapshot.error.toString()),
+                )
+              : childOnError!;
         }
 
         if (snapshot.connectionState == ConnectionState.done) {

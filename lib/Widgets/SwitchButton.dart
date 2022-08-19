@@ -57,7 +57,8 @@ class _SwitchButtonState extends State<SwitchButton> {
         style: ElevatedButton.styleFrom(
             primary: _bool
                 ? widget.activeColor ?? Theme.of(context).primaryColor
-                : widget.inactiveColor ?? Theme.of(context).accentColor),
+                : widget.inactiveColor ??
+                    Theme.of(context).colorScheme.secondary),
         onPressed: () {
           setState(() {
             _bool = !_bool;

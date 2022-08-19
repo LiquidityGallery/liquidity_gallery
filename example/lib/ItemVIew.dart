@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:liquidity_gallery/Widgets/LiquidityCardItem.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class ItemView extends StatelessWidget {
@@ -66,7 +63,8 @@ class ItemView extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverList(delegate: SliverChildListDelegate([
+              SliverList(
+                  delegate: SliverChildListDelegate([
                 LiquidityCard(children: [
                   LiquidityCardItem(
                     child: Text('List tile 1'),

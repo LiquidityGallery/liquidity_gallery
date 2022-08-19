@@ -1,20 +1,12 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:liquidity_gallery/Class.dart';
-import 'package:liquidity_gallery/Functions/datePicker.dart';
-import 'package:liquidity_gallery/Functions/onYesNo.dart';
-import 'package:liquidity_gallery/Widgets/ContentCard.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 import 'AccessRightTest.dart';
 import 'AutoCompleteExampleView.dart';
-import 'BadgesIconView.dart';
 import 'ExportTextFromPDFView.dart';
 import 'ItemVIew.dart';
 import 'LocationInfoView.dart';
 import 'ModalSheetView.dart';
 import 'NestedNavigationFlowView.dart';
-import 'PickImageView.dart';
-import 'SearchTextFieldView.dart';
 import 'SharePrintView.dart';
 import 'StartEndDatePickerView.dart';
 import 'SwitchButtonView.dart';
@@ -57,16 +49,16 @@ class MainView extends StatelessWidget {
               print(await enumPicker(context, Currency.values));
             },
           ),
-          TextButton(
-            child: Text("Exchange"),
-            onPressed: () async {
-              final fx = Forex();
-              double myPrice = await fx.getCurrencyConverted(
-                  describeEnum(Currency.CNY), "HKD", 100);
-              print("100 USD in HKD: ${myPrice}");
-              print(await fx.getAvailableCurrencies());
-            },
-          ),
+          // TextButton(
+          //   child: Text("Exchange"),
+          //   onPressed: () async {
+          //     final fx = Forex();
+          //     double myPrice = await fx.getCurrencyConverted(
+          //         describeEnum(Currency.CNY), "HKD", 100);
+          //     print("100 USD in HKD: ${myPrice}");
+          //     print(await fx.getAvailableCurrencies());
+          //   },
+          // ),
 
           ConfirmButton(
               text: 'test this button',
@@ -99,7 +91,7 @@ class MainView extends StatelessWidget {
           ContentCard(
             imageURL:
                 'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
-          child: Text("HI"),
+            child: Text("HI"),
             subtitle: 'WD News Today',
             //    dense: true,
             onTap: () {},

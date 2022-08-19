@@ -14,7 +14,9 @@ class StartEndDatePicker extends StatelessWidget {
       required this.endDate,
       required this.onStartDateChanged,
       required this.onEndDateChanged,
-      this.padding = 0.0, this.width, this.height})
+      this.padding = 0.0,
+      this.width,
+      this.height})
       : super(key: key);
 
   /// Control direction of [StartEndDatePicker]

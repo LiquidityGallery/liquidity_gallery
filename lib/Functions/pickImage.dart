@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:image_picker/image_picker.dart';
 import 'package:liquidity_gallery/Models/PickFile.dart';
 import 'package:path/path.dart';
@@ -19,10 +17,12 @@ import 'package:path/path.dart';
 ///   <string>Privacy - Microphone Usage Description</string>
 
 Future<PickFile> pickImage() async {
-  final PickedFile? _pickedFile = await ImagePicker().getImage(source: ImageSource.gallery);
+  final PickedFile? _pickedFile =
+      await ImagePicker().getImage(source: ImageSource.gallery);
   if (_pickedFile != null) {
     final _uint8List = await _pickedFile.readAsBytes();
     return PickFile(uint8list: _uint8List, name: basename(_pickedFile.path));
   } else {
     throw 'No image selected';
-  }}
+  }
+}

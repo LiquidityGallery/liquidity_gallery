@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-
 /// A function version of a gogole login method. Saving you Time ;)
 /// Verion 1.0 20210611
 /// A functionalto conncet google login while pressed on (Web/Android/iOS).
@@ -24,7 +23,6 @@ Future<void> googleLogin() async {
     print(e);
   }
 }
-
 
 //?/ Web google login start
 

@@ -4,7 +4,6 @@ ThemeData get twitterDarkTheme => ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Color.fromRGBO(17, 19, 22, 1),
     primaryColor: Color.fromRGBO(73, 160, 235, 1),
-    accentColor: Color.fromRGBO(73, 160, 235, 0.3),
     inputDecorationTheme: InputDecorationTheme(
         border: InputBorder.none,
         hintStyle: TextStyle(
@@ -15,25 +14,19 @@ ThemeData get twitterDarkTheme => ThemeData(
         BottomAppBarTheme(elevation: 0, color: Color.fromRGBO(17, 19, 22, 1)),
     bottomNavigationBarTheme: _darkThemeBottomNavigationBarTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        primary: Color.fromRGBO(73, 160, 235, 1),
-        elevation: 1,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide.none)
-      )
-    ),
+        style: ElevatedButton.styleFrom(
+            primary: Color.fromRGBO(73, 160, 235, 1),
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide.none))),
     canvasColor: Color.fromRGBO(25, 26, 27, 1),
-
     snackBarTheme: SnackBarThemeData(
-      contentTextStyle: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
-      backgroundColor: Color.fromRGBO(17, 19, 22, 1),
-      actionTextColor: Color.fromRGBO(73, 160, 235, 1)
-    ),
-
+        contentTextStyle: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
+        backgroundColor: Color.fromRGBO(17, 19, 22, 1),
+        actionTextColor: Color.fromRGBO(73, 160, 235, 1)),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Color.fromRGBO(73, 160, 235, 1)
-    ),
+        backgroundColor: Color.fromRGBO(73, 160, 235, 1)),
 
     /// [Roboto] is also the default [fontFamily] of Flutter
     fontFamily: 'Roboto',
@@ -47,7 +40,9 @@ ThemeData get twitterDarkTheme => ThemeData(
         headline6: TextStyle(
             fontWeight: FontWeight.w900,
             color: Color.fromRGBO(220, 220, 220, 1))),
-    dividerColor: Color.fromRGBO(70, 70, 70, 1)
+    dividerColor: Color.fromRGBO(70, 70, 70, 1),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: Color.fromRGBO(73, 160, 235, 0.3))
 
     /// Drawer theme can not apply in [ThemeData], see [Widgets/MyDrawer] to
     /// check [Drawer] setting

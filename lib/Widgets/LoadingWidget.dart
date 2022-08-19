@@ -6,7 +6,9 @@ class LoadingWidget extends StatefulWidget {
   final Duration? timeout;
   final Duration? willPop;
 
-  const LoadingWidget({Key? key,required this.load, this.timeout, this.willPop}) : super(key: key);
+  const LoadingWidget(
+      {Key? key, required this.load, this.timeout, this.willPop})
+      : super(key: key);
   @override
   _LoadingWidgetState createState() => _LoadingWidgetState();
 }
@@ -27,7 +29,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
       _error = null;
     });
     try {
-      await widget.load().timeout(widget.timeout ?? Duration(days: 1), onTimeout: () {
+      await widget.load().timeout(widget.timeout ?? Duration(days: 1),
+          onTimeout: () {
         throw 'Request timeout';
       });
       if (widget.willPop != null) {
@@ -47,74 +50,74 @@ class _LoadingWidgetState extends State<LoadingWidget> {
     return Scaffold(
       body: _isLoading
           ? Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Loading...'),
-            CircularProgressIndicator.adaptive()
-          ],
-        ),
-      )
-          : _error != null
-          ? Center(
-        child: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.error),
-              Text('Error: $_error'),
-              Row(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(
-                    child: ConfirmButton(
-                        radius: 0,
-                     //   color: Colors.grey[800],
-                        text: 'Retry', onPressed: (){
-                      init();
-
-                    }),
-                  ),
+                  Text('Loading...'),
+                  CircularProgressIndicator.adaptive()
                 ],
               ),
-
-              Container(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10,right: 10),
-                      child: ConfirmButton(
-                          radius: 0,
-                          color: Colors.grey[800],
-                          text: 'Back', onPressed: (){
-                       Navigator.pop(context);
-
-                      }),
+            )
+          : _error != null
+              ? Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.error),
+                        Text('Error: $_error'),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ConfirmButton(
+                                  radius: 0,
+                                  //   color: Colors.grey[800],
+                                  text: 'Retry',
+                                  onPressed: () {
+                                    init();
+                                  }),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: ConfirmButton(
+                                    radius: 0,
+                                    color: Colors.grey[800],
+                                    text: 'Back',
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    }),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      )
-          : Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.done),
-            Text('Finish'),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text('Back')),
-          ],
-        ),
-      ),
+                )
+              : Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.done),
+                      Text('Finish'),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('Back')),
+                    ],
+                  ),
+                ),
     );
   }
 }

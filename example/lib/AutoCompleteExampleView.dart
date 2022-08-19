@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liquidity_gallery/Widgets/LiquidityAutoComplete.dart';
 
 class AutoCompleteExampleView extends StatefulWidget {
   @override

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 /// Searchbar for ios style
 class SearchBar extends StatefulWidget {
@@ -9,7 +8,13 @@ class SearchBar extends StatefulWidget {
   final Function(String)? onChanged;
   final Color? backgroundColor;
 
-  const SearchBar({Key? key,required this.controller, this.placeholder='Search', this.onChanged, this.backgroundColor}) : super(key: key);
+  const SearchBar(
+      {Key? key,
+      required this.controller,
+      this.placeholder = 'Search',
+      this.onChanged,
+      this.backgroundColor})
+      : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -19,10 +24,14 @@ class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10,right: 10,bottom: 1),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 1),
       child: CupertinoTextField(
         padding: EdgeInsets.all(9),
-        decoration: BoxDecoration(color: widget.backgroundColor== null?Colors.grey[200]: widget.backgroundColor,borderRadius: BorderRadius.circular(11)),
+        decoration: BoxDecoration(
+            color: widget.backgroundColor == null
+                ? Colors.grey[200]
+                : widget.backgroundColor,
+            borderRadius: BorderRadius.circular(11)),
         controller: widget.controller,
         onChanged: widget.onChanged,
         prefix: const Icon(
@@ -30,8 +39,7 @@ class _SearchBarState extends State<SearchBar> {
           color: CupertinoColors.systemGrey,
         ),
         placeholder: widget.placeholder,
-        placeholderStyle:
-        const TextStyle(color: CupertinoColors.systemGrey),
+        placeholderStyle: const TextStyle(color: CupertinoColors.systemGrey),
       ),
     );
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
   const LiquidityAutoComplete(
       {Key? key,
-        required this.focusNode,
+      required this.focusNode,
       required this.optionsBuilder,
       required this.onSelected,
       this.inputDecoration,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 Route SlideUp(Widget page) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => page,

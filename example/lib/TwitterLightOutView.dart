@@ -65,11 +65,14 @@ class _TwitterLightsOutView extends StatelessWidget {
                   () => print('User taped the button'), 'tap to close');
             },
             child: Text('Show message')),
-        DropdownButtonFormField(items: [
-          DropdownMenuItem(value: 'OPEN', child: Text('OPEN')),
-          DropdownMenuItem(value: 'CLOSE', child: Text('CLOSE')),
-          DropdownMenuItem(value: 'UNDEFINED', child: Text('UNDEFINED'))
-        ], onChanged: (e) {},)
+        DropdownButtonFormField(
+          items: [
+            DropdownMenuItem(value: 'OPEN', child: Text('OPEN')),
+            DropdownMenuItem(value: 'CLOSE', child: Text('CLOSE')),
+            DropdownMenuItem(value: 'UNDEFINED', child: Text('UNDEFINED'))
+          ],
+          onChanged: (e) {},
+        )
       ],
     );
   }

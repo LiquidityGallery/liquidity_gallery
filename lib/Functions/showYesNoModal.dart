@@ -13,7 +13,7 @@ Future<void> showYesNoModal(BuildContext context, void Function() onYes,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
       builder: (context) => Container(
-        color: Colors.white,
+            color: Colors.white,
             //   height: MediaQuery.of(context).size.height * 0.92,
             child: SafeArea(
               child: Column(

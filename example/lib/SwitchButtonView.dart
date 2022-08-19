@@ -13,36 +13,36 @@ class SwitchButtonView extends StatelessWidget {
           children: [
             Expanded(
                 child: SwitchButton(
-                  text: '零售',
-                  icon: Icons.shop,
-                  onChanged: (bool value) {
-                    print(value);
-                  },
-                )),
+              text: '零售',
+              icon: Icons.shop,
+              onChanged: (bool value) {
+                print(value);
+              },
+            )),
             Expanded(
                 child: SwitchButton(
-                  text: '批發',
-                  icon: Icons.map,
-                  onChanged: (bool value) {
-                    print(value);
-                  },
-                )),
+              text: '批發',
+              icon: Icons.map,
+              onChanged: (bool value) {
+                print(value);
+              },
+            )),
             Expanded(
                 child: SwitchButton(
-                  text: '網點',
-                  icon: Icons.home,
-                  onChanged: (bool value) {
-                    print(value);
-                  },
-                )),
+              text: '網點',
+              icon: Icons.home,
+              onChanged: (bool value) {
+                print(value);
+              },
+            )),
             Expanded(
                 child: SwitchButton(
-                  text: '店舖',
-                  icon: Icons.home_work,
-                  onChanged: (bool value) {
-                    print(value);
-                  },
-                ))
+              text: '店舖',
+              icon: Icons.home_work,
+              onChanged: (bool value) {
+                print(value);
+              },
+            ))
           ],
         ),
       ),

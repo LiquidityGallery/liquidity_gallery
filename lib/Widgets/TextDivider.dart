@@ -7,7 +7,11 @@ class TextDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Expanded(child: Divider()), Text(text), Expanded(child: Divider())],
+      children: [
+        Expanded(child: Divider()),
+        Text(text),
+        Expanded(child: Divider())
+      ],
     );
   }
 }

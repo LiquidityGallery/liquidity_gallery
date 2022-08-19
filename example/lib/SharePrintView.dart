@@ -12,9 +12,11 @@ class SharePrintView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ElevatedButton(onPressed: () {
-            Share.share('Testing');
-          }, child: Text('Share text "Testing"'))
+          ElevatedButton(
+              onPressed: () {
+                Share.share('Testing');
+              },
+              child: Text('Share text "Testing"'))
         ],
       ),
     );

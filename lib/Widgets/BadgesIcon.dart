@@ -9,7 +9,8 @@ class BadgesIcon extends StatelessWidget {
       this.showBadge = true,
       this.padding,
       this.badgeAnimationType,
-      this.animationDuration = const Duration(milliseconds: 500), this.textStyle})
+      this.animationDuration = const Duration(milliseconds: 500),
+      this.textStyle})
       : super(key: key);
 
   final Widget? child;
@@ -28,7 +29,10 @@ class BadgesIcon extends StatelessWidget {
       padding: padding ?? EdgeInsets.all(3),
       showBadge: showBadge,
       child: child ?? Icon(Icons.notifications),
-      badgeContent: Text(badge?.toString() ?? '', style: textStyle,),
+      badgeContent: Text(
+        badge?.toString() ?? '',
+        style: textStyle,
+      ),
     );
   }
 }

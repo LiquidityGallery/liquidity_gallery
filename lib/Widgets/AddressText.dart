@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:liquidity_gallery/Functions/getAddressByLatLong.dart';
 
 /// Simply display address from location given, can directly call
 /// [placemarkFromCoordinates] to get result

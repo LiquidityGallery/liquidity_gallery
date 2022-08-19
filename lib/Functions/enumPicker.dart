@@ -1,19 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:liquidity_gallery/Class.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 ///URL Launcher simple version
-Future<dynamic> enumPicker(context, values, {bool isListview=false}) async {
-  if(isListview==false) {
+Future<dynamic> enumPicker(context, values, {bool isListview = false}) async {
+  if (isListview == false) {
     return await showModal(
         context,
         SafeArea(
-            child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...values
-                      .map((e) => InkWell(
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+          ...values
+              .map((e) => InkWell(
                     child: Row(
                       children: [
                         Expanded(
@@ -30,21 +27,16 @@ Future<dynamic> enumPicker(context, values, {bool isListview=false}) async {
                       Navigator.pop(context, e);
                     },
                   ))
-                      .toList()
-                ])
-
-
-        ),
+              .toList()
+        ])),
         radius: 0);
   } else {
     return await showModalMax(
         context,
         SafeArea(
-            child: ListView(
-
-                children: [
-                  ...values
-                      .map((e) => InkWell(
+            child: ListView(children: [
+          ...values
+              .map((e) => InkWell(
                     child: Row(
                       children: [
                         Expanded(
@@ -61,15 +53,9 @@ Future<dynamic> enumPicker(context, values, {bool isListview=false}) async {
                       Navigator.pop(context, e);
                     },
                   ))
-                      .toList()
-                ])
-
-
-        ),
-        radius: 0, height: 0.8);
+              .toList()
+        ])),
+        radius: 0,
+        height: 0.8);
   }
-
-
 }
-
-

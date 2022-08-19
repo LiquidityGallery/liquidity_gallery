@@ -26,11 +26,10 @@ class BorderTextField extends StatelessWidget {
   const BorderTextField(
       {Key? key,
       this.onTap,
-        this.textInputType= TextInputType.text,
+      this.textInputType = TextInputType.text,
       this.labeltext,
       required this.controller,
       this.isborder = true,
-
       this.bordercolor,
       this.hinttext,
       this.fillcolor,
@@ -40,10 +39,10 @@ class BorderTextField extends StatelessWidget {
       this.borderWidth = 0.2,
       this.textStyle,
       this.onChanged,
-        this.textAlign= TextAlign.start,
+      this.textAlign = TextAlign.start,
       this.readOnly = false,
       this.obscureText = false,
-      this.maxLines=10})
+      this.maxLines = 10})
       : super(key: key);
 
   @override
@@ -53,7 +52,6 @@ class BorderTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
-
         textAlign: textAlign,
         obscureText: obscureText,
         onTap: onTap,
@@ -62,9 +60,8 @@ class BorderTextField extends StatelessWidget {
         autofocus: autofocus,
         readOnly: readOnly,
         minLines: minLines,
-        maxLines: maxLines== 0 ? null : maxLines,
-        keyboardType:
-         textInputType,
+        maxLines: maxLines == 0 ? null : maxLines,
+        keyboardType: textInputType,
         controller: controller,
         decoration: InputDecoration(
           filled: true,

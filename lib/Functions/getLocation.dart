@@ -13,7 +13,7 @@ Future<void> checkLocationPermission() async {
     _serviceEnabled = await _location.requestService();
     if (!_serviceEnabled) {
       print('Location service request denied');
-      return ;
+      return;
     }
   }
   print('Location service enabled');
@@ -26,7 +26,7 @@ Future<void> checkLocationPermission() async {
     _permissionStatus = await _location.requestPermission();
     if (_permissionStatus != PermissionStatus.granted) {
       print('Location permission denied');
-      return ;
+      return;
     }
   }
   print('Location permission granted');
@@ -34,7 +34,7 @@ Future<void> checkLocationPermission() async {
 
 Future<LocationData> getLocation() async {
   print('Loading location data...');
-  LocationData _locationData =  await Location().getLocation();
+  LocationData _locationData = await Location().getLocation();
   print('Location data loaded');
   return _locationData;
 }

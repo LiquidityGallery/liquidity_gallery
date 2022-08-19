@@ -20,6 +20,7 @@ Future<T?> showPickEnumSheet<T extends Enum>(
           ));
 
   if (_value != null) return _value;
+  return null;
 }
 
 class PickEnumSheet<T extends Enum> extends StatefulWidget {

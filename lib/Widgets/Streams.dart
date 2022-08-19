@@ -8,18 +8,15 @@ class Streams<T> extends StatelessWidget {
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
-  const Streams(
-      {Key? key,
-
-      required this.child,
-      required this.stream})
+  const Streams({Key? key, required this.child, required this.stream})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: stream,
-      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+      builder: (BuildContext context,
+          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           print(snapshot.error.toString());
           return Center(

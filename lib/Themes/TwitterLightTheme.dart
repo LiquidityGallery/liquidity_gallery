@@ -10,7 +10,6 @@ ThemeData get twitterLightTheme => ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: backgroundColor,
     primaryColor: primaryColor,
-    accentColor: accentColor,
     inputDecorationTheme: InputDecorationTheme(
         border: InputBorder.none,
         hintStyle: TextStyle(
@@ -44,7 +43,8 @@ ThemeData get twitterLightTheme => ThemeData(
     /// See more on [_darkThemeAppBarTheme]
     primaryTextTheme: TextTheme(
         headline6: TextStyle(fontWeight: FontWeight.w900, color: textColor)),
-    dividerColor: Color.fromRGBO(225, 230, 233, 1)
+    dividerColor: Color.fromRGBO(225, 230, 233, 1),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor)
 
     /// Drawer theme can not apply in [ThemeData], see [Widgets/MyDrawer] to
     /// check [Drawer] setting

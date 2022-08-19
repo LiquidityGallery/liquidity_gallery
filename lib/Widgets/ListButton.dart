@@ -7,11 +7,13 @@ class ListButton extends StatelessWidget {
   final Icon icon;
   final Widget child;
 
-  const ListButton({Key? key, required this.onTap, required this.icon, required this.child}) : super(key: key);
+  const ListButton(
+      {Key? key, required this.onTap, required this.icon, required this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return           Padding(
+    return Padding(
       padding: const EdgeInsets.only(right: 10, left: 10),
       child: MailboxContainer(
           onTap: onTap,
@@ -20,7 +22,6 @@ class ListButton extends StatelessWidget {
           child: ListTile(
             leading: icon,
             title: child,
-
           )),
     );
   }
