@@ -2,7 +2,6 @@ export 'GoogleLogin.dart';
 export 'SlideUp.dart';
 export 'datePicker.dart';
 export 'enumPicker.dart';
-export 'getAddressByLatLong.dart';
 export 'getDeviceId.dart';
 export 'getLocation.dart';
 export 'get_rate.dart';
