@@ -13,6 +13,7 @@ class ConfirmButton extends StatefulWidget {
   final double elevation;
   final double padding;
   final double fontSize;
+  final Icon? icon;
 
   /// Version1.01 last update 20200610.
   ///
@@ -30,6 +31,7 @@ class ConfirmButton extends StatefulWidget {
     this.elevation = 1,
     this.padding = 15.0,
     this.fontSize = 15,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -86,17 +88,17 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           },
           child: _isLoading
               ? CircularProgressIndicator.adaptive()
-              : Text(
-                  widget.text,
-                  style: TextStyle(
-                      fontSize: widget.fontSize,
-                      color: widget.textcolor == null
-                          ? Colors.white
-                          : widget.textcolor,
-                      fontWeight: widget.isbold == true
-                          ? FontWeight.bold
-                          : FontWeight.normal),
-                ),
+              : ((widget.text=='' && widget.icon!= null)? widget.icon:Text(
+            widget.text,
+            style: TextStyle(
+                fontSize: widget.fontSize,
+                color: widget.textcolor == null
+                    ? Colors.white
+                    : widget.textcolor,
+                fontWeight: widget.isbold == true
+                    ? FontWeight.bold
+                    : FontWeight.normal),
+          ))
         ),
       ),
     );
