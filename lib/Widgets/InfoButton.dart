@@ -8,13 +8,15 @@ class InfoButton extends StatelessWidget {
   final Widget child;
   final Color? color;
   final double height;
+  final double width;
   const InfoButton(
       {Key? key,
       required this.onTap,
       required this.icon,
       required this.child,
       this.color,
-      this.height = 200})
+      this.height = 200,
+      this.width= 450})
       : super(key: key);
 
   @override
@@ -48,6 +50,7 @@ class InfoButton extends StatelessWidget {
       ),
       backgroundColor: color ?? Colors.cyan[800],
       height: height,
+      width: width,
     );
   }
 }
