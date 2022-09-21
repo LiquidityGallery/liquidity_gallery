@@ -6,11 +6,14 @@ class Futures<T> extends StatelessWidget {
 
   final Widget Function(QuerySnapshot<Map<String, dynamic>>) child;
   final Widget? childOnError;
+  final Widget childOnWaiting;
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const Futures(
-      {Key? key, required this.child, required this.future, this.childOnError})
+      {Key? key, required this.child, required this.future, this.childOnError, this.childOnWaiting= const Center(
+        child: CircularProgressIndicator(),
+      )})
       : super(key: key);
 
   @override
@@ -31,9 +34,7 @@ class Futures<T> extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return child(snapshot.data!);
         } else {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
+          return childOnWaiting;
         }
 //?/ Class做法
       },

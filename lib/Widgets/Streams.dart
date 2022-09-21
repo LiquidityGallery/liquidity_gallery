@@ -5,10 +5,14 @@ class Streams<T> extends StatelessWidget {
   final Stream<QuerySnapshot<Map<String, dynamic>>> stream;
 
   final Widget Function(QuerySnapshot<Map<String, dynamic>>) child;
+  final Widget childOnWaiting;
+
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
-  const Streams({Key? key, required this.child, required this.stream})
+  const Streams({Key? key, required this.child, required this.stream, this.childOnWaiting= const Center(
+    child: CircularProgressIndicator(),
+  )})
       : super(key: key);
 
   @override
@@ -25,9 +29,7 @@ class Streams<T> extends StatelessWidget {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
+          return childOnWaiting;
         } else {
           return child(snapshot.data!);
         }
