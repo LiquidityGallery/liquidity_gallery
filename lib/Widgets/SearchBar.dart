@@ -7,13 +7,14 @@ class SearchBar extends StatefulWidget {
   final String placeholder;
   final Function(String)? onChanged;
   final Color? backgroundColor;
+  final Widget? suffix;
 
   const SearchBar(
       {Key? key,
       required this.controller,
       this.placeholder = 'Search',
       this.onChanged,
-      this.backgroundColor})
+      this.backgroundColor, this.suffix})
       : super(key: key);
 
   @override
@@ -40,6 +41,7 @@ class _SearchBarState extends State<SearchBar> {
         ),
         placeholder: widget.placeholder,
         placeholderStyle: const TextStyle(color: CupertinoColors.systemGrey),
+          suffix: widget.suffix ?? Container(),
       ),
     );
   }
