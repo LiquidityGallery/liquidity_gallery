@@ -21,7 +21,7 @@ dependencies:
   firebase_auth: any
   firebase_core: any
   firebase_storage: any
-  fluent_ui: ^3.5.2
+  fluent_ui: ^4.1.2
   flutter:
     sdk: flutter
   flutter_cache_manager: ^3.1.2
