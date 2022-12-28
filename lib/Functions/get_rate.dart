@@ -1,19 +1,27 @@
-import 'package:http/http.dart' as http;
-import 'dart:convert' show jsonDecode;
+import 'package:dio/dio.dart';
 
 import '../Class.dart';
 
-const key = '03ab98ff1731468b917a';
+const _appId = 'dc871ed0a64a4214ad53eaccc9980b6b';
+
+final symbols = Currency.values.map((e) => e.name).join(',');
 
 Future<num> getRate(Currency from, Currency to, {double? amount}) async {
-  final url = Uri.parse(
-      'https://api.exchangerate.host/convert?from=${from.name}&to=${to.name}${amount != null ? '&amount=$amount' : ''}');
+  final url = 'https://openexchangerates.org/api/latest.json';
 
-  final response = await http.get(url);
+  final queryParameters = {'app_id': _appId, 'symbols': symbols};
 
-  final data = jsonDecode(response.body);
+  final response = await Dio().get(url, queryParameters: queryParameters);
 
-  final rate = data['result'];
+  final data = response.data;
 
-  return rate;
+  final rates = data['rates'];
+
+  final fromRate = 1 / rates[from.name];
+
+  final toRate = rates[to.name] * fromRate;
+
+  if (amount != null) return amount * toRate;
+
+  return toRate;
 }
