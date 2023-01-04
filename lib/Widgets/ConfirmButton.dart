@@ -70,36 +70,37 @@ class _ConfirmButtonState extends State<ConfirmButton> {
         minWidth: widget.minWidth,
         height: widget.height,
         child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              primary: widget.color == null ? Colors.cyan : widget.color,
-              elevation: widget.elevation,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.radius),
-                  side: BorderSide.none)),
-          onPressed: () async {
-            if (_isLoading) {
-              return;
-            } else {
-              setState(() {
-                _isLoading = true;
-              });
-              await init();
-            }
-          },
-          child: _isLoading
-              ? CircularProgressIndicator.adaptive()
-              : ((widget.text=='' && widget.icon!= null)? widget.icon:Text(
-            widget.text,
-            style: TextStyle(
-                fontSize: widget.fontSize,
-                color: widget.textcolor == null
-                    ? Colors.white
-                    : widget.textcolor,
-                fontWeight: widget.isbold == true
-                    ? FontWeight.bold
-                    : FontWeight.normal),
-          ))
-        ),
+            style: ElevatedButton.styleFrom(
+                primary: widget.color == null ? Colors.cyan : widget.color,
+                elevation: widget.elevation,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(widget.radius),
+                    side: BorderSide.none)),
+            onPressed: () async {
+              if (_isLoading) {
+                return;
+              } else {
+                setState(() {
+                  _isLoading = true;
+                });
+                await init();
+              }
+            },
+            child: _isLoading
+                ? CircularProgressIndicator.adaptive()
+                : ((widget.text == '' && widget.icon != null)
+                    ? widget.icon
+                    : Text(
+                        widget.text,
+                        style: TextStyle(
+                            fontSize: widget.fontSize,
+                            color: widget.textcolor == null
+                                ? Colors.white
+                                : widget.textcolor,
+                            fontWeight: widget.isbold == true
+                                ? FontWeight.bold
+                                : FontWeight.normal),
+                      ))),
       ),
     );
   }

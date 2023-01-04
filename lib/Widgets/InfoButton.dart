@@ -16,7 +16,7 @@ class InfoButton extends StatelessWidget {
       required this.child,
       this.color,
       this.height = 200,
-      this.width= 450})
+      this.width = 450})
       : super(key: key);
 
   @override

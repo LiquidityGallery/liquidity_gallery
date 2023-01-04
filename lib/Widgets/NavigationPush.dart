@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-void NavigationPush(context,Widget page){
+void NavigationPush(context, Widget page) {
   ///Navigator.of(context).push with no animation
   Navigator.pushReplacement(
     context,
@@ -10,5 +10,4 @@ void NavigationPush(context,Widget page){
       reverseTransitionDuration: Duration.zero,
     ),
   );
-
 }

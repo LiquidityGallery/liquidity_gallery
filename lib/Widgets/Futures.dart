@@ -11,7 +11,11 @@ class Futures<T> extends StatelessWidget {
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const Futures(
-      {Key? key, required this.child, required this.future, this.childOnError, this.childOnWaiting= const Center(
+      {Key? key,
+      required this.child,
+      required this.future,
+      this.childOnError,
+      this.childOnWaiting = const Center(
         child: CircularProgressIndicator(),
       )})
       : super(key: key);

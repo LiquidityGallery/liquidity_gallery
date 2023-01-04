@@ -1,8 +1,11 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:honeywell_scanner/scanned_data.dart';
 
 // Package imports:
 import 'package:mobile_scanner/mobile_scanner.dart';
+
+import '../Widgets/HoneyScanner.dart' as honeywell;
 
 /// Scan barcode and qr code, then return [Barcode], return null if
 /// user close it.
@@ -32,8 +35,17 @@ class _ScanViewState extends State<_ScanView>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: MobileScanner(onDetect: onDetect),
-    );
+    return honeywell.Scanner(
+        debug: ScannedData(
+          codeType: honeywell.BarcodeType.ean13.name,
+          code: '99999',
+        ),
+        onDecoded: (scanData) async {
+          print(scanData.code);
+          Navigator.maybePop(context, scanData.code);
+        },
+        child: Scaffold(
+          body: MobileScanner(onDetect: onDetect),
+        ));
   }
 }
