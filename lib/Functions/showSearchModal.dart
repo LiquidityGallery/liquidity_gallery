@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 Future<T> showSearchModal<T>(BuildContext context,
     {InputDecoration? inputDecoration,
@@ -11,7 +10,7 @@ Future<T> showSearchModal<T>(BuildContext context,
     required bool Function(T, String filter) filterFunction,
     bool? showCancelTextButton}) async {
   if (Platform.isIOS) {
-    return await showBarModalBottomSheet(
+    return await showModalBottomSheet(
         context: context,
         builder: (context) {
           return _SearchPage<T>(
