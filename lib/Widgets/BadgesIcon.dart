@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:badges/badges.dart';
 
 class BadgesIcon extends StatelessWidget {
@@ -24,9 +24,9 @@ class BadgesIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Badge(
-      animationDuration: animationDuration,
-      animationType: badgeAnimationType ?? BadgeAnimationType.slide,
-      padding: padding ?? EdgeInsets.all(3),
+      // animationDuration: animationDuration,
+      // animationType: badgeAnimationType ?? BadgeAnimationType.slide,
+      // padding: padding ?? EdgeInsets.all(3),
       showBadge: showBadge,
       child: child ?? Icon(Icons.notifications),
       badgeContent: Text(
