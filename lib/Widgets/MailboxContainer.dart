@@ -10,6 +10,7 @@ class MailboxContainer extends StatelessWidget {
   final double topMargin;
   final double bottomMargin;
   final BoxShadow? boxShadow;
+  final void Function()? onLongPress;
 
   /// A container layout for mail/order like layout for app pages
   const MailboxContainer(
@@ -22,7 +23,8 @@ class MailboxContainer extends StatelessWidget {
       this.padding = 8,
       this.topMargin = 3,
       this.bottomMargin = 4,
-      this.boxShadow})
+      this.boxShadow,
+        this.onLongPress,})
       : super(key: key);
 
   @override
@@ -30,6 +32,7 @@ class MailboxContainer extends StatelessWidget {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool darkModeOn = brightness == Brightness.dark;
     return InkWell(
+      onLongPress: onLongPress,
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(padding),
