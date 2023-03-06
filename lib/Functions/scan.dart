@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-
-
 /// Scan barcode and qr code, then return [Barcode], return null if
 /// user close it.
 Future<void> scan(
@@ -27,8 +25,13 @@ class _ScanViewState extends State<_ScanView>
   /// Allow only one barcode to scan.
   bool isScanned = false;
 
-  void onDetect(Barcode barcode, MobileScannerArguments? arguments) {
-    if (!isScanned) Navigator.maybePop(context, barcode.rawValue);
+  onDetect(BarcodeCapture capture) {
+    if (!isScanned) {
+      for (final barcode in capture.barcodes) {
+        return Navigator.maybePop(context, barcode);
+      }
+    }
+    ;
     isScanned = true;
   }
 
