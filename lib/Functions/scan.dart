@@ -28,10 +28,9 @@ class _ScanViewState extends State<_ScanView>
   onDetect(BarcodeCapture capture) {
     if (!isScanned) {
       for (final barcode in capture.barcodes) {
-        return Navigator.maybePop(context, barcode);
+        return Navigator.maybePop(context, barcode.rawValue);
       }
     }
-    ;
     isScanned = true;
   }
 
