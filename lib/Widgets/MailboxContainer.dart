@@ -38,7 +38,7 @@ class MailboxContainer extends StatelessWidget {
         padding: EdgeInsets.all(padding),
         margin: EdgeInsets.fromLTRB(0, topMargin, 0, bottomMargin),
         decoration: BoxDecoration(
-            color: backgroundColor == null ? (darkModeOn ==true? Colors.grey.shade800: Colors.white54) : backgroundColor,
+            color: backgroundColor == null ? (darkModeOn ==true? Colors.grey.shade900: Colors.white54) : backgroundColor,
             borderRadius: BorderRadius.circular(Radius!),
             boxShadow: darkModeOn
                 ? []
