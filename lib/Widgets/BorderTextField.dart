@@ -47,8 +47,8 @@ class BorderTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool darkModeOn = brightness == Brightness.dark;
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool darkModeOn = brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: TextField(
@@ -56,7 +56,7 @@ class BorderTextField extends StatelessWidget {
         obscureText: obscureText,
         onTap: onTap,
         onChanged: onChanged,
-        style: textStyle == null ? TextStyle(fontSize: 14) : textStyle,
+        style: textStyle ?? const TextStyle(fontSize: 14),
         autofocus: autofocus,
         readOnly: readOnly,
         minLines: minLines,
@@ -65,7 +65,7 @@ class BorderTextField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           filled: true,
-          fillColor: fillcolor == null ? Colors.white : fillcolor,
+          fillColor: fillcolor ?? Colors.white,
           enabledBorder: OutlineInputBorder(
             borderSide: isborder == true
                 ? BorderSide(
@@ -75,7 +75,7 @@ class BorderTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius),
           ),
           border: OutlineInputBorder(
-            borderSide: new BorderSide(width: borderWidth),
+            borderSide: BorderSide(width: borderWidth),
             borderRadius: BorderRadius.circular(8),
           ),
           labelText: labeltext,

@@ -5,7 +5,7 @@ Future<void> showYesNoModal(BuildContext context, void Function() onYes,
   await showModalBottomSheet(
       backgroundColor: Colors.transparent,
       //   isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(16),
         ),
@@ -21,18 +21,18 @@ Future<void> showYesNoModal(BuildContext context, void Function() onYes,
                 children: [
                   ListTile(
                       title: Text(
-                          text == null ? "Do you want to continue?" : text)),
+                          text ?? "Do you want to continue?")),
                   ListTile(
                     leading: Icon(
                       Icons.check_circle,
                       color: Colors.cyan[300],
                     ),
-                    title: Text("Yes"),
+                    title: const Text("Yes"),
                     onTap: onYes,
                   ),
                   ListTile(
-                    leading: Icon(Icons.cancel),
-                    title: Text(
+                    leading: const Icon(Icons.cancel),
+                    title: const Text(
                       "Cancel",
                     ),
                     onTap: () {

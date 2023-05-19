@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class NestedNavigationFlowView extends StatelessWidget {
   final _navigatorKey = GlobalKey<NavigatorState>();
 
+  NestedNavigationFlowView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nested navigation flow'),
+        title: const Text('Nested navigation flow'),
       ),
       body: Navigator(
         key: _navigatorKey,
@@ -36,7 +38,7 @@ class _FirstView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: TextButton(
-        child: Text('First View'),
+        child: const Text('First View'),
         onPressed: () => Navigator.pushNamed(context, '/Next'),
       ),
     );
@@ -48,7 +50,7 @@ class _NextView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text('This is next page'),
       ),
     );

@@ -1,56 +1,56 @@
 import 'package:flutter/material.dart';
 
-final Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);
-final Color accentColor = Color.fromRGBO(230, 230, 230, 1);
-final Color primaryColor = Color.fromRGBO(73, 160, 235, 1);
-final Color hintColor = Color.fromRGBO(133, 145, 158, 1);
-final Color textColor = Color.fromRGBO(0, 0, 0, 1);
+const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);
+const Color accentColor = Color.fromRGBO(230, 230, 230, 1);
+const Color primaryColor = Color.fromRGBO(73, 160, 235, 1);
+const Color hintColor = Color.fromRGBO(133, 145, 158, 1);
+const Color textColor = Color.fromRGBO(0, 0, 0, 1);
 
 ThemeData get twitterLightTheme => ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: backgroundColor,
     primaryColor: primaryColor,
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
         hintStyle: TextStyle(
           color: hintColor,
         )),
     appBarTheme: _darkThemeAppBarTheme,
-    bottomAppBarTheme: BottomAppBarTheme(elevation: 0, color: backgroundColor),
+    bottomAppBarTheme: const BottomAppBarTheme(elevation: 0, color: backgroundColor),
     bottomNavigationBarTheme: _darkThemeBottomNavigationBarTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            primary: primaryColor,
+            backgroundColor: primaryColor,
             elevation: 1,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: BorderSide.none))),
     canvasColor: accentColor,
-    snackBarTheme: SnackBarThemeData(
+    snackBarTheme: const SnackBarThemeData(
         contentTextStyle: TextStyle(color: textColor),
         backgroundColor: accentColor,
         actionTextColor: primaryColor),
     floatingActionButtonTheme:
-        FloatingActionButtonThemeData(backgroundColor: primaryColor),
+        const FloatingActionButtonThemeData(backgroundColor: primaryColor),
 
     /// [Roboto] is also the default [fontFamily] of Flutter
     fontFamily: 'Roboto',
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
 
         /// This [TextStyle] is default in [Text]
-        bodyText2: TextStyle(color: textColor)),
+        bodyMedium: TextStyle(color: textColor)),
 
     /// See more on [_darkThemeAppBarTheme]
-    primaryTextTheme: TextTheme(
-        headline6: TextStyle(fontWeight: FontWeight.w900, color: textColor)),
-    dividerColor: Color.fromRGBO(225, 230, 233, 1),
+    primaryTextTheme: const TextTheme(
+        titleLarge: TextStyle(fontWeight: FontWeight.w900, color: textColor)),
+    dividerColor: const Color.fromRGBO(225, 230, 233, 1),
     colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor)
 
     /// Drawer theme can not apply in [ThemeData], see [Widgets/MyDrawer] to
     /// check [Drawer] setting
     );
 
-AppBarTheme get _darkThemeAppBarTheme => AppBarTheme(
+AppBarTheme get _darkThemeAppBarTheme => const AppBarTheme(
     elevation: 0,
 
     /// [titleTextStyle] current not working, wait for Flutter update,
@@ -59,7 +59,7 @@ AppBarTheme get _darkThemeAppBarTheme => AppBarTheme(
     iconTheme: IconThemeData(color: primaryColor));
 
 BottomNavigationBarThemeData get _darkThemeBottomNavigationBarTheme =>
-    BottomNavigationBarThemeData(
+    const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       elevation: 0,
       backgroundColor: Color.fromRGBO(230, 230, 230, 0.3),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 Future<bool> onYesNo(BuildContext context, {String? text}) async {
-  final _bool = await showModalBottomSheet<bool>(
+  final result = await showModalBottomSheet<bool>(
       //   isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(16),
         ),
@@ -16,20 +16,18 @@ Future<bool> onYesNo(BuildContext context, {String? text}) async {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  ListTile(
-                      title: Text(
-                          text == null ? "Do you want to continue?" : text)),
+                  ListTile(title: Text(text ?? "Do you want to continue?")),
                   ListTile(
                     leading: Icon(
                       Icons.check_circle,
                       color: Colors.cyan[300],
                     ),
-                    title: Text("Yes"),
+                    title: const Text("Yes"),
                     onTap: () => Navigator.pop(context, true),
                   ),
                   ListTile(
-                    leading: Icon(Icons.cancel),
-                    title: Text(
+                    leading: const Icon(Icons.cancel),
+                    title: const Text(
                       "Cancel",
                     ),
                     onTap: () {
@@ -40,7 +38,7 @@ Future<bool> onYesNo(BuildContext context, {String? text}) async {
               ),
             ),
           ));
-  if (_bool == null || !_bool) {
+  if (result == null || !result) {
     return false;
   } else {
     return true;

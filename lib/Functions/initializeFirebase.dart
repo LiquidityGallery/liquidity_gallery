@@ -22,7 +22,7 @@ Future<void> initializeFirebase(
     WebFirebaseOptions? webFirebaseOptions,
     AndroidFirebaseOptions? androidFirebaseOptions}) async {
   try {
-    Firebase.app('$appName');
+    Firebase.app(appName);
   } catch (e) {
     if (kIsWeb) {
       if (webFirebaseOptions != null) {

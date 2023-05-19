@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class TwitterThemeView extends StatefulWidget {
+  const TwitterThemeView({super.key});
+
   @override
   _TwitterThemeViewState createState() => _TwitterThemeViewState();
 }
@@ -18,12 +20,12 @@ class _TwitterThemeViewState extends State<TwitterThemeView> {
       data: twitterLightTheme,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
+          title: const Text('Home'),
         ),
         drawer: _MyDrawer(),
         body: _body,
         bottomNavigationBar: BottomNavigationBar(
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined),
                 activeIcon: Icon(Icons.home),
@@ -54,7 +56,7 @@ class _TwitterThemeView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Center(
+        const Center(
           child: Text(
             '他們所有得設備和儀器彷彿都是有生命的\nAlmost before we knew it, we had left the ground.\n\nThis is custom home page',
           ),
@@ -64,9 +66,9 @@ class _TwitterThemeView extends StatelessWidget {
               showMessage(context, 'You can close this message',
                   () => print('User taped the button'), 'tap to close');
             },
-            child: Text('Show message')),
+            child: const Text('Show message')),
         DropdownButtonFormField(
-          items: [
+          items: const [
             DropdownMenuItem(value: 'OPEN', child: Text('OPEN')),
             DropdownMenuItem(value: 'CLOSE', child: Text('CLOSE')),
             DropdownMenuItem(value: 'UNDEFINED', child: Text('UNDEFINED'))
@@ -81,7 +83,7 @@ class _TwitterThemeView extends StatelessWidget {
 class _SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('This is Custom page'),
     );
   }
@@ -92,7 +94,7 @@ class _MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color.fromRGBO(17, 19, 22, 1),
+        color: const Color.fromRGBO(17, 19, 22, 1),
         child: Column(
           children: [
             _Header(),
@@ -107,20 +109,20 @@ class _MyDrawer extends StatelessWidget {
                   icon: Icons.shopping_bag_outlined,
                   onTap: () {},
                 ),
-                _DrawerItem(
+                const _DrawerItem(
                   title: 'Workshop',
                   icon: Icons.home_work_outlined,
                 ),
-                _DrawerItem(
+                const _DrawerItem(
                   title: 'Merchant',
                   icon: Icons.bookmark_border,
                 ),
-                _DrawerItem(
+                const _DrawerItem(
                   title: 'Report',
                   icon: Icons.list_alt_outlined,
                 ),
-                Divider(),
-                _DrawerItem(title: 'Settings')
+                const Divider(),
+                const _DrawerItem(title: 'Settings')
               ],
             ))
           ],
@@ -133,8 +135,8 @@ class _MyDrawer extends StatelessWidget {
 class _Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, top: 10, bottom: 20),
+    return const Padding(
+      padding: EdgeInsets.only(left: 20, top: 10, bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -173,17 +175,17 @@ class _DrawerItem extends StatelessWidget {
         data: ThemeData(),
         child: ListTile(
           selected: true,
-          selectedTileColor: Color.fromRGBO(34, 34, 34, 1),
+          selectedTileColor: const Color.fromRGBO(34, 34, 34, 1),
           leading: icon != null
               ? Icon(
                   icon,
                   size: 23,
-                  color: Color.fromRGBO(106, 106, 106, 1),
+                  color: const Color.fromRGBO(106, 106, 106, 1),
                 )
               : null,
           title: Text(
             title,
-            style: TextStyle(color: Color.fromRGBO(193, 193, 193, 1)),
+            style: const TextStyle(color: Color.fromRGBO(193, 193, 193, 1)),
           ),
           onTap: onTap,
         ));

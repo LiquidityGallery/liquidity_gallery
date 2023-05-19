@@ -4,14 +4,14 @@ import '../liquidity_gallery.dart';
 
 Future<dynamic> showLockPanel(
     BuildContext context, Function onPressed, String password) async {
-  TextEditingController _controller = TextEditingController();
+  TextEditingController controller = TextEditingController();
 
   return await showModal(
       context,
       Column(mainAxisSize: MainAxisSize.min, children: [
-        Center(
+        const Center(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [Text("PLEASE ENTER PASSWORD"), Icon(Icons.lock)],
@@ -22,7 +22,7 @@ Future<dynamic> showLockPanel(
           maxLines: 1,
           obscureText: true,
           autofocus: true,
-          controller: _controller,
+          controller: controller,
           labeltext: 'Password',
         ),
         Row(
@@ -31,7 +31,7 @@ Future<dynamic> showLockPanel(
               child: ConfirmButton(
                 text: 'ENTER',
                 onPressed: () async {
-                  if (_controller.text == password) {
+                  if (controller.text == password) {
                     Navigator.pop(context);
                     await onPressed();
                   } else {

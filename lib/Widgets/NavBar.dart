@@ -10,7 +10,7 @@ class NavBar extends StatefulWidget {
   final double unselectedFontSize;
   final double selectedFontSize;
 
-  NavBar(
+  const NavBar(
       {Key? key,
       required this.NumOfItem,
       required this.children,
@@ -26,8 +26,8 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  // static const TextStyle optionStyle =
+  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   late List<Widget> _widgetOptions;
 
   @override
@@ -53,7 +53,7 @@ class _NavBarState extends State<NavBar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: widget.color == null ? Colors.cyan[800] : widget.color,
+        backgroundColor: widget.color ?? Colors.cyan[800],
         items: widget.items,
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.white,

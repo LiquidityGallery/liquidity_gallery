@@ -28,11 +28,11 @@ class BadgesIcon extends StatelessWidget {
       // animationType: badgeAnimationType ?? BadgeAnimationType.slide,
       // padding: padding ?? EdgeInsets.all(3),
       showBadge: showBadge,
-      child: child ?? Icon(Icons.notifications),
       badgeContent: Text(
         badge?.toString() ?? '',
         style: textStyle,
       ),
+      child: child ?? const Icon(Icons.notifications),
     );
   }
 }

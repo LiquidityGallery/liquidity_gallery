@@ -38,7 +38,7 @@ class MailboxContainer extends StatelessWidget {
         padding: EdgeInsets.all(padding),
         margin: EdgeInsets.fromLTRB(0, topMargin, 0, bottomMargin),
         decoration: BoxDecoration(
-            color: backgroundColor == null ? Colors.white54 : backgroundColor,
+            color: backgroundColor ?? Colors.white54,
             borderRadius: BorderRadius.circular(Radius!),
             boxShadow: darkModeOn
                 ? []
@@ -50,10 +50,10 @@ class MailboxContainer extends StatelessWidget {
                                 spreadRadius: 2,
                                 blurRadius: 5,
                                 offset:
-                                    Offset(0, 4), // changes position of shadow
+                                    const Offset(0, 4), // changes position of shadow
                               )
                             : boxShadow!)
-                        : BoxShadow()
+                        : const BoxShadow()
                   ]),
         child: child,
       ),

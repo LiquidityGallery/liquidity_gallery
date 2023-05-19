@@ -26,11 +26,11 @@ class User {
   User({required this.id, required this.name, required this.accesses});
 
   bool canAccess(Area area) {
-    return this.accesses.any((access) => access.area == area);
+    return accesses.any((access) => access.area == area);
   }
 
   int accessLevel(Area area) {
-    return this.accesses.firstWhere((element) => element.area == area).level;
+    return accesses.firstWhere((element) => element.area == area).level;
   }
 
   factory User.fromJson(Map<String, dynamic> data) {
@@ -94,15 +94,15 @@ class _AccessViewState extends State<AccessView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Access'),
+        title: const Text('Access'),
       ),
       body: ListView(
         children: [
           Text('Current logged in as ${currentUser.name}'),
           Text(
-              'You can access ${currentUser.accesses.fold<String>('', (previousValue, element) => previousValue + '${describeEnum(element.area)}(${element.level}) ')}'),
+              'You can access ${currentUser.accesses.fold<String>('', (previousValue, element) => '$previousValue${describeEnum(element.area)}(${element.level}) ')}'),
           ListTile(
-            title: Text('Change user'),
+            title: const Text('Change user'),
             onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -112,7 +112,7 @@ class _AccessViewState extends State<AccessView> {
                 .then((value) => setState(() => currentUser = value)),
           ),
           ListTile(
-            title: Text('Item'),
+            title: const Text('Item'),
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -138,7 +138,7 @@ class RightView extends StatelessWidget {
     } else {
       return Scaffold(
         appBar: AppBar(),
-        body: Center(
+        body: const Center(
           child: Text('You do have the access right'),
         ),
       );
@@ -148,35 +148,35 @@ class RightView extends StatelessWidget {
   Widget _build() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Item'),
+        title: const Text('Item'),
       ),
       body: ListView(
         children: [
           AccessListTile(
             userLevel: user.accessLevel(area),
             level: 1,
-            child: ListTile(
+            child: const ListTile(
               title: Text('If you can see this, you have access right level 1'),
             ),
           ),
           AccessListTile(
             userLevel: user.accessLevel(area),
             level: 2,
-            child: ListTile(
+            child: const ListTile(
               title: Text('If you can see this, you have access right level 2'),
             ),
           ),
           AccessListTile(
             userLevel: user.accessLevel(area),
             level: 3,
-            child: ListTile(
+            child: const ListTile(
               title: Text('If you can see this, you have access right level 3'),
             ),
           ),
           AccessListTile(
             userLevel: user.accessLevel(area),
             level: 4,
-            child: ListTile(
+            child: const ListTile(
               title: Text('If you can see this, you have access right level 4'),
             ),
           )
@@ -195,7 +195,7 @@ class _SelectUserView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select user'),
+        title: const Text('Select user'),
       ),
       body: ListView(
         children: users

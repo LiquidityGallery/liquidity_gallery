@@ -65,13 +65,13 @@ class _SearchPage<T> extends StatefulWidget {
 }
 
 class __SearchPageState<T> extends State<_SearchPage<T>> {
-  List<String> _tempList = [
-    'abc',
-    'bcd',
-    'cde',
-    'def',
-    'efg',
-  ];
+  // List<String> _tempList = [
+  //   'abc',
+  //   'bcd',
+  //   'cde',
+  //   'def',
+  //   'efg',
+  // ];
 
   String _filter = '';
   final _filterController = TextEditingController();
@@ -93,16 +93,16 @@ class __SearchPageState<T> extends State<_SearchPage<T>> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height - 50,
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.search),
-          title: Text('Search'),
+          leading: const Icon(Icons.search),
+          title: const Text('Search'),
           actions: [
             IconButton(
                 onPressed: () => Navigator.pop(context),
-                icon: Icon(Icons.cancel))
+                icon: const Icon(Icons.cancel))
           ],
         ),
         body: Padding(
@@ -117,7 +117,7 @@ class __SearchPageState<T> extends State<_SearchPage<T>> {
                         autofocus: true,
                         textInputAction: TextInputAction.search,
                         decoration: widget.inputDecoration ??
-                            InputDecoration(hintText: 'Search'),
+                            const InputDecoration(hintText: 'Search'),
                         onChanged: (String string) {
                           setState(() {
                             _filter = string;
@@ -138,13 +138,13 @@ class __SearchPageState<T> extends State<_SearchPage<T>> {
                               _filter = '';
                             });
                           },
-                          child: Text('Cancel'))
+                          child: const Text('Cancel'))
                       : Container()
                 ],
               ),
               Expanded(
                   child: _isLoading
-                      ? Center(
+                      ? const Center(
                           child: CircularProgressIndicator.adaptive(),
                         )
                       : ListView(

@@ -52,10 +52,10 @@ class _SwitchButtonState extends State<SwitchButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: widget.padding ?? EdgeInsets.symmetric(horizontal: 10),
+      padding: widget.padding ?? const EdgeInsets.symmetric(horizontal: 10),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: _bool
+            backgroundColor: _bool
                 ? widget.activeColor ?? Theme.of(context).primaryColor
                 : widget.inactiveColor ??
                     Theme.of(context).colorScheme.secondary),
@@ -67,7 +67,7 @@ class _SwitchButtonState extends State<SwitchButton> {
         },
         child: Padding(
           padding: widget.childPadding ??
-              EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+              const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -83,9 +83,9 @@ class _SwitchButtonState extends State<SwitchButton> {
                 style: widget.textStyle ??
                     TextStyle(
                         fontSize:
-                            Theme.of(context).textTheme.bodyText1?.fontSize ??
+                            Theme.of(context).textTheme.bodyLarge?.fontSize ??
                                 8.0,
-                        color: Theme.of(context).textTheme.bodyText1?.color ??
+                        color: Theme.of(context).textTheme.bodyLarge?.color ??
                             Colors.white),
               )
             ],

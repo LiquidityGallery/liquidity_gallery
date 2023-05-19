@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 
 class LocationInfoView extends StatefulWidget {
+  const LocationInfoView({super.key});
+
   @override
   _LocationViewState createState() => _LocationViewState();
 }
 
 class _LocationViewState extends State<LocationInfoView> {
-  Location _location = new Location();
+  final Location _location = Location();
 
   bool _serviceEnabled = false;
   PermissionStatus _permissionStatus = PermissionStatus.denied;
@@ -57,21 +59,21 @@ class _LocationViewState extends State<LocationInfoView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Location information'),
+        title: const Text('Location information'),
       ),
       body: ListView(
         children: [
           ListTile(
-            leading: Text('Service enabled'),
+            leading: const Text('Service enabled'),
             title: Text('$_serviceEnabled'),
           ),
           ListTile(
-            leading: Text('Permission granted'),
+            leading: const Text('Permission granted'),
             title: Text('${_permissionStatus == PermissionStatus.granted}'),
           ),
           ListTile(
-            leading: Text('Permission status'),
-            title: Text('${describeEnum(_permissionStatus)}'),
+            leading: const Text('Permission status'),
+            title: Text(describeEnum(_permissionStatus)),
           ),
           _locationData != null ? _locationDataField() : Container()
         ],
@@ -83,43 +85,43 @@ class _LocationViewState extends State<LocationInfoView> {
     return Column(
       children: [
         ListTile(
-          leading: Text('latitude'),
+          leading: const Text('latitude'),
           title: Text('${_locationData!.latitude}'),
         ),
         ListTile(
-          leading: Text('longitude'),
+          leading: const Text('longitude'),
           title: Text('${_locationData!.longitude}'),
         ),
         ListTile(
-          leading: Text('accuracy'),
+          leading: const Text('accuracy'),
           title: Text('${_locationData!.accuracy}'),
         ),
         ListTile(
-          leading: Text('altitude'),
+          leading: const Text('altitude'),
           title: Text('${_locationData!.altitude}'),
         ),
         ListTile(
-          leading: Text('speed'),
+          leading: const Text('speed'),
           title: Text('${_locationData!.speed}'),
         ),
         ListTile(
-          leading: Text('speed accuracy'),
+          leading: const Text('speed accuracy'),
           title: Text('${_locationData!.speedAccuracy}'),
         ),
         ListTile(
-          leading: Text('heading'),
+          leading: const Text('heading'),
           title: Text('${_locationData!.heading}'),
         ),
         ListTile(
-          leading: Text('heading accuracy'),
+          leading: const Text('heading accuracy'),
           title: Text('${_locationData!.headingAccuracy}'),
         ),
         ListTile(
-          leading: Text('time'),
+          leading: const Text('time'),
           title: Text('${_locationData!.time}'),
         ),
         ListTile(
-          leading: Text('is mock?'),
+          leading: const Text('is mock?'),
           title: Text('${_locationData!.isMock}'),
         )
       ],

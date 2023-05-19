@@ -8,32 +8,36 @@ import 'LocationInfoView.dart';
 import 'ModalSheetView.dart';
 import 'NestedNavigationFlowView.dart';
 import 'SharePrintView.dart';
-import 'StartEndDatePickerView.dart';
+// import 'StartEndDatePickerView.dart';
 import 'SwitchButtonView.dart';
 import 'TwitterLightOutView.dart';
 import 'TwitterThemeView.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: twitterLightTheme,
       darkTheme: twitterDarkTheme,
-      home: MainView(),
+      home: const MainView(),
     );
   }
 }
 
 class MainView extends StatelessWidget {
+  const MainView({super.key});
+
   @override
   Widget build(BuildContext context) {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool darkModeOn = brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: ListView(
         children: [
@@ -41,10 +45,10 @@ class MainView extends StatelessWidget {
               onPressed: () async {
                 print(await datePicker(context));
               },
-              child: Text("Date Picker")),
+              child: const Text("Date Picker")),
 
           ListTile(
-            title: Text('Currency picker'),
+            title: const Text('Currency picker'),
             onTap: () async {
               print(await enumPicker(context, Currency.values));
             },
@@ -69,10 +73,10 @@ class MainView extends StatelessWidget {
           ConfirmButton(
               text: 'test onYesNo',
               onPressed: () async {
-                final _bool = await onYesNo(context).timeout(
-                    Duration(seconds: 1),
+                final bool = await onYesNo(context).timeout(
+                    const Duration(seconds: 1),
                     onTimeout: () => throw 'timeout');
-                print(_bool);
+                print(bool);
               }),
           // CalendarTimeline(
           //   initialDate: DateTime(2020, 4, 20),
@@ -91,32 +95,32 @@ class MainView extends StatelessWidget {
           ContentCard(
             imageURL:
                 'https://firebasestorage.googleapis.com/v0/b/logistized.appspot.com/o/MDOS%2Fimage_picker_29CA1672-E0F8-4AEB-857C-78BA383F5DD5-77684-00000A943FA057CE.jpg?alt=media&token=2c78a779-3861-43cf-8974-e0eafc051293',
-            child: Text("HI"),
             subtitle: 'WD News Today',
             //    dense: true,
             onTap: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.update,
               size: 17,
             ),
+            child: const Text("HI"),
           ),
           ListTile(
-            title: Text("Bubble Tabbar Example"),
+            title: const Text("Bubble Tabbar Example"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (_) => Scaffold(
                         appBar: AppBar(
-                          title: Text("Bubble"),
+                          title: const Text("Bubble"),
                         ),
                         body: Center(
-                          child: Container(
+                          child: SizedBox(
                               width: 500,
                               height: 1000,
                               child: BubbleTabBar(
                                   labelColor: Colors.black87,
                                   unselectedLabalColor: Colors.grey,
                                   indicatorColor: Colors.transparent,
-                                  tabs: [
+                                  tabs: const [
                                     Tab(
                                       text: 'One',
                                     ),
@@ -128,14 +132,14 @@ class MainView extends StatelessWidget {
                                     ListView(
                                       children: [
                                         Container(
-                                          child: Text("One"),
                                           color: Colors.blue,
+                                          child: const Text("One"),
                                         )
                                       ],
                                     ),
                                     Container(
-                                      child: Text("Second"),
                                       color: Colors.red,
+                                      child: const Text("Second"),
                                     )
                                   ])),
                         ),
@@ -143,34 +147,36 @@ class MainView extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Loading widget'),
+            title: const Text('Loading widget'),
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadingWidget(
                           load: () async {
-                            await Future.delayed(Duration(seconds: 5));
+                            await Future.delayed(const Duration(seconds: 5));
                           },
-                          timeout: Duration(seconds: 2),
+                          timeout: const Duration(seconds: 2),
                         ))),
           ),
 
           ListTile(
-            title: Text('Twitter Light Out theme'),
+            title: const Text('Twitter Light Out theme'),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => TwitterLightsOutView()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const TwitterLightsOutView()));
             },
           ),
           ListTile(
-            title: Text('Twitter theme'),
+            title: const Text('Twitter theme'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => TwitterThemeView()));
+                  MaterialPageRoute(builder: (_) => const TwitterThemeView()));
             },
           ),
           ListTile(
-            title: Text('Twitter Light Out Login'),
+            title: const Text('Twitter Light Out Login'),
             onTap: () {
               // Navigator.push(
               //     context,
@@ -183,43 +189,47 @@ class MainView extends StatelessWidget {
               //             )));
             },
           ),
+          // ListTile(
+          //   title: const Text('StartEndDatePicker'),
+          //   onTap: () => Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //           builder: (context) => const StartEndDatePickerView())),
+          // ),
           ListTile(
-            title: Text('StartEndDatePicker'),
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => StartEndDatePickerView())),
-          ),
-          ListTile(
-            title: Text('Location Info'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => LocationInfoView())),
+            title: const Text('Location Info'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const LocationInfoView())),
           ),
           // ListTile(
           //     title: Text('Location and Google Map'),
           //     onTap: () => Navigator.push(
           //         context, MaterialPageRoute(builder: (_) => LocationView()))),
           ListTile(
-              title: Text('Export Text From PDF'),
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => ExportTextFromPDFView()))),
+              title: const Text('Export Text From PDF'),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const ExportTextFromPDFView()))),
           ListTile(
-            title: Text('Auto Complete example'),
+            title: const Text('Auto Complete example'),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => const AutoCompleteExampleView())),
+          ),
+          ListTile(
+            title: const Text('Item view exmaple'),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const ItemView())),
+          ),
+          ListTile(
+            title: const Text('Switch button example'),
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (_) => AutoCompleteExampleView())),
+                MaterialPageRoute(builder: (_) => const SwitchButtonView())),
           ),
           ListTile(
-            title: Text('Item view exmaple'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => ItemView())),
-          ),
-          ListTile(
-            title: Text('Switch button example'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => SwitchButtonView())),
-          ),
-          ListTile(
-            title: Text('Nested navigation flow'),
+            title: const Text('Nested navigation flow'),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (_) => NestedNavigationFlowView())),
           ),
@@ -229,44 +239,46 @@ class MainView extends StatelessWidget {
           //       context, MaterialPageRoute(builder: (_) => PickImageView())),
           // ),
           ListTile(
-            title: Text('Access example'),
+            title: const Text('Access example'),
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => AccessView())),
+                context, MaterialPageRoute(builder: (_) => const AccessView())),
           ),
-          ListTile(
+          const ListTile(
             title: Text('Badges Icon'),
             // onTap: () => Navigator.push(
             //     context, MaterialPageRoute(builder: (_) => BadgesIconView())),
           ),
           ListTile(
-            title: Text('Modal sheet example'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => ModalSheetView())),
+            title: const Text('Modal sheet example'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const ModalSheetView())),
           ),
           ListTile(
-            title: Text('Share & Print'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => SharePrintView())),
+            title: const Text('Share & Print'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const SharePrintView())),
           ),
           // ListTile(
           //   title: Text('Search text field example'),
           //   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SearchTextFieldView())),
           // ),
-          Header(
+          const Header(
             text: 'Title',
             color: Colors.white,
           ),
-          Texter(
+          const Texter(
             text: 'This is a text.',
             color: Colors.white,
           ),
-          darkModeOn == true ? Text("Darkmode") : Text("Lighttheme"),
+          darkModeOn == true
+              ? const Text("Darkmode")
+              : const Text("Lighttheme"),
           ListTile(
-            title: Text('Show modal'),
+            title: const Text('Show modal'),
             onTap: () => showModalBottomSheet(
                 context: context,
                 isScrollControlled: true,
-                builder: (context) => SafeArea(
+                builder: (context) => const SafeArea(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [TextField()],
@@ -280,7 +292,7 @@ class MainView extends StatelessWidget {
             elevation: 0,
             color: Colors.black87,
           ),
-          BubbleTabBar(tabs: [
+          BubbleTabBar(tabs: const [
             Tab(
               text: 'One',
             ),

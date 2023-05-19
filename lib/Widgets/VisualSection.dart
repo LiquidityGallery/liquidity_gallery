@@ -57,12 +57,12 @@ class VisualSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: backgroundcolor == null ? Colors.white54 : backgroundcolor,
+      color: backgroundcolor ?? Colors.white54,
       height: height,
       constraints: BoxConstraints(minHeight: minheight!),
       child: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: 1000),
+          constraints: const BoxConstraints(maxWidth: 1000),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -94,7 +94,7 @@ class VisualSection extends StatelessWidget {
                               ? FontWeight.bold
                               : FontWeight.normal),
                     ),
-              Padding(padding: EdgeInsets.all(10)),
+              const Padding(padding: EdgeInsets.all(10)),
               Wrap(
                 alignment: WrapAlignment.spaceEvenly,
                 direction: Axis.horizontal,
@@ -150,7 +150,6 @@ class DisplayFrame extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8, right: 8, left: 8),
                   child: Container(
-                    child: child,
                     decoration: BoxDecoration(
                         //  color: Colors.cyan,
                         borderRadius: BorderRadius.circular(8.0),
@@ -163,6 +162,7 @@ class DisplayFrame extends StatelessWidget {
                         ]),
                     width: width,
                     height: height,
+                    child: child,
                   ),
                 ),
               ),
@@ -183,7 +183,7 @@ class DisplayFrame extends StatelessWidget {
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.bold,
                           color:
-                              titlecolor == null ? Colors.black : titlecolor),
+                              titlecolor ?? Colors.black),
                     ),
                   ),
             subtitle == null
@@ -193,9 +193,7 @@ class DisplayFrame extends StatelessWidget {
                     child: Text(
                       subtitle!,
                       style: TextStyle(
-                          color: subtitlecolor == null
-                              ? Colors.black54
-                              : subtitlecolor),
+                          color: subtitlecolor ?? Colors.black54),
                     ),
                   )
           ],
@@ -240,7 +238,7 @@ class DotPoint extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: dotcolor == null ? Colors.yellow : dotcolor,
+                      color: dotcolor ?? Colors.yellow,
                       borderRadius: BorderRadius.circular(48.0),
                       boxShadow: [
                         BoxShadow(
@@ -252,7 +250,7 @@ class DotPoint extends StatelessWidget {
                   width: 50,
                   height: 50,
                   child: Center(
-                    child: icon == null ? Icon(Icons.ac_unit) : icon,
+                    child: icon ?? const Icon(Icons.ac_unit),
                   ),
                 ),
               ),
@@ -267,7 +265,7 @@ class DotPoint extends StatelessWidget {
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.bold,
                           color:
-                              titlecolor == null ? Colors.black : titlecolor),
+                              titlecolor ?? Colors.black),
                     ),
                   ),
             subtitle == null
@@ -278,9 +276,7 @@ class DotPoint extends StatelessWidget {
                       subtitle!,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: subtitlecolor == null
-                              ? Colors.black54
-                              : subtitlecolor),
+                          color: subtitlecolor ?? Colors.black54),
                     ),
                   )
           ],
@@ -331,6 +327,20 @@ class ListBoard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
+              decoration: BoxDecoration(
+                  color:
+                      backgroundcolor ?? Colors.cyan,
+                  borderRadius: BorderRadius.circular(radius!),
+                  // border: Border.all(width: 10,color: Colors.cyanAccent),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[400]!,
+                      blurRadius: 1.0,
+                      spreadRadius: 0.5,
+                    )
+                  ]),
+              constraints:
+                  const BoxConstraints(minHeight: 600, minWidth: 370, maxWidth: 420),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -347,13 +357,11 @@ class ListBoard extends StatelessWidget {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.raleway(
                                 fontSize: titlefontsize,
-                                color: titlecolor == null
-                                    ? Colors.black
-                                    : titlecolor,
+                                color: titlecolor ?? Colors.black,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                  Padding(padding: EdgeInsets.all(10)),
+                  const Padding(padding: EdgeInsets.all(10)),
                   child == null
                       ? Container()
                       : Padding(
@@ -369,29 +377,11 @@ class ListBoard extends StatelessWidget {
                               onpressed!;
                             },
                             text: buttontext,
-                            color: buttoncolor == null
-                                ? Colors.yellow
-                                : buttoncolor,
-                            textcolor: (buttontextcolor == null
-                                ? Colors.black87
-                                : buttontextcolor),
+                            color: buttoncolor ?? Colors.yellow,
+                            textcolor: (buttontextcolor ?? Colors.black87),
                           ))
                 ],
               ),
-              decoration: BoxDecoration(
-                  color:
-                      backgroundcolor == null ? Colors.cyan : backgroundcolor,
-                  borderRadius: BorderRadius.circular(radius!),
-                  // border: Border.all(width: 10,color: Colors.cyanAccent),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[400]!,
-                      blurRadius: 1.0,
-                      spreadRadius: 0.5,
-                    )
-                  ]),
-              constraints:
-                  BoxConstraints(minHeight: 600, minWidth: 370, maxWidth: 420),
             ),
           ),
         ),
@@ -500,9 +490,7 @@ class HeroBoard extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.raleway(
                               fontSize: titlefontsize,
-                              color: titlecolor == null
-                                  ? Colors.black
-                                  : titlecolor,
+                              color: titlecolor ?? Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -515,9 +503,7 @@ class HeroBoard extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.raleway(
                             fontSize: subtitlefontsize!,
-                            color: subtitlecolor == null
-                                ? Colors.black87
-                                : subtitlecolor,
+                            color: subtitlecolor ?? Colors.black87,
                           ),
                         ),
                       ),
@@ -526,13 +512,11 @@ class HeroBoard extends StatelessWidget {
                     : ConfirmButton(
                         onPressed: onPressed!,
                         color:
-                            buttoncolor == null ? Colors.yellow : buttoncolor,
+                            buttoncolor ?? Colors.yellow,
                         text: buttontext,
                         radius: radius!,
                         minWidth: 140,
-                        textcolor: buttontextcolor == null
-                            ? Colors.black
-                            : buttontextcolor,
+                        textcolor: buttontextcolor ?? Colors.black,
                       )
               ],
             ),

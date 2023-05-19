@@ -31,7 +31,7 @@ class FuturesDoc<T> extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return child(snapshot.data!);
         } else {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }

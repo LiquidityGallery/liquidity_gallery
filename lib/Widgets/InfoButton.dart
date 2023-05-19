@@ -23,6 +23,9 @@ class InfoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BubbleTile(
       onTap: onTap,
+      backgroundColor: color ?? Colors.cyan[800],
+      height: height,
+      width: width,
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Stack(
@@ -36,10 +39,10 @@ class InfoButton extends StatelessWidget {
                 ),
               ],
             ),
-            Align(
+            const Align(
                 alignment: Alignment.bottomRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.white,
@@ -48,9 +51,6 @@ class InfoButton extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: color ?? Colors.cyan[800],
-      height: height,
-      width: width,
     );
   }
 }

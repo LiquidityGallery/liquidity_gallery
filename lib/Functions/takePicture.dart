@@ -17,11 +17,11 @@ import 'package:path/path.dart';
 ///   <string>Privacy - Microphone Usage Description</string>
 
 Future<PickFile> takeImage() async {
-  final PickedFile? _pickedFile =
+  final PickedFile? pickedFile =
       await ImagePicker().getImage(source: ImageSource.camera);
-  if (_pickedFile != null) {
-    final _uint8List = await _pickedFile.readAsBytes();
-    return PickFile(uint8list: _uint8List, name: basename(_pickedFile.path));
+  if (pickedFile != null) {
+    final uint8List = await pickedFile.readAsBytes();
+    return PickFile(uint8list: uint8List, name: basename(pickedFile.path));
   } else {
     throw 'No image selected';
   }

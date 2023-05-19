@@ -3,15 +3,15 @@ import 'package:location/location.dart';
 /// Function to get current location
 /// See usage on example [LocationInfoView.dart]
 Future<void> checkLocationPermission() async {
-  Location _location = Location();
+  Location location = Location();
 
   print('Checking location service enable...');
-  var _serviceEnabled = await _location.serviceEnabled();
-  if (!_serviceEnabled) {
+  var serviceEnabled = await location.serviceEnabled();
+  if (!serviceEnabled) {
     print('Location service disable');
     print('Requesting location service enable...');
-    _serviceEnabled = await _location.requestService();
-    if (!_serviceEnabled) {
+    serviceEnabled = await location.requestService();
+    if (!serviceEnabled) {
       print('Location service request denied');
       return;
     }
@@ -19,12 +19,12 @@ Future<void> checkLocationPermission() async {
   print('Location service enabled');
 
   print('Checking location permission...');
-  var _permissionStatus = await _location.hasPermission();
-  if (_permissionStatus == PermissionStatus.denied) {
+  var permissionStatus = await location.hasPermission();
+  if (permissionStatus == PermissionStatus.denied) {
     print('Location permission denied');
     print('Requesting location permission...');
-    _permissionStatus = await _location.requestPermission();
-    if (_permissionStatus != PermissionStatus.granted) {
+    permissionStatus = await location.requestPermission();
+    if (permissionStatus != PermissionStatus.granted) {
       print('Location permission denied');
       return;
     }
@@ -34,7 +34,7 @@ Future<void> checkLocationPermission() async {
 
 Future<LocationData> getLocation() async {
   print('Loading location data...');
-  LocationData _locationData = await Location().getLocation();
+  LocationData locationData = await Location().getLocation();
   print('Location data loaded');
-  return _locationData;
+  return locationData;
 }

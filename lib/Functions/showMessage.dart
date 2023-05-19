@@ -6,7 +6,7 @@ void showMessage(BuildContext context, String message,
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     // backgroundColor: Colors.cyan,
     content: Text(
-      '$message',
+      message,
       // style: TextStyle(color: Colors.white),
     ),
     action: onReturn != null

@@ -28,11 +28,9 @@ class _SearchBarState extends State<SearchBar> {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, bottom: 1),
       child: CupertinoTextField(
-        padding: EdgeInsets.all(9),
+        padding: const EdgeInsets.all(9),
         decoration: BoxDecoration(
-            color: widget.backgroundColor == null
-                ? Colors.grey[200]
-                : widget.backgroundColor,
+            color: widget.backgroundColor ?? Colors.grey[200],
             borderRadius: BorderRadius.circular(11)),
         controller: widget.controller,
         onChanged: widget.onChanged,

@@ -7,7 +7,7 @@ const _appId = 'dc871ed0a64a4214ad53eaccc9980b6b';
 final symbols = Currency.values.map((e) => e.name).join(',');
 
 Future<num> getRate(Currency from, Currency to, {double? amount}) async {
-  final url = 'https://openexchangerates.org/api/latest.json';
+  const url = 'https://openexchangerates.org/api/latest.json';
 
   final queryParameters = {'app_id': _appId, 'symbols': symbols};
 
