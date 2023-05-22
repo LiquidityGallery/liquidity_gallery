@@ -205,12 +205,12 @@ class MainView extends StatelessWidget {
           //     title: Text('Location and Google Map'),
           //     onTap: () => Navigator.push(
           //         context, MaterialPageRoute(builder: (_) => LocationView()))),
-          ListTile(
-              title: const Text('Export Text From PDF'),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => const ExportTextFromPDFView()))),
+          // ListTile(
+          //     title: const Text('Export Text From PDF'),
+          //     onTap: () => Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (_) => const ExportTextFromPDFView()))),
           ListTile(
             title: const Text('Auto Complete example'),
             onTap: () => Navigator.push(

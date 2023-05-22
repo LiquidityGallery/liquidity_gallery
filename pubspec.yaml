@@ -30,7 +30,7 @@ dependencies:
   just_audio: ^0.9.25
   # location: ^4.3.0
   mobile_scanner: ^3.0.0
-  pdf_text: ^0.5.0
+  # pdf_text: ^0.5.0
   string_similarity: ^2.0.0
   url_launcher: ^6.0.9
   dio: ^5.0.1
