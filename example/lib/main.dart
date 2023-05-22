@@ -190,11 +190,11 @@ class MainView extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) => StartEndDatePickerView())),
           ),
-          ListTile(
-            title: Text('Location Info'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => LocationInfoView())),
-          ),
+          // ListTile(
+          //   title: Text('Location Info'),
+          //   onTap: () => Navigator.push(
+          //       context, MaterialPageRoute(builder: (_) => LocationInfoView())),
+          // ),
           // ListTile(
           //     title: Text('Location and Google Map'),
           //     onTap: () => Navigator.push(
