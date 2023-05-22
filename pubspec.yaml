@@ -37,7 +37,7 @@ dependencies:
   intl: ^0.18.0
   share_plus: ^7.0.0
   google_fonts: ^4.0.4
-  flutter_datetime_picker: ^1.5.1
+  # flutter_datetime_picker: ^1.5.1
   firebase_storage: ^11.1.2
   firebase_core: ^2.11.0
   firebase_auth: ^4.5.0
