@@ -189,17 +189,6 @@ class MainView extends StatelessWidget {
               //             )));
             },
           ),
-          // ListTile(
-          //   title: const Text('StartEndDatePicker'),
-          //   onTap: () => Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //           builder: (context) => const StartEndDatePickerView())),
-          // ),
-          // ListTile(
-          //   title: const Text('Location Info'),
-          //   onTap: () => Navigator.push(context,
-          //       MaterialPageRoute(builder: (_) => const LocationInfoView())),
           // ),
           // ListTile(
           //     title: Text('Location and Google Map'),
