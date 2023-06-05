@@ -38,7 +38,7 @@ class AutoSizedAppBarWithImage extends StatelessWidget {
               Expanded(
                   flex: 4,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Center(
                       child: GestureDetector(
                         child: Hero(
@@ -47,9 +47,9 @@ class AutoSizedAppBarWithImage extends StatelessWidget {
                             cacheManager: baseCacheManger,
                             imageUrl: imageUrls.first,
                             placeholder: (context, url) =>
-                                CircularProgressIndicator.adaptive(),
+                                const CircularProgressIndicator.adaptive(),
                             errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
+                                const Icon(Icons.error),
                           ),
                         ),
                         onTap: () {
@@ -70,7 +70,7 @@ class AutoSizedAppBarWithImage extends StatelessWidget {
                 child: Center(
                   child: AutoSizeText(
                     title,
-                    style: style ?? Theme.of(context).textTheme.headline5,
+                    style: style ?? Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
               )
@@ -93,7 +93,7 @@ class BigImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Images'),
+        title: const Text('Images'),
       ),
       body: CarouselSlider(
         items: imageUrls
@@ -101,17 +101,17 @@ class BigImage extends StatelessWidget {
                   tag: 'imageHero',
                   child: GestureDetector(
                     onLongPress: () async {
-                      final _file =
+                      final file =
                           await baseCacheManager.getSingleFile(imageUrl);
-                      Share.shareFiles([_file.path], subject: _file.basename);
+                      Share.shareFiles([file.path], subject: file.basename);
                     },
                     child: CachedNetworkImage(
                       cacheManager: baseCacheManager,
                       imageUrl: imageUrl,
                       placeholder: (context, progress) =>
-                          CircularProgressIndicator.adaptive(),
+                          const CircularProgressIndicator.adaptive(),
                       errorWidget: (context, progress, value) =>
-                          Icon(Icons.error),
+                          const Icon(Icons.error),
                     ),
                   ),
                 ))

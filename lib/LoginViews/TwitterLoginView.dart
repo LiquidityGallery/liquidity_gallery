@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class TwitterLoginView extends StatefulWidget {
-  TwitterLoginView(
+  const TwitterLoginView(
       {Key? key,
       this.title = 'Login',
       this.loginText = 'Login',
@@ -25,7 +25,7 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
 
   final _passwordController = TextEditingController();
 
-  bool _showPassword = false;
+  // bool _showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +33,13 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Ellie'),
+          title: const Text('Ellie'),
         ),
-        body: ListView(padding: EdgeInsets.all(20), children: [
+        body: ListView(padding: const EdgeInsets.all(20), children: [
           Center(
             child: Text(
               widget.title,
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+              style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
             ),
           ),
           Visibility(
@@ -47,11 +47,11 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
               child: Column(
                 children: [
                   TextFormField(
-                    style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
+                    style: const TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
                     controller: _usernameController,
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.name,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Phone, email or username',
                     ),
                     onChanged: (String string) {
@@ -59,7 +59,7 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
                     },
                   ),
                   TextFormField(
-                    style: TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
+                    style: const TextStyle(color: Color.fromRGBO(73, 160, 235, 1)),
                     controller: _passwordController,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.visiblePassword,
@@ -67,15 +67,15 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
                       widget.onLogin!(
                           _usernameController.text, _passwordController.text);
                     },
-                    decoration: InputDecoration(hintText: 'Password'),
+                    decoration: const InputDecoration(hintText: 'Password'),
                     onChanged: (String string) {
                       setState(() {});
                     },
                   ),
-                  Divider(),
+                  const Divider(),
                 ],
               )),
-          TextDivider(
+          const TextDivider(
             text: 'or',
           ),
           // Visibility(
@@ -90,22 +90,22 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
           visible: widget.onLogin != null,
           child: BottomAppBar(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   border: Border(
                       top: BorderSide(
                           width: 1, color: Color.fromRGBO(33, 35, 38, 1)))),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Row(
                   children: [
                     TextButton(
-                        child: Text(
+                        child: const Text(
                           'Forgot password?',
                           style:
                               TextStyle(color: Color.fromRGBO(66, 144, 211, 1)),
                         ),
                         onPressed: () {}),
-                    Spacer(),
+                    const Spacer(),
                     _LoginButton(
                       enable: _usernameController.text.isNotEmpty &&
                           _passwordController.text.isNotEmpty,
@@ -140,8 +140,8 @@ class _LoginButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0))),
-      child: Text(text),
       onPressed: enable ? onTap : null,
+      child: Text(text),
     );
   }
 }

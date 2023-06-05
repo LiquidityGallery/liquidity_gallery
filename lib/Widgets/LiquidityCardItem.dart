@@ -16,7 +16,7 @@ class LiquidityCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
-      child: Column(
+      child: const Column(
         children: [],
       ),
     );

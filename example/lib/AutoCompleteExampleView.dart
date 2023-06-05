@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
 class AutoCompleteExampleView extends StatefulWidget {
+  const AutoCompleteExampleView({super.key});
+
   @override
   _AutoCompleteExampleViewState createState() =>
       _AutoCompleteExampleViewState();
 }
 
 class _AutoCompleteExampleViewState extends State<AutoCompleteExampleView> {
-  final List<User> _users = [
-    User(id: '01', name: '01User'),
-    User(id: '02', name: '02User'),
-    User(id: '03', name: '03User'),
-    User(id: '04', name: '04User'),
-    User(id: '05', name: '05User'),
-  ];
+  // final List<User> _users = [
+  //   User(id: '01', name: '01User'),
+  //   User(id: '02', name: '02User'),
+  //   User(id: '03', name: '03User'),
+  //   User(id: '04', name: '04User'),
+  //   User(id: '05', name: '05User'),
+  // ];
 
-  List<String> _list = ['1111', '2222', '3333', '4444', '5555'];
+  final List<String> _list = ['1111', '2222', '3333', '4444', '5555'];
 
   final controller = TextEditingController();
   final controller2 = TextEditingController();
@@ -29,14 +31,14 @@ class _AutoCompleteExampleViewState extends State<AutoCompleteExampleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Auto Complete example'),
+        title: const Text('Auto Complete example'),
       ),
       body: Form(
         key: _formKey,
         child: ListView(
           children: [
             ListTile(
-              leading: Text('Selected user'),
+              leading: const Text('Selected user'),
               title: Text(_user?.name ?? 'Not selected'),
             ),
             // LiquidityAutoComplete<User>(
@@ -102,7 +104,7 @@ class _AutoCompleteExampleViewState extends State<AutoCompleteExampleView> {
                 onPressed: () {
                   setState(() {});
                 },
-                child: Text('Validate')),
+                child: const Text('Validate')),
             Center(
               child:
                   Text((_formKey.currentState?.validate() ?? false).toString()),

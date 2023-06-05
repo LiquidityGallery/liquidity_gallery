@@ -20,7 +20,7 @@ class AddressText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
-      return Text('Current not supported for web');
+      return const Text('Current not supported for web');
     } else {
       return FutureBuilder(
         future: placemarkFromCoordinates(latitude, longitude),
@@ -28,7 +28,7 @@ class AddressText extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             return Text('${snapshot.data!.first.toJson()}');
           } else {
-            return Text('$loadingText');
+            return Text(loadingText);
           }
         },
       );

@@ -8,7 +8,7 @@ class SharePrintView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Share & Print'),
+        title: const Text('Share & Print'),
       ),
       body: ListView(
         children: [
@@ -16,7 +16,7 @@ class SharePrintView extends StatelessWidget {
               onPressed: () {
                 Share.share('Testing');
               },
-              child: Text('Share text "Testing"'))
+              child: const Text('Share text "Testing"'))
         ],
       ),
     );

@@ -18,20 +18,20 @@ class LocationText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
-      return Text('Current not supported for web');
+      return const Text('Current not supported for web');
     } else {
       return FutureBuilder(
         future: locationFromAddress(address),
         builder: (context, AsyncSnapshot<List<Location>> snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            final _data = snapshot.data!.first;
+            final data = snapshot.data!.first;
             return Text(
-              'Latitude: ${_data.latitude}, Longitude: ${_data.longitude}',
+              'Latitude: ${data.latitude}, Longitude: ${data.longitude}',
               style: textStyle,
             );
           } else {
             return Text(
-              '$loadingText',
+              loadingText,
               style: textStyle,
             );
           }

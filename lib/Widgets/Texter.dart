@@ -35,7 +35,7 @@ class Texter extends StatelessWidget {
         style: TextStyle(
             fontWeight: isbold == false ? FontWeight.normal : FontWeight.bold,
             fontSize: fontSize,
-            color: color == null ? Colors.black : color),
+            color: color ?? Colors.black),
       ),
     );
   }

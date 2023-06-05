@@ -18,7 +18,6 @@ class GrandButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: child,
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
@@ -27,8 +26,9 @@ class GrandButton extends StatelessWidget {
           ),
         ),
         backgroundColor: MaterialStateProperty.all(
-            backgroundColor == null ? Colors.white : backgroundColor),
+            backgroundColor ?? Colors.white),
       ),
+      child: child,
     );
   }
 }

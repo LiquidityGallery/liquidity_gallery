@@ -9,24 +9,24 @@ class ModalSheetView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Modal sheet example'),
+        title: const Text('Modal sheet example'),
       ),
       body: ListView(
         children: [
           ElevatedButton(
               onPressed: () {
-                showInputModal(context, [TextField()]);
+                showInputModal(context, [const TextField()]);
               },
-              child: Text('with input')),
+              child: const Text('with input')),
           ElevatedButton(
               onPressed: () {
                 showModalMax(
                     context,
                     Scaffold(
                       appBar: AppBar(
-                        title: Text('App bar'),
+                        title: const Text('App bar'),
                       ),
-                      body: Column(
+                      body: const Column(
                         children: [
                           ListTile(
                             title: Text('123'),
@@ -38,7 +38,7 @@ class ModalSheetView extends StatelessWidget {
                       ),
                     ));
               },
-              child: Text('Show modal max'))
+              child: const Text('Show modal max'))
         ],
       ),
     );

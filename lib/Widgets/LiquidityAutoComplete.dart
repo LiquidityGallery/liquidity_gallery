@@ -65,7 +65,7 @@ class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
             child: SizedBox(
               height: 200.0,
               child: ListView.builder(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 itemCount: options.length,
                 itemBuilder: (BuildContext context, int index) {
                   final T option = options.elementAt(index);

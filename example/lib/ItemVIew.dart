@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class ItemView extends StatelessWidget {
+  const ItemView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -17,7 +19,7 @@ class ItemView extends StatelessWidget {
                 flexibleSpace: AutoSizedAppBarWithImage(
                   bottomHeight: 60,
                   title: 'Item 01',
-                  imageUrls: [
+                  imageUrls: const [
                     'https://picsum.photos/2000/1000',
                     'https://picsum.photos/500/1000',
                     'https://picsum.photos/100/500'
@@ -65,7 +67,7 @@ class ItemView extends StatelessWidget {
               ),
               SliverList(
                   delegate: SliverChildListDelegate([
-                LiquidityCard(children: [
+                const LiquidityCard(children: [
                   LiquidityCardItem(
                     child: Text('List tile 1'),
                   )

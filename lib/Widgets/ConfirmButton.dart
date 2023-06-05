@@ -46,16 +46,16 @@ class _ConfirmButtonState extends State<ConfirmButton> {
       await widget.onPressed();
     } catch (e) {
       Flushbar(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         borderRadius: BorderRadius.circular(8),
         message: '$e',
-        duration: Duration(
+        duration: const Duration(
           seconds: 3,
         ),
-        animationDuration: Duration(seconds: 1),
+        animationDuration: const Duration(seconds: 1),
         forwardAnimationCurve: Curves.easeIn,
         reverseAnimationCurve: Curves.easeOut,
-      )..show(context);
+      ).show(context);
     }
     setState(() {
       _isLoading = false;
@@ -71,7 +71,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
         height: widget.height,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: widget.color == null ? Colors.cyan : widget.color,
+                backgroundColor: widget.color ?? Colors.cyan,
                 elevation: widget.elevation,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(widget.radius),
@@ -87,16 +87,14 @@ class _ConfirmButtonState extends State<ConfirmButton> {
               }
             },
             child: _isLoading
-                ? CircularProgressIndicator.adaptive()
+                ? const CircularProgressIndicator.adaptive()
                 : ((widget.text == '' && widget.icon != null)
                     ? widget.icon
                     : Text(
                         widget.text,
                         style: TextStyle(
                             fontSize: widget.fontSize,
-                            color: widget.textcolor == null
-                                ? Colors.white
-                                : widget.textcolor,
+                            color: widget.textcolor ?? Colors.white,
                             fontWeight: widget.isbold == true
                                 ? FontWeight.bold
                                 : FontWeight.normal),

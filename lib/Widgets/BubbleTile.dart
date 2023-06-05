@@ -41,7 +41,7 @@ class BubbleTile extends StatelessWidget {
           padding: EdgeInsets.all(margin),
           margin: EdgeInsets.fromLTRB(0, topMargin, 0, bottomMargin),
           decoration: BoxDecoration(
-              color: backgroundColor == null ? Colors.white : backgroundColor,
+              color: backgroundColor ?? Colors.white,
               borderRadius: BorderRadius.circular(Radius!),
               boxShadow: [
                 isShadow == true
@@ -49,9 +49,9 @@ class BubbleTile extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.15),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: Offset(0, 4), // changes position of shadow
+                        offset: const Offset(0, 4), // changes position of shadow
                       )
-                    : BoxShadow(color: Colors.transparent),
+                    : const BoxShadow(color: Colors.transparent),
               ]),
           child: child,
         ),

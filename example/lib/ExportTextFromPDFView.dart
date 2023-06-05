@@ -1,69 +1,71 @@
-import 'dart:io';
+// import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:pdf_text/pdf_text.dart';
-import 'package:path_provider/path_provider.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+// import 'package:pdf_text/pdf_text.dart';
+// import 'package:path_provider/path_provider.dart';
 
-class ExportTextFromPDFView extends StatefulWidget {
-  @override
-  _ExportTextFromPDFViewState createState() => _ExportTextFromPDFViewState();
-}
+// class ExportTextFromPDFView extends StatefulWidget {
+//   const ExportTextFromPDFView({super.key});
 
-class _ExportTextFromPDFViewState extends State<ExportTextFromPDFView> {
-  String? _string;
+//   @override
+//   _ExportTextFromPDFViewState createState() => _ExportTextFromPDFViewState();
+// }
 
-  Future<File> loadExamplePDF() async {
-    print('Loading bytes from assets');
-    final _bytes = await rootBundle.load('assets/pdf/MDO_example.pdf');
-    print('Bytes loaded');
+// class _ExportTextFromPDFViewState extends State<ExportTextFromPDFView> {
+//   String? _string;
 
-    print('Creating temporary empty file...');
-    final _file =
-        File('${(await getTemporaryDirectory()).path}/pdf/MDO_example.pdf');
-    print('Temporary empty file created');
+//   Future<File> loadExamplePDF() async {
+//     print('Loading bytes from assets');
+//     final bytes = await rootBundle.load('assets/pdf/MDO_example.pdf');
+//     print('Bytes loaded');
 
-    print('Writing bytes from assets to temporary empty file...');
-    await _file.writeAsBytes(
-        _bytes.buffer.asUint8List(_bytes.offsetInBytes, _bytes.lengthInBytes));
-    print('Bytes from assets wrote to temporary empty file');
+//     print('Creating temporary empty file...');
+//     final file =
+//         File('${(await getTemporaryDirectory()).path}/pdf/MDO_example.pdf');
+//     print('Temporary empty file created');
 
-    return _file;
-  }
+//     print('Writing bytes from assets to temporary empty file...');
+//     await file.writeAsBytes(
+//         bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
+//     print('Bytes from assets wrote to temporary empty file');
 
-  Future<PDFDoc> convertFileToPDFDoc(File file) async {
-    return await PDFDoc.fromFile(file);
-  }
+//     return file;
+//   }
 
-  Future<String> getTextFromPDFDoc(PDFDoc pdfDoc) async {
-    return await pdfDoc.text;
-  }
+//   Future<PDFDoc> convertFileToPDFDoc(File file) async {
+//     return await PDFDoc.fromFile(file);
+//   }
 
-  @override
-  void initState() {
-    super.initState();
-    loadExamplePDF().then((value) => convertFileToPDFDoc(value).then((value) {
-          getTextFromPDFDoc(value).then((value) {
-            setState(() {
-              _string = value;
-            });
-          });
-        }));
-  }
+//   Future<String> getTextFromPDFDoc(PDFDoc pdfDoc) async {
+//     return await pdfDoc.text;
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Export text from PDF'),
-      ),
-      body: _string == null
-          ? Center(
-              child: CircularProgressIndicator.adaptive(),
-            )
-          : Center(
-              child: Text(_string!),
-            ),
-    );
-  }
-}
+//   @override
+//   void initState() {
+//     super.initState();
+//     loadExamplePDF().then((value) => convertFileToPDFDoc(value).then((value) {
+//           getTextFromPDFDoc(value).then((value) {
+//             setState(() {
+//               _string = value;
+//             });
+//           });
+//         }));
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Export text from PDF'),
+//       ),
+//       body: _string == null
+//           ? const Center(
+//               child: CircularProgressIndicator.adaptive(),
+//             )
+//           : Center(
+//               child: Text(_string!),
+//             ),
+//     );
+//   }
+// }

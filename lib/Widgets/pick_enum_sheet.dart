@@ -6,7 +6,7 @@ Future<T?> showPickEnumSheet<T extends Enum>(
   /// Usage:
   ///   item = (await showPickEnumSheet(context, Items.values) ?? item);
 
-  final _value = await showModalBottomSheet(
+  final value = await showModalBottomSheet(
       isScrollControlled: true,
       context: context,
       builder: (context) => Padding(
@@ -19,7 +19,7 @@ Future<T?> showPickEnumSheet<T extends Enum>(
             ),
           ));
 
-  if (_value != null) return _value;
+  if (value != null) return value;
   return null;
 }
 

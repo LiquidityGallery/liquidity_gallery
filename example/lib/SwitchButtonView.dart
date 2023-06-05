@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class SwitchButtonView extends StatelessWidget {
+  const SwitchButtonView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Switch button example'),
+        title: const Text('Switch button example'),
       ),
       body: Center(
         child: Row(

@@ -29,7 +29,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
       _error = null;
     });
     try {
-      await widget.load().timeout(widget.timeout ?? Duration(days: 1),
+      await widget.load().timeout(widget.timeout ?? const Duration(days: 1),
           onTimeout: () {
         throw 'Request timeout';
       });
@@ -49,7 +49,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _isLoading
-          ? Center(
+          ? const Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -65,7 +65,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.error),
+                        const Icon(Icons.error),
                         Text('Error: $_error'),
                         Row(
                           children: [
@@ -108,13 +108,13 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.done),
-                      Text('Finish'),
+                      const Icon(Icons.done),
+                      const Text('Finish'),
                       ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('Back')),
+                          child: const Text('Back')),
                     ],
                   ),
                 ),

@@ -36,24 +36,24 @@ class StreamBadgesIcon<T> extends StatelessWidget {
             // animationType: badgeAnimationType ?? BadgeAnimationType.slide,
             // padding: padding ?? EdgeInsets.all(3),
             showBadge: showBadge,
-            child: child ?? Icon(Icons.notifications),
             badgeContent: Text(
               badge?.toString() ?? '',
               style: textStyle,
             ),
+            child: child ?? const Icon(Icons.notifications),
           );
         }
-        final _int = whileStream(snapshot.data!);
+        final int = whileStream(snapshot.data as T);
         return Badge(
           // animationDuration: animationDuration,
           // animationType: badgeAnimationType ?? BadgeAnimationType.slide,
           // padding: padding ?? EdgeInsets.all(3),
           showBadge: showBadge,
-          child: child ?? Icon(Icons.notifications),
           badgeContent: Text(
-            _int?.toString() ?? '',
+            int?.toString() ?? '',
             style: textStyle,
           ),
+          child: child ?? const Icon(Icons.notifications),
         );
       },
     );

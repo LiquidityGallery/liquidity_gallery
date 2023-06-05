@@ -10,7 +10,7 @@ class BubbleTabBar extends StatefulWidget {
   final double tabHeight;
   final Color? unselectedLabalColor;
 
-  BubbleTabBar(
+  const BubbleTabBar(
       {Key? key,
       required this.tabs,
       required this.children,
@@ -23,7 +23,7 @@ class BubbleTabBar extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return new HomeWidgetState();
+    return HomeWidgetState();
   }
 }
 
@@ -39,7 +39,7 @@ class HomeWidgetState extends State<BubbleTabBar>
   void initState() {
     super.initState();
     tabs = widget.tabs;
-    _tabController = new TabController(vsync: this, length: tabs.length);
+    _tabController = TabController(vsync: this, length: tabs.length);
   }
 
   @override
@@ -51,20 +51,18 @@ class HomeWidgetState extends State<BubbleTabBar>
   @override
   Widget build(BuildContext context) {
     //?/ Detect if dark mode is active
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool darkModeOn = brightness == Brightness.dark;
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool darkModeOn = brightness == Brightness.dark;
     return Container(
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: widget.tabHeight,
             child: TabBar(
               isScrollable: true,
-              unselectedLabelColor: widget.unselectedLabalColor == null
-                  ? Colors.grey
-                  : widget.unselectedLabalColor,
+              unselectedLabelColor: widget.unselectedLabalColor ?? Colors.grey,
               labelColor:
-                  widget.labelColor == null ? Colors.white : widget.labelColor,
+                  widget.labelColor ?? Colors.white,
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BubbleTabIndicator(
                 indicatorHeight: 25.0,
@@ -84,7 +82,7 @@ class HomeWidgetState extends State<BubbleTabBar>
           Expanded(
             flex: 9,
             child: Container(
-              child: new TabBarView(
+              child: TabBarView(
                 controller: _tabController,
                 children: widget.children,
               ),

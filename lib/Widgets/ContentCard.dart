@@ -26,7 +26,7 @@ class ContentCard extends StatelessWidget {
       onTap: onTap,
       child: Center(
         child: Container(
-            constraints: BoxConstraints(maxWidth: 400),
+            constraints: const BoxConstraints(maxWidth: 400),
             child: dense == false
                 ? Card(
                     child: Column(
@@ -66,7 +66,7 @@ class ContentCard extends StatelessWidget {
                                             icon == null ? Container() : icon!,
                                             Text(
                                               subtitle!,
-                                              style: TextStyle(fontSize: 14),
+                                              style: const TextStyle(fontSize: 14),
                                             ),
                                           ],
                                         ),
@@ -149,7 +149,7 @@ class ContentCard extends StatelessWidget {
                                             icon == null ? Container() : icon!,
                                             Text(
                                               subtitle!,
-                                              style: TextStyle(fontSize: 14),
+                                              style: const TextStyle(fontSize: 14),
                                             ),
                                           ],
                                         ),
