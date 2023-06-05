@@ -8,17 +8,13 @@ environment:
 
 dependencies:
   another_flushbar: ^1.10.24
-  # audioplayers: ^4.0.1
   auto_size_text: ^3.0.0-nullsafety.0
   badges: ^3.0.2
   bubble_tab_indicator: ^0.1.6
   cached_network_image: ^3.1.0
   calendar_timeline: ^1.0.1-null-safety.0
   carousel_slider: any
-  # charts_flutter: ^0.12.0
   cloud_firestore: any
-  # date_time_picker: ^2.1.0
-  # fluent_ui: ^4.1.2
   flutter:
     sdk: flutter
   flutter_cache_manager: ^3.1.2
@@ -28,16 +24,13 @@ dependencies:
   honeywell_scanner: ^4.0.0+14
   image_picker: ^0.8.2
   just_audio: ^0.9.25
-  # location: ^4.3.0
   mobile_scanner: ^3.0.0
-  # pdf_text: ^0.5.0
   string_similarity: ^2.0.0
   url_launcher: ^6.0.9
   dio: ^5.0.1
   intl: ^0.18.0
   share_plus: ^7.0.0
   google_fonts: ^4.0.4
-  # flutter_datetime_picker: ^1.5.1
   firebase_storage: ^11.1.2
   firebase_core: ^2.11.0
   firebase_auth: ^4.5.0
