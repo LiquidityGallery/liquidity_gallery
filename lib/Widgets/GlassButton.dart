@@ -6,7 +6,7 @@ class GlassButton extends StatelessWidget {
   final double? radius;
   final Color? color;
   final double borderWidth;
-  final bool isInkWell = false;
+  final bool isInkWell;
 
   const GlassButton(
       {Key? key,
@@ -14,7 +14,8 @@ class GlassButton extends StatelessWidget {
       this.radius,
       this.color,
       this.borderWidth = 1,
-      required this.onTap})
+      required this.onTap,
+      this.isInkWell = true})
       : super(key: key);
 
   @override
