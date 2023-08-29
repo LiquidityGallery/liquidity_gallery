@@ -6,6 +6,7 @@ class GlassButton extends StatelessWidget {
   final double? radius;
   final Color? color;
   final double borderWidth;
+  final bool isInkWell = false;
 
   const GlassButton(
       {Key? key,
@@ -18,19 +19,22 @@ class GlassButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.circular(radius == null ? 10 : radius!),
-              border:
-                  Border.all(width: borderWidth, color: color ?? Colors.grey)),
-          child: Padding(
-            padding:
-                const EdgeInsets.only(top: 8, bottom: 8, right: 12, left: 12),
-            child: child,
-          ),
-        ));
+    if (isInkWell) {
+      return InkWell(onTap: onTap, child: _detail());
+    } else {
+      return GestureDetector(onTap: onTap, child: _detail());
+    }
+  }
+
+  Widget _detail() {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius == null ? 10 : radius!),
+          border: Border.all(width: borderWidth, color: color ?? Colors.grey)),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8, bottom: 8, right: 12, left: 12),
+        child: child,
+      ),
+    );
   }
 }
