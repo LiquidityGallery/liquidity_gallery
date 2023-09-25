@@ -22,6 +22,7 @@ class BorderTextField extends StatelessWidget {
   final bool obscureText;
   final int maxLines;
   final TextAlign textAlign;
+  final Function(String input)? onSubmitted;
 
   const BorderTextField(
       {Key? key,
@@ -39,6 +40,7 @@ class BorderTextField extends StatelessWidget {
       this.borderWidth = 0.2,
       this.textStyle,
       this.onChanged,
+this.onSubmitted,
       this.textAlign = TextAlign.start,
       this.readOnly = false,
       this.obscureText = false,
@@ -56,6 +58,7 @@ class BorderTextField extends StatelessWidget {
         obscureText: obscureText,
         onTap: onTap,
         onChanged: onChanged,
+        onSubmitted: onSubmitted,
         style: textStyle ?? const TextStyle(fontSize: 14),
         autofocus: autofocus,
         readOnly: readOnly,
