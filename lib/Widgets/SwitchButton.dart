@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SwitchButton extends StatefulWidget {
   const SwitchButton(
-      {Key? key,
+      {super.key,
       required this.icon,
       required this.text,
       this.iconSize = 20.0,
@@ -13,8 +13,7 @@ class SwitchButton extends StatefulWidget {
       this.inactiveColor,
       this.padding,
       this.childPadding,
-      this.heightBetween = 3})
-      : super(key: key);
+      this.heightBetween = 3});
 
   final IconData icon;
   final double iconSize;

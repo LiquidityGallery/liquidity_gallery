@@ -11,15 +11,14 @@ class BubbleTabBar extends StatefulWidget {
   final Color? unselectedLabalColor;
 
   const BubbleTabBar(
-      {Key? key,
+      {super.key,
       required this.tabs,
       required this.children,
       this.backgroundColor,
       this.labelColor,
       this.indicatorColor,
       this.unselectedLabalColor,
-      this.tabHeight = 40})
-      : super(key: key);
+      this.tabHeight = 40});
 
   @override
   State<StatefulWidget> createState() {

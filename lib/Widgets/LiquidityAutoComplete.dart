@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
   const LiquidityAutoComplete(
-      {Key? key,
+      {super.key,
       required this.focusNode,
       required this.optionsBuilder,
       required this.onSelected,
@@ -10,8 +10,7 @@ class LiquidityAutoComplete<T extends Object> extends StatelessWidget {
       required this.child,
       required this.controller,
       this.validator,
-      this.color})
-      : super(key: key);
+      this.color});
 
   /// Get output options
   final Iterable<T> Function(TextEditingValue) optionsBuilder;

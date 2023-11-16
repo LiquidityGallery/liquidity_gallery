@@ -6,11 +6,10 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 /// [locationFromAddress] to get result
 class LocationText extends StatelessWidget {
   const LocationText(
-      {Key? key,
+      {super.key,
       required this.address,
       this.textStyle,
-      this.loadingText = 'Loading location...'})
-      : super(key: key);
+      this.loadingText = 'Loading location...'});
   final String address;
   final TextStyle? textStyle;
   final String loadingText;

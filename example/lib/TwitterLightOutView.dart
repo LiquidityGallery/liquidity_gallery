@@ -163,8 +163,7 @@ class _Header extends StatelessWidget {
 
 //TODO: Apply selected color
 class _DrawerItem extends StatelessWidget {
-  const _DrawerItem({Key? key, required this.title, this.icon, this.onTap})
-      : super(key: key);
+  const _DrawerItem({required this.title, this.icon, this.onTap});
   final String title;
   final IconData? icon;
   final Function()? onTap;

@@ -9,13 +9,12 @@ import 'package:share_plus/share_plus.dart';
 /// Default have a image on top and a title below
 class AutoSizedAppBarWithImage extends StatelessWidget {
   AutoSizedAppBarWithImage(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.imageUrls,
       this.style,
       required this.bottomHeight,
-      this.bigImageMode = true})
-      : super(key: key);
+      this.bigImageMode = true});
 
   final bool bigImageMode;
   final List<String> imageUrls;
@@ -84,8 +83,7 @@ class AutoSizedAppBarWithImage extends StatelessWidget {
 
 class BigImage extends StatelessWidget {
   const BigImage(
-      {Key? key, required this.imageUrls, required this.baseCacheManager})
-      : super(key: key);
+      {super.key, required this.imageUrls, required this.baseCacheManager});
   final List<String> imageUrls;
   final BaseCacheManager baseCacheManager;
 

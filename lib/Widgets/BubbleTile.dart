@@ -9,13 +9,13 @@ class BubbleTile extends StatelessWidget {
   final double padding;
   final double topMargin;
   final double bottomMargin;
-  final double height;
+  final double? height;
   final double width;
   final double margin;
 
   /// A container layout for mail/order like layout for app pages
   const BubbleTile(
-      {Key? key,
+      {super.key,
       @required this.child,
       this.backgroundColor,
       this.Radius = 18,
@@ -26,8 +26,7 @@ class BubbleTile extends StatelessWidget {
       this.bottomMargin = 4,
       this.height = 100,
       this.width = 100,
-      this.margin = 8})
-      : super(key: key);
+      this.margin = 8});
 
   @override
   Widget build(BuildContext context) {

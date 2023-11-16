@@ -10,13 +10,12 @@ class Streams<T> extends StatelessWidget {
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const Streams(
-      {Key? key,
+      {super.key,
       required this.child,
       required this.stream,
       this.childOnWaiting = const Center(
         child: CircularProgressIndicator(),
-      )})
-      : super(key: key);
+      )});
 
   @override
   Widget build(BuildContext context) {

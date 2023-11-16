@@ -21,8 +21,8 @@ dependencies:
   fluttertoast: ^8.0.9
   geocoding: ^2.0.0
   google_sign_in: ^6.0.2
-  honeywell_scanner: ^4.0.0+14
-  image_picker: ^0.8.2
+  honeywell_scanner: ^5.0.0+2
+  image_picker: ^1.0.4
   just_audio: ^0.9.25
   mobile_scanner: ^3.0.0
   string_similarity: ^2.0.0
@@ -30,13 +30,13 @@ dependencies:
   dio: ^5.0.1
   intl: ^0.18.0
   share_plus: ^7.0.0
-  google_fonts: ^4.0.4
+  google_fonts: ^6.1.0
   firebase_storage: ^11.1.2
   firebase_core: ^2.11.0
   firebase_auth: ^4.5.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
 

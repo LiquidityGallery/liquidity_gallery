@@ -7,8 +7,7 @@ class LoadingWidget extends StatefulWidget {
   final Duration? willPop;
 
   const LoadingWidget(
-      {Key? key, required this.load, this.timeout, this.willPop})
-      : super(key: key);
+      {super.key, required this.load, this.timeout, this.willPop});
   @override
   _LoadingWidgetState createState() => _LoadingWidgetState();
 }

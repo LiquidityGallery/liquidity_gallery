@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class RadioButtons extends StatefulWidget {
   const RadioButtons(
-      {Key? key,
+      {super.key,
       required this.children,
       this.initValue,
-      required this.onChanged})
-      : super(key: key);
+      required this.onChanged});
 
   final List<String> children;
 

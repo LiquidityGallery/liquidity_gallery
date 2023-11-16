@@ -6,11 +6,10 @@ import 'package:geocoding/geocoding.dart';
 /// [placemarkFromCoordinates] to get result
 class AddressText extends StatelessWidget {
   const AddressText(
-      {Key? key,
+      {super.key,
       required this.latitude,
       required this.longitude,
-      this.loadingText = 'Loading address...'})
-      : super(key: key);
+      this.loadingText = 'Loading address...'});
   final double latitude;
   final double longitude;
 

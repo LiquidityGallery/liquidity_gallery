@@ -7,12 +7,11 @@ class GrandButton extends StatelessWidget {
   final Function() onPressed;
 
   const GrandButton(
-      {Key? key,
+      {super.key,
       this.child,
       this.radius = 5.0,
       this.backgroundColor,
-      required this.onPressed})
-      : super(key: key);
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

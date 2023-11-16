@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 class SharePrintView extends StatelessWidget {
-  const SharePrintView({Key? key}) : super(key: key);
+  const SharePrintView({super.key});
 
   @override
   Widget build(BuildContext context) {

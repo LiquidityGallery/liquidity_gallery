@@ -14,7 +14,7 @@ Future<void> scan(
 }
 
 class _ScanView extends StatefulWidget {
-  const _ScanView({Key? key}) : super(key: key);
+  const _ScanView();
 
   @override
   State<_ScanView> createState() => _ScanViewState();

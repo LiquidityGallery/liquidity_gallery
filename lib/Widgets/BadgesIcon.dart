@@ -3,15 +3,14 @@ import 'package:badges/badges.dart';
 
 class BadgesIcon extends StatelessWidget {
   const BadgesIcon(
-      {Key? key,
+      {super.key,
       this.child,
       this.badge,
       this.showBadge = true,
       this.padding,
       this.badgeAnimationType,
       this.animationDuration = const Duration(milliseconds: 500),
-      this.textStyle})
-      : super(key: key);
+      this.textStyle});
 
   final Widget? child;
   final int? badge;

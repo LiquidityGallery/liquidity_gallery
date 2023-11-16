@@ -14,7 +14,7 @@ class Texter extends StatelessWidget {
   ///
   /// Here your have one. Replace for a text widget. Easy to use!
   const Texter(
-      {Key? key,
+      {super.key,
       required this.text,
       this.left = 0,
       this.top = 0,
@@ -22,8 +22,7 @@ class Texter extends StatelessWidget {
       this.fontSize = 20,
       this.right = 0,
       this.isbold = false,
-      this.color})
-      : super(key: key);
+      this.color});
 
   @override
   Widget build(BuildContext context) {

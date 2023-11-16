@@ -36,13 +36,13 @@ String removeCheckDigit(String? code) {
 
 class Scanner extends StatefulWidget {
   const Scanner({
-    Key? key,
+    super.key,
     required this.onDecoded,
     required this.child,
     this.debug,
     this.onScannerError,
     this.onError,
-  }) : super(key: key);
+  });
 
   final Function(ScannedData scannedData) onDecoded;
   final Widget child;

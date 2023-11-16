@@ -10,8 +10,7 @@ class FuturesDoc<T> extends StatelessWidget {
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
   const FuturesDoc(
-      {Key? key, required this.child, required this.future, this.childOnError})
-      : super(key: key);
+      {super.key, required this.child, required this.future, this.childOnError});
 
   @override
   Widget build(BuildContext context) {

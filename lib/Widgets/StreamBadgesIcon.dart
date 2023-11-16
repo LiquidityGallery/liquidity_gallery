@@ -3,7 +3,7 @@ import 'package:flutter/material.dart' hide Badge;
 
 class StreamBadgesIcon<T> extends StatelessWidget {
   const StreamBadgesIcon(
-      {Key? key,
+      {super.key,
       required this.stream,
       this.child,
       this.badge,
@@ -12,8 +12,7 @@ class StreamBadgesIcon<T> extends StatelessWidget {
       this.padding,
       this.badgeAnimationType,
       this.animationDuration = const Duration(milliseconds: 500),
-      this.textStyle})
-      : super(key: key);
+      this.textStyle});
 
   final Stream<T> stream;
   final Widget? child;

@@ -8,8 +8,7 @@ class ListButton extends StatelessWidget {
   final Widget child;
 
   const ListButton(
-      {Key? key, required this.onTap, required this.icon, required this.child})
-      : super(key: key);
+      {super.key, required this.onTap, required this.icon, required this.child});
 
   @override
   Widget build(BuildContext context) {

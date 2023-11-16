@@ -10,13 +10,12 @@ class SearchBar extends StatefulWidget {
   final Widget? suffix;
 
   const SearchBar(
-      {Key? key,
+      {super.key,
       required this.controller,
       this.placeholder = 'Search',
       this.onChanged,
       this.backgroundColor,
-      this.suffix})
-      : super(key: key);
+      this.suffix});
 
   @override
   _SearchBarState createState() => _SearchBarState();

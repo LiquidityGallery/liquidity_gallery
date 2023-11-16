@@ -36,7 +36,7 @@ class VisualSection extends StatelessWidget {
   ///
   /// HeroBoard() // Big Title and paragraph text for major web disply with great layout.
   const VisualSection(
-      {Key? key,
+      {super.key,
       this.backgroundcolor,
       this.height,
       this.title,
@@ -50,8 +50,7 @@ class VisualSection extends StatelessWidget {
       this.titlefontfamily,
       this.subtitlefontfamily,
       this.children,
-      this.minheight = 500})
-      : super(key: key);
+      this.minheight = 500});
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +120,7 @@ class DisplayFrame extends StatelessWidget {
 
   ///A image container with prebuild title and subtitle. Auto-adjust layout
   const DisplayFrame(
-      {Key? key,
+      {super.key,
       this.title,
       this.subtitle,
       this.titlecolor,
@@ -130,8 +129,7 @@ class DisplayFrame extends StatelessWidget {
       this.child2,
       this.height = 260,
       this.width = 330,
-      this.radius = 0})
-      : super(key: key);
+      this.radius = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -213,14 +211,13 @@ class DotPoint extends StatelessWidget {
 
   /// A colored Icon Widget with title and subtitle as a nice web point form display prebuild layout
   const DotPoint(
-      {Key? key,
+      {super.key,
       this.dotcolor,
       this.icon,
       this.title,
       this.subtitle,
       this.titlecolor,
-      this.subtitlecolor})
-      : super(key: key);
+      this.subtitlecolor});
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +300,7 @@ class ListBoard extends StatelessWidget {
   ///
   /// Use ListBoardItem in the ListBoard for better text
   const ListBoard(
-      {Key? key,
+      {super.key,
       this.title,
       this.titlefontsize = 27,
       this.titlecolor,
@@ -313,8 +310,7 @@ class ListBoard extends StatelessWidget {
       required this.buttontext,
       this.buttoncolor,
       this.onpressed,
-      this.buttontextcolor})
-      : super(key: key);
+      this.buttontextcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -401,13 +397,12 @@ class ListBoardItem extends StatelessWidget {
   ///
   /// formatted Text with icon such as check mark, only for ListBoard
   const ListBoardItem(
-      {Key? key,
+      {super.key,
       this.icon,
       this.isicon = false,
       this.iconsize = 17,
       this.text,
-      this.fontsize = 15})
-      : super(key: key);
+      this.fontsize = 15});
 
   @override
   Widget build(BuildContext context) {
@@ -454,7 +449,7 @@ class HeroBoard extends StatelessWidget {
 
   ///Big Title and paragraph text for major web disply with great layout.
   const HeroBoard(
-      {Key? key,
+      {super.key,
       this.title,
       this.subtitle,
       this.titlefontsize = 30,
@@ -465,8 +460,7 @@ class HeroBoard extends StatelessWidget {
       this.buttoncolor,
       this.radius = 30,
       this.buttontextcolor,
-      required this.buttontext})
-      : super(key: key);
+      required this.buttontext});
 
   @override
   Widget build(BuildContext context) {

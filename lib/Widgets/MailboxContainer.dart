@@ -14,7 +14,7 @@ class MailboxContainer extends StatelessWidget {
 
   /// A container layout for mail/order like layout for app pages
   const MailboxContainer(
-      {Key? key,
+      {super.key,
       @required this.child,
       this.backgroundColor,
       this.Radius = 25,
@@ -24,8 +24,7 @@ class MailboxContainer extends StatelessWidget {
       this.topMargin = 3,
       this.bottomMargin = 4,
       this.boxShadow,
-        this.onLongPress,})
-      : super(key: key);
+        this.onLongPress,});
 
   @override
   Widget build(BuildContext context) {

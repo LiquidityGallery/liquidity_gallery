@@ -1,5 +1,4 @@
 import 'package:image_picker/image_picker.dart';
-import 'package:liquidity_gallery/Models/PickFile.dart';
 import 'package:path/path.dart';
 
 ///Usage (IOS Only): add these three line to Info.plist
@@ -16,12 +15,12 @@ import 'package:path/path.dart';
 ///
 ///   <string>Privacy - Microphone Usage Description</string>
 
-Future<PickFile> takeImage() async {
-  final PickedFile? pickedFile =
-      await ImagePicker().getImage(source: ImageSource.camera);
+Future<XFile> takeImage() async {
+  final pickedFile =
+      await ImagePicker().pickImage(source: ImageSource.camera);
   if (pickedFile != null) {
     final uint8List = await pickedFile.readAsBytes();
-    return PickFile(uint8list: uint8List, name: basename(pickedFile.path));
+    return XFile.fromData( uint8List, name: basename(pickedFile.path));
   } else {
     throw 'No image selected';
   }

@@ -10,14 +10,13 @@ class InfoButton extends StatelessWidget {
   final double height;
   final double width;
   const InfoButton(
-      {Key? key,
+      {super.key,
       required this.onTap,
       required this.icon,
       required this.child,
       this.color,
       this.height = 200,
-      this.width = 450})
-      : super(key: key);
+      this.width = 450});
 
   @override
   Widget build(BuildContext context) {

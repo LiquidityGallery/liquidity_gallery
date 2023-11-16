@@ -3,7 +3,7 @@ import 'package:liquidity_gallery/Functions/showInputModal.dart';
 import 'package:liquidity_gallery/Functions/showModal.dart';
 
 class ModalSheetView extends StatelessWidget {
-  const ModalSheetView({Key? key}) : super(key: key);
+  const ModalSheetView({super.key});
 
   @override
   Widget build(BuildContext context) {

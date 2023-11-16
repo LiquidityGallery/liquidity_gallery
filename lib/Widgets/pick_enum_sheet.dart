@@ -24,7 +24,7 @@ Future<T?> showPickEnumSheet<T extends Enum>(
 }
 
 class PickEnumSheet<T extends Enum> extends StatefulWidget {
-  const PickEnumSheet({Key? key, required this.values}) : super(key: key);
+  const PickEnumSheet({super.key, required this.values});
 
   final List<T> values;
 

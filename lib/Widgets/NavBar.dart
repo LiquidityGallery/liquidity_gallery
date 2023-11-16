@@ -11,14 +11,13 @@ class NavBar extends StatefulWidget {
   final double selectedFontSize;
 
   const NavBar(
-      {Key? key,
+      {super.key,
       required this.NumOfItem,
       required this.children,
       required this.items,
       this.color,
       this.unselectedFontSize = 12,
-      this.selectedFontSize = 14})
-      : super(key: key);
+      this.selectedFontSize = 14});
 
   @override
   _NavBarState createState() => _NavBarState();

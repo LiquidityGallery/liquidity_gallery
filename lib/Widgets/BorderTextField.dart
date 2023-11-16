@@ -25,7 +25,7 @@ class BorderTextField extends StatelessWidget {
   final Function(String input)? onSubmitted;
 
   const BorderTextField(
-      {Key? key,
+      {super.key,
       this.onTap,
       this.textInputType = TextInputType.text,
       this.labeltext,
@@ -44,8 +44,7 @@ this.onSubmitted,
       this.textAlign = TextAlign.start,
       this.readOnly = false,
       this.obscureText = false,
-      this.maxLines = 10})
-      : super(key: key);
+      this.maxLines = 10});
 
   @override
   Widget build(BuildContext context) {

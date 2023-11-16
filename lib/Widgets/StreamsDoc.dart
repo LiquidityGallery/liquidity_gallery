@@ -8,8 +8,7 @@ class StreamsDoc<T> extends StatelessWidget {
 
   ///Better Streambuilder with shorter format.
   /// updated: merge to cloud_firestore 2.2.2
-  const StreamsDoc({Key? key, required this.child, required this.stream})
-      : super(key: key);
+  const StreamsDoc({super.key, required this.child, required this.stream});
 
   @override
   Widget build(BuildContext context) {

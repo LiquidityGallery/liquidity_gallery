@@ -10,15 +10,14 @@ class ContentCard extends StatelessWidget {
   final void Function()? onTap;
 
   const ContentCard(
-      {Key? key,
+      {super.key,
       this.dense = false,
       this.imageOnLeft = true,
       this.subtitle,
       this.icon,
       required this.imageURL,
       @required this.onTap,
-      this.child})
-      : super(key: key);
+      this.child});
 
   @override
   Widget build(BuildContext context) {

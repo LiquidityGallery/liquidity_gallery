@@ -9,14 +9,13 @@ class GlassButton extends StatelessWidget {
   final bool isInkWell;
 
   const GlassButton(
-      {Key? key,
+      {super.key,
       required this.child,
       this.radius,
       this.color,
       this.borderWidth = 1,
       required this.onTap,
-      this.isInkWell = true})
-      : super(key: key);
+      this.isInkWell = true});
 
   @override
   Widget build(BuildContext context) {

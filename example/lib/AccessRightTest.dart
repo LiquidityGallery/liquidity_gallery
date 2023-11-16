@@ -73,7 +73,7 @@ List<Map<String, dynamic>> userDocuments = [
 ];
 
 class AccessView extends StatefulWidget {
-  const AccessView({Key? key}) : super(key: key);
+  const AccessView({super.key});
 
   @override
   _AccessViewState createState() => _AccessViewState();
@@ -125,7 +125,7 @@ class _AccessViewState extends State<AccessView> {
 }
 
 class RightView extends StatelessWidget {
-  const RightView({Key? key, required this.user}) : super(key: key);
+  const RightView({super.key, required this.user});
 
   final User user;
 
@@ -187,7 +187,7 @@ class RightView extends StatelessWidget {
 }
 
 class _SelectUserView extends StatelessWidget {
-  const _SelectUserView({Key? key, required this.users}) : super(key: key);
+  const _SelectUserView({required this.users});
 
   final List<User> users;
 
@@ -211,11 +211,10 @@ class _SelectUserView extends StatelessWidget {
 
 class AccessListTile extends StatelessWidget {
   const AccessListTile(
-      {Key? key,
+      {super.key,
       required this.level,
       required this.userLevel,
-      required this.child})
-      : super(key: key);
+      required this.child});
 
   final int userLevel;
   final int level;

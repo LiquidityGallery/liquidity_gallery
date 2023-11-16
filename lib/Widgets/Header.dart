@@ -7,14 +7,13 @@ class Header extends StatelessWidget {
   ///
   /// You can also use a Texter() Widget if you need to put some paragraph text in it :)
   const Header(
-      {Key? key,
+      {super.key,
       required this.text,
       this.left = 0,
       this.top = 30,
       this.bottom = 20,
       this.fontSize = 30,
-      this.color})
-      : super(key: key);
+      this.color});
 
   final String text;
   final double left;

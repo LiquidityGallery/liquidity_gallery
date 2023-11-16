@@ -5,7 +5,7 @@ import 'ConfirmButton.dart';
 class AlertPanel extends StatelessWidget {
   final String? text;
 
-  const AlertPanel({Key? key, this.text = ''}) : super(key: key);
+  const AlertPanel({super.key, this.text = ''});
 
   @override
   Widget build(BuildContext context) {

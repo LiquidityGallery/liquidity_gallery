@@ -19,7 +19,7 @@ class ConfirmButton extends StatefulWidget {
   ///
   /// A custom button with pre-build rounded colorful shape on it.
   const ConfirmButton({
-    Key? key,
+    super.key,
     required this.text,
     this.color,
     this.radius = 12,
@@ -32,7 +32,7 @@ class ConfirmButton extends StatefulWidget {
     this.padding = 15.0,
     this.fontSize = 15,
     this.icon,
-  }) : super(key: key);
+  });
 
   @override
   _ConfirmButtonState createState() => _ConfirmButtonState();

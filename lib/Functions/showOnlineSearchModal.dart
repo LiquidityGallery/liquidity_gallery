@@ -39,14 +39,13 @@ Future<T> showOnlineSearchModal<T>(BuildContext context,
 
 class _SearchPage<T> extends StatefulWidget {
   const _SearchPage(
-      {Key? key,
+      {super.key,
       this.inputDecoration,
       required this.initText,
       required this.items,
       required this.itemAsString,
       required this.filterFunction,
-      required this.showCancelTextButton})
-      : super(key: key);
+      required this.showCancelTextButton});
 
   final InputDecoration? inputDecoration;
 

@@ -3,13 +3,12 @@ import 'package:liquidity_gallery/liquidity_gallery.dart';
 
 class TwitterLoginView extends StatefulWidget {
   const TwitterLoginView(
-      {Key? key,
+      {super.key,
       this.title = 'Login',
       this.loginText = 'Login',
       required this.onLogin,
       this.onGoogleLogin,
-      this.onAppleLogin})
-      : super(key: key);
+      this.onAppleLogin});
   final String title;
   final String loginText;
   final Function(String, String)? onLogin;
@@ -128,8 +127,7 @@ class _TwitterLoginViewState extends State<TwitterLoginView> {
 
 class _LoginButton extends StatelessWidget {
   const _LoginButton(
-      {Key? key, this.enable = false, required this.text, this.onTap})
-      : super(key: key);
+      {this.enable = false, required this.text, this.onTap});
   final bool enable;
   final String text;
   final Function()? onTap;

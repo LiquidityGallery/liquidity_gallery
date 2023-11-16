@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class LiquidityCardItem extends StatelessWidget {
   const LiquidityCardItem(
-      {Key? key,
+      {super.key,
       this.padding = const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       required this.child,
-      this.title})
-      : super(key: key);
+      this.title});
 
   final EdgeInsets padding;
   final Widget child;
